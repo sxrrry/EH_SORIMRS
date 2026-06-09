@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{9369A8310873F40B}Prefabs/Weapons/Rifles/ARY_G3/ARY_Rifle_G3_FullAuto_HideBipod_Base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

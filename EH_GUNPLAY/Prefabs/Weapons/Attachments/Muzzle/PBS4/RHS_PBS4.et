@@ -1,0 +1,16 @@
+GenericEntity : "{B3EFF8C3EBF155D9}Prefabs/Weapons/Core/RHS_Suppressor_base.et" {
+ ID "5DA5388FD8F2F99D"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      m_vLinearFactors 1 0.5 1.2
+      m_vAngularFactors 1 1 1.5
+      m_vTurnFactors 1 0.3 1
+     }
+    }
+   }
+  }
+ }
+}

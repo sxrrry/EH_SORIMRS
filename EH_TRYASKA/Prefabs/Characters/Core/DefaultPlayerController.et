@@ -1,0 +1,20 @@
+SCR_PlayerController {
+ ID "1A9BA6BEFA06E3B1"
+ components {
+  SCR_HUDManagerComponent "{2FDC275D9EBCDB8B}" {
+   InfoDisplays {
+    SCR_ScreenEffectsManager "{5AF2CE6B10209B7D}" {
+     InfoDisplays {
+      GC_SuppressionScreenEffect "{68503B71EBEA1FD4}" {
+       m_fVignetteMax 0.5
+       m_fBlurMax 0.2
+       m_fBlurSizeMin 0.2
+       m_fContrastMax 2
+       m_fChromAberMax 0.05
+      }
+     }
+    }
+   }
+  }
+ }
+}

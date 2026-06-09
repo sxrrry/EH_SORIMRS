@@ -1,0 +1,26 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef Emitter_01 {
+   ShapeSize 1 0 3
+   ConeAngle 360 0 180
+   ConeAngleMinDist 84.167
+   MaxNum 1
+   BirthRate 5000
+   Offset 0 -2 0
+   Angles 180 0 0
+   LodMin 0
+   LodMax 0
+   ParticleType Prefab
+   Prefab "{58E62C5D17281925}Prefabs/Particles/Blasts/Blast_small_Invisible_Trigger.et"
+   Velocity 5
+   EnableCollisions 1
+   NormalRestitution 0
+   TagentialRestitution 0
+   Friction 0
+   Lifetime 0.1
+   EmittingTime 0.2
+   Repeat 0
+  }
+ }
+}

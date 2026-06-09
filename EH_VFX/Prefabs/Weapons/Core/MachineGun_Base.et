@@ -1,0 +1,21 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     components {
+      SCR_MuzzleEffectComponent "{6954A078D022DF48}" {
+       ParticleEffect "{32FC74AE9AECA2BF}Particles/notSorry/sr_muzzleBlastTrigger_small.ptc"
+       EffectPosition EntitySlotInfo pos {
+        PivotID "barrel_muzzle"
+        Offset 0 0 0.1
+       }
+       ResetOnFire 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

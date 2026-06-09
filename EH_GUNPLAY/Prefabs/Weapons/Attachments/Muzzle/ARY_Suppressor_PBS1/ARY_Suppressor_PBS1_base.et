@@ -1,0 +1,15 @@
+GenericEntity : "{491CEF88656BE6C2}Prefabs/Weapons/Core/Suppressor_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      m_vAngularFactors 0.8 0.8 1.5
+      m_vTurnFactors 0.8 0.3 1
+     }
+    }
+   }
+  }
+ }
+}

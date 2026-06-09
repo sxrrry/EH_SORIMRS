@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{70AD88328D2F6864}Prefabs/Weapons/Attachments/Muzzle/ARY_Suppressor_PBS1/ARY_Suppressor_PBS1_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

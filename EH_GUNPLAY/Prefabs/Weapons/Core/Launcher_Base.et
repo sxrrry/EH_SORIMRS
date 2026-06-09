@@ -1,0 +1,24 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
+     WeaponAimModifiers {
+      SwayWeaponAimModifier "{521AE9A3284CB1B0}" {
+       "Linear Damping" 5 4 2
+       "Angular Damping" 25 15 18
+       "ADS Multiplier" 0.5
+       "Focus Multiplier" 0.35
+       "Stamina Scale Mins" 0.7 0.6 1.5
+       "Stamina Scale Maxs" 4 4 3
+       "Angular Inertia Magnitude ADS" 25 20 35
+       "Linear Inertia Decay Speed" 1
+       "Angular Inertia Decay Speed" 1
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,28 @@
+GenericEntity : "{42F8DC54A45367C9}Prefabs/Weapons/Rifles/AK74M/Rifle_AK105.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       AngularData RecoilData "{587895243A80771D}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 4
+       }
+       TurnOffsetData RecoilData "{587895243B6FE433}" {
+        "Curve Mins" -6 4.5 0
+        "Curve Maxs" 6 6 0
+        "Base Recoil Scale" 4
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,22 @@
+GameProject {
+ ID "EH_GUNPLAY"
+ GUID "68E48106A721D64F"
+ TITLE "EH_GUNPLAY"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{CC52F0D24B142725}Prefabs/Weapons/Rifles/M2 Carbine/BC_Rifle_M2_Carbine.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,23 @@
+MetaFileClass {
+ Name "{FB48D30B389F866F}Assets/IMG/TRYASKA_MASK2.edds"
+ Configurations {
+  PNGResourceClass PC : "{0FE15736B2B24038}Configs/System/ResourceTypes/PC/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+  PNGResourceClass XBOX_ONE : "{D9E3C07E0CEFD28B}Configs/System/ResourceTypes/XBOX_ONE/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+  PNGResourceClass XBOX_SERIES : "{A0D4A5D55754C80B}Configs/System/ResourceTypes/XBOX_SERIES/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+  PNGResourceClass PS4 : "{8F56C72593079310}Configs/System/ResourceTypes/PS4/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+  PNGResourceClass PS5 : "{785A4583AC38909F}Configs/System/ResourceTypes/PS5/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+  PNGResourceClass HEADLESS : "{095FD5ADF84725BA}Configs/System/ResourceTypes/HEADLESS/TextureMask2.conf" {
+   Conversion RedHQCompression
+  }
+ }
+}

@@ -1,0 +1,84 @@
+EffectDef {
+      EmitterDef eh_smoke_after {
+   ShapeSize 10 0 10
+   ConeAngle 360 0 0
+   ConeAngleMinDist 80
+   MaxNum 100
+   BirthRate 10
+   Offset 0 0 0
+   Angles 0 0 0
+   LocalTransform 0
+   LodMin 0
+   LodMax 0
+   Material "{5C751A80FB6CD3F4}Particles/_Materials/Gas/Smoke_loop_02.emat"
+   StreakFullUV 0
+   SizeRND 0.6
+   ScaleX 1
+   ScaleY 1
+   CenterY 0
+   RotMultiplier 100
+   RotRND 10
+   RandomRotDir 1
+   VelAngle 0
+   RandomAngle 1
+   FlipU Random
+   VelocityRND 1
+   AirResistance 10
+   WindInfluence 0.4
+   GravityMultiply -0.417
+   AnimOnce 1
+   AnimFPS 30
+   LifetimeByAnim 1
+   LifetimeRND 0.8
+   Color {
+    0 0.7709 0.7709 0.7709 0.9968 0.6435 0.6435 0.6435
+   }
+   Alpha {
+    0 0.1269 0.0961 0.2159 0.5427 0.078 1 0
+   }
+   RotationSpeed {
+    0 1 0.0815 0.353 1 0
+   }
+   Size {
+    0.0015 0 0.0964 0.5215 1 1
+   }
+   EmittingTime 20
+   Repeat 0
+   AlphaMast {
+    0 1 0.6019 0.7227 1 0
+   }
+   BRateMast {
+    0 0 0.0619 0 0.2271 1 0.8321 1 1 0
+   }
+  }
+    EmitterDef eh_shockwave {
+   ShapeType Sphere
+   ShapeSize 3 3 3
+   ConeAngle 360 0 180
+   MaxNum 5
+   BirthRate 10000
+   Material "{5C751A80FB6CD3F4}Particles/_Materials/Gas/Smoke_loop_02.emat"
+   SizeMultiplier 50
+   SizeRND 10
+   RotMultiplier 20.3
+   RotRND 22.2
+   RandomRotDir 1
+   FlipU Random
+   FlipV Random
+   Velocity 0
+   AnimOnce 1
+   AnimFPS 240
+   Lifetime 0.15
+   Color {
+    0 1 1 1
+   }
+   Alpha {
+    0 1 0.4995 0.3464 1 0
+   }
+   Size {
+    0 0 1 1
+   }
+   EmittingTime 0.1
+   Repeat 0
+  }
+}

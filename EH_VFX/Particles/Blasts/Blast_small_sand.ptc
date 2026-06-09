@@ -1,0 +1,55 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef smoke_explosion {
+   ShapeType Box
+   ShapeSize 10 0 10
+   ConeAngle 360 179 180
+   ConeAngleMinDist 80
+   BirthRate 1000
+   Offset 0 0 0
+   Angles 0 0 0
+   LocalTransform 0
+   Material "{029D33C344E15DFB}Particles/_Materials/Gas/Smoke_loop_01.emat"
+   StreakFullUV 0
+   SizeMultiplier 4
+   SizeRND 3
+   ScaleX 1
+   ScaleY 1
+   CenterY 0
+   RotMultiplier 100
+   RotRND 5
+   RandomRotDir 1
+   VelAngle 0
+   RandomAngle 1
+   FlipU Random
+   Velocity 10
+   VelocityRND 0
+   AirResistance 10
+   AirResistanceRND 1.5
+   WindInfluence 0.4
+   GravityMultiply 0
+   GravityMultiplyRND 0
+   AnimFPS 102
+   Lifetime 10
+   LifetimeRND 0.6
+   Color {
+    0 0.604 0.542 0.461 1 0.38 0.325 0.256
+   }
+   Alpha {
+    0 0.3 0.098 0.6 0.54 0.183 1 0
+   }
+   RotationSpeed {
+    0 1 0.025 0 1 0
+   }
+   Size {
+    0 0.9 0.03 1 1 1
+   }
+   EmittingTime 0.2
+   Repeat 0
+  }
+ }
+ LightOffset 0 3 0
+ LightClipEV -16
+ LightRadius 30
+}

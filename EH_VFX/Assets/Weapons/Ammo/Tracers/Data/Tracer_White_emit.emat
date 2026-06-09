@@ -1,0 +1,4 @@
+MatCommon {
+ Emissive 1 1 1 0
+ EmissiveLV 9
+}

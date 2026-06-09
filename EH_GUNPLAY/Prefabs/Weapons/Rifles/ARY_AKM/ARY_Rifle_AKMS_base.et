@@ -1,0 +1,28 @@
+GenericEntity : "{4B5BB86FFAC9FE27}Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKM_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{669EFCE3E3E6E1BC}" {
+       AngularData RecoilData "{669EFCE3E3E6E1B1}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 3.3
+       }
+       TurnOffsetData RecoilData "{669EFCE3E3E6E1B7}" {
+        "Curve Mins" -8 7 0
+        "Curve Maxs" 8 9 0
+        "Base Recoil Scale" 3.3
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

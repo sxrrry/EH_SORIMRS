@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{A2F0354B64E9070D}Assets/Weapons/Ammo/Tracers/Data/Tracer_White_emit.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,28 @@
+GenericEntity {
+ ID "659F41E2363553A5"
+ components {
+  WeaponComponent "{659F41E236355004}" {
+   components {
+    MuzzleComponent "{659F41E236356316}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{659F41E2363563F6}" {
+       AngularData RecoilData "{659F41E2363563C6}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 3
+       }
+       TurnOffsetData RecoilData "{659F41E2363563C1}" {
+        "Curve Mins" -6 4.5 0
+        "Curve Maxs" 6 6 0
+        "Base Recoil Scale" 3
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

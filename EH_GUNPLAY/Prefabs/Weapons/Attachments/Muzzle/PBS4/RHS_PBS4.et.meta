@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3D2940A7E1E36F87}Prefabs/Weapons/Attachments/Muzzle/PBS4/RHS_PBS4.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{2471E6641DE9B973}Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKMS_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

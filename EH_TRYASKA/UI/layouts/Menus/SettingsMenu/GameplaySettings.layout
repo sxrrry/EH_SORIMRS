@@ -1,0 +1,19 @@
+HorizontalLayoutWidgetClass {
+ {
+  ScrollLayoutWidgetClass "{000000009881A4C7}" {
+   Prefab "{000000009881A4C7}"
+   {
+    VerticalLayoutWidgetClass "{00000000C099DEEF}" {
+     Prefab "{00000000C099DEEF}"
+     {
+      ButtonWidgetClass "{59FA767E8FD9CBCC}" {
+       Prefab "{59FA767E8FD9CBCC}"
+       "Is Enabled" 0
+       "Is Visible" 0
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,4301 @@
+AudioOutputStateResClass {
+ Signals {
+  SignalClass "60429" {
+   id 60429
+   name "B&V INTERIOR"
+   tl -1472 -1392
+   res "{8A428597F8C3A3ED}Sounds/_SharedData/Signals/FinalMix/FinalMix_Interior.sig"
+   outputsport {
+    2 14 19 27
+   }
+  }
+  SignalClass "62477" {
+   id 62477
+   name "LF FILTER"
+   tl 1072 -112
+   res "{D9A2674676070DA8}Sounds/_SharedData/Signals/FinalMix/FinalMix_AboveSea.sig"
+   conns {
+    IOPConnectionClass "iop:28" {
+     port 28
+     conn {
+      ConnectionsClass connections {
+       id 26
+       links {
+        ConnectionClass "281630:65" {
+         id 281630
+         port 65
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    28
+   }
+   outputsport {
+    2 4
+   }
+   inputvalues {
+    0
+   }
+   inputvaluesmin {
+    0
+   }
+   inputvaluesmax {
+    1
+   }
+  }
+  SignalClass "285709" {
+   id 285709
+   name "Signal Dynamic Range"
+   tl -752 -1472
+   res "{F51E46C7F783713E}Sounds/_SharedData/Signals/FinalMix/FinalMix_DynamicRange.sig"
+   inputsport {
+    1
+   }
+   outputsport {
+    2 39 51 56
+   }
+   inputvalues {
+    1
+   }
+   inputvaluesmin {
+    -1
+   }
+   inputvaluesmax {
+    1
+   }
+  }
+  SignalClass "295949" {
+   id 295949
+   name "Signal Reverb Mix"
+   tl 272 960
+   res "{F3424AB4FFF40B4D}Sounds/_SharedData/Signals/FinalMix/FinalMix_ReverbMix.sig"
+   outputsport {
+    11 12 13
+   }
+  }
+  SignalClass "306189" {
+   id 306189
+   name "Signal Dynamic Mix"
+   tl 32 -368
+   res "{5D2709AA0854ACDC}Sounds/_SharedData/Signals/FinalMix/FinalMix_DynamicMix.sig"
+   conns {
+    IOPConnectionClass "iop:20" {
+     port 20
+     conn {
+      ConnectionsClass connections {
+       id 26
+       links {
+        ConnectionClass "311326:65" {
+         id 311326
+         port 65
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass "iop:21" {
+     port 21
+     conn {
+      ConnectionsClass connections {
+       id 26
+       links {
+        ConnectionClass "312350:65" {
+         id 312350
+         port 65
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass "iop:22" {
+     port 22
+     conn {
+      ConnectionsClass connections {
+       id 26
+       links {
+        ConnectionClass "313374:65" {
+         id 313374
+         port 65
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass "iop:124" {
+     port 124
+     conn {
+      ConnectionsClass connections {
+       id 26
+       links {
+        ConnectionClass "321566:65" {
+         id 321566
+         port 65
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    20 21 22 124
+   }
+   outputsport {
+    11 12 13 14 138
+   }
+   inputvalues {
+    0 0 0 0
+   }
+   inputvaluesmin {
+    0 0 0 0
+   }
+   inputvaluesmax {
+    0.2 0.2 0.2 1
+   }
+  }
+ }
+ filters {
+  FilterClass "61462" {
+   id 61462
+   name "B&V INTERIOR"
+   comment ""
+   version 5
+   tl -752 496
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "60429:2" {
+       id 60429
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "60429:27" {
+       id 60429
+       port 27
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   wetDry 1
+   volume_dB -6
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 2700
+    Q 0.4
+   }
+  }
+  FilterClass "63510" {
+   id 63510
+   name "UNDERWATER + HEALTH"
+   comment ""
+   version 5
+   tl 1072 0
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "62477:4" {
+       id 62477
+       port 4
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 2
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 100
+    Q 1.5
+   }
+  }
+  FilterClass "109590" {
+   id 109590
+   name "B&V INTERIOR"
+   comment ""
+   version 5
+   tl -1024 -1056
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "60429:2" {
+       id 60429
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "60429:27" {
+       id 60429
+       port 27
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   wetDry 1
+   volume_dB -6
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 2349
+    Q 0.4
+   }
+  }
+  FilterClass "167958" {
+   id 167958
+   name "VEHICLE INTERIOR"
+   comment ""
+   version 5
+   tl -1472 -1200
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "60429:14" {
+       id 60429
+       port 14
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB -6
+   DSPObject BiquadDSPTypeClass dsp {
+   }
+  }
+  FilterClass "179222" {
+   id 179222
+   name "PEAK LIMITER SFX"
+   comment ""
+   version 5
+   tl 1360 80
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject PeakLimiterDSPTypeClass dsp {
+    threshold -0.3
+    release 40
+   }
+  }
+  FilterClass "180246" {
+   id 180246
+   name "COMP MASTER SFX"
+   comment ""
+   version 5
+   tl 1360 -32
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:3" {
+     id 3
+     links {
+      ConnectionClass "285709:56" {
+       id 285709
+       port 56
+      }
+     }
+    }
+   }
+   pi {
+    9 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject CompressorDSPTypeClass dsp {
+    attack 30
+    release 80
+   }
+  }
+  FilterClass "195606" {
+   id 195606
+   name "COMP"
+   comment ""
+   version 5
+   tl -1472 -912
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject CompressorDSPTypeClass dsp {
+    threshold -37
+    ratio 3
+    attack 220
+    release 400
+   }
+  }
+  FilterClass "199702" {
+   id 199702
+   name "REVERB EXT"
+   comment ""
+   version 5
+   tl 464 2432
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 22
+   DSPObject Reverb2DSPTypeClass dsp {
+    RoomDimensions 13 30
+    SourcePosition 0.9 0.895
+    MicPosition 0.155 0.15
+    Absorption 0.4
+    Damping 0.3
+   }
+  }
+  FilterClass "200726" {
+   id 200726
+   name "LPF"
+   comment ""
+   version 5
+   tl 464 2592
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 5000
+    Q 0.7
+   }
+  }
+  FilterClass "201750" {
+   id 201750
+   name "HPF"
+   comment ""
+   version 5
+   tl 464 2512
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType HighPass
+    fc 400
+    Q 0.2
+   }
+  }
+  FilterClass "296982" {
+   id 296982
+   name "Filter Reverb Small"
+   comment ""
+   version 5
+   tl 496 960
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:6" {
+     id 6
+     links {
+      ConnectionClass "368670:65" {
+       id 368670
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    65 0
+   }
+   wetDry 1
+   volume_dB 15
+   DSPObject SmallRoomReverbDSPTypeClass dsp {
+    earlyReflectionsTime 0.4
+    lateReflectionsTime 0.7
+    lateReflectionsDensity 0.4
+    lateReflectionsDamping 0.4
+    width 0.9
+   }
+  }
+  FilterClass "298006" {
+   id 298006
+   name "Filter Reverb Medium"
+   comment ""
+   version 5
+   tl 496 1216
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "368670:65" {
+       id 368670
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   wetDry 1
+   volume_dB 10
+   DSPObject Reverb2DSPTypeClass dsp {
+    RoomDimensions 7 11
+    SourcePosition 0.28 0.5
+    MicPosition 0.6 0.37
+    Absorption 0.12
+    Damping 0.25
+   }
+  }
+  FilterClass "299030" {
+   id 299030
+   name "Filter Reverb Large"
+   comment ""
+   version 5
+   tl 496 1472
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "368670:65" {
+       id 368670
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   wetDry 1
+   volume_dB 10
+   DSPObject Reverb2DSPTypeClass dsp {
+    RoomDimensions 15.3 21.2
+    SourcePosition 0.28 0.51
+    MicPosition 0.63 0.37
+    Absorption 0.12
+    Damping 0.25
+   }
+  }
+  FilterClass "315414" {
+   id 315414
+   name "Filter High Shelf"
+   comment ""
+   version 5
+   tl 304 -480
+   ctl 0 0
+   parent ""
+   pi {
+    3 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType HighShelf
+    fc 5000
+    gain 2
+   }
+  }
+  FilterClass "316438" {
+   id 316438
+   name "Filter COMP"
+   comment ""
+   version 5
+   tl -480 -592
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject CompressorDSPTypeClass dsp {
+    threshold -28
+    attack 100
+   }
+  }
+  FilterClass "318486" {
+   id 318486
+   name "Filter High Shelf"
+   comment ""
+   version 5
+   tl 302.85 -688.55
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType HighShelf
+    fc 3000
+    gain 2
+   }
+  }
+  FilterClass "325654" {
+   id 325654
+   name "Filter Dynamic EQ"
+   comment ""
+   version 5
+   tl -1264 -1376
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 4
+   DSPObject DynamicEqualizerDSPTypeClass dsp {
+    fc 120
+    Q 3
+    ratio 4
+    threshold -24
+    release 75
+   }
+  }
+  FilterClass "333846" {
+   id 333846
+   name "Filter Limiter"
+   comment ""
+   version 5
+   tl 640 -2608
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject DistortionDSPTypeClass dsp {
+    distortionType HardClipper
+    drive 5
+   }
+  }
+  FilterClass "334870" {
+   id 334870
+   name "Filter Gate"
+   comment ""
+   version 5
+   tl 416 -2688
+   ctl 0 0
+   parent ""
+   pi {
+    3 0
+   }
+   wetDry 1
+   volume_dB 6
+   DSPObject NoiseGateDSPTypeClass dsp {
+    attack 0
+   }
+  }
+  FilterClass "335894" {
+   id 335894
+   name "Filter Gate"
+   comment ""
+   version 5
+   tl 208 -2320
+   ctl 0 0
+   parent ""
+   pi {
+    3 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject NoiseGateDSPTypeClass dsp {
+    threshold -12
+    attack 0
+    release 30
+   }
+  }
+  FilterClass "337942" {
+   id 337942
+   name "Filter Resonance"
+   comment ""
+   version 5
+   tl 208 -2416
+   ctl 0 0
+   parent ""
+   pi {
+    3 0
+   }
+   wetDry 1
+   volume_dB 15
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType BandPass
+    fc 72
+    Q 12
+   }
+  }
+  FilterClass "344086" {
+   id 344086
+   name "Filter Delay"
+   comment ""
+   version 5
+   tl -1264 2976
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject QuadDelayDSPTypeClass dsp {
+    delayTime1 250
+    delayTime2 220
+    delayTime3 320
+    delayTime4 190
+    attenuationFactor 0.4
+    dampingMin 0.1
+    dampingMax 0.3
+    feedbackMin 0.1
+    feedbackMax 0.2
+   }
+  }
+  FilterClass "345110" {
+   id 345110
+   name "Filter Reverb Vehicle Cabin"
+   comment ""
+   version 5
+   tl 496 1872
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 15
+   DSPObject SmallRoomReverbDSPTypeClass dsp {
+    earlyReflectionsTime 0.08
+    lateReflectionsTime 0.15
+    lateReflectionsDensity 0.29
+    lateReflectionsDamping 0.9
+    width 0.95
+   }
+  }
+  FilterClass "349206" {
+   id 349206
+   name "Filter Reverb Vehicle Cabin EQ"
+   comment ""
+   version 5
+   tl 496 1792
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType HighShelf
+    fc 8000
+    gain -4
+   }
+  }
+  FilterClass "351254" {
+   id 351254
+   name "Filter Low Pass"
+   comment ""
+   version 5
+   tl 256 2208
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 240
+    Q 0.6
+   }
+  }
+  FilterClass "353302" {
+   id 353302
+   name "Filter MonoToStereo"
+   comment "Feels like panned to left a bit. No clue what to do with that"
+   version 5
+   tl 256 2128
+   ctl 0 -24
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 0.5
+   volume_dB 0
+   DSPObject MonoToStereoDSPTypeClass dsp {
+    delayTime 11
+   }
+  }
+  FilterClass "362518" {
+   id 362518
+   name "Filter LP 2"
+   comment ""
+   version 5
+   tl 235.182 -1985.723
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 80
+    Q 1.31
+   }
+  }
+  FilterClass "364566" {
+   id 364566
+   name "Filter LP 1"
+   comment ""
+   version 5
+   tl 235.182 -2065.723
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 80
+    Q 0.54
+   }
+  }
+  FilterClass "369686" {
+   id 369686
+   name "Filter LP 1"
+   comment ""
+   version 5
+   tl 318.431 -1527.982
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 80
+    Q 0.54
+   }
+  }
+  FilterClass "372758" {
+   id 372758
+   name "Filter LP 2"
+   comment ""
+   version 5
+   tl 318.431 -1447.982
+   ctl 0 0
+   parent ""
+   pi {
+    1 0
+   }
+   wetDry 1
+   volume_dB 0
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 80
+    Q 1.31
+   }
+  }
+ }
+ filter_chain {
+  FilterChainClass "64535" {
+   id 64535
+   name "SFX MASTER"
+   comment ""
+   version 5
+   tl 1536 0
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "180246:65" {
+       id 180246
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "179222:65" {
+       id 179222
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    6 0
+   }
+   ports 2
+  }
+  FilterChainClass "202775" {
+   id 202775
+   name "Reverb EXT"
+   comment ""
+   version 5
+   tl 688 2496
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "199702:65" {
+       id 199702
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "201750:65" {
+       id 201750
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:3" {
+     id 3
+     links {
+      ConnectionClass "200726:65" {
+       id 200726
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    14 0
+   }
+   ports 3
+  }
+  FilterChainClass "336919" {
+   id 336919
+   name "FilterChain Shots"
+   comment ""
+   version 5
+   tl 416 -2352
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "337942:65" {
+       id 337942
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "335894:65" {
+       id 335894
+       port 65
+      }
+     }
+    }
+   }
+   ports 2
+  }
+  FilterChainClass "348183" {
+   id 348183
+   name "FilterChain 340"
+   comment ""
+   version 5
+   tl 496 1952
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "349206:65" {
+       id 349206
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "345110:65" {
+       id 345110
+       port 65
+      }
+     }
+    }
+   }
+   ports 2
+  }
+  FilterChainClass "352279" {
+   id 352279
+   name "FilterChain Cabin Reverb Bass"
+   comment ""
+   version 5
+   tl 496 2192
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "353302:65" {
+       id 353302
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "351254:65" {
+       id 351254
+       port 65
+      }
+     }
+    }
+   }
+   ports 2
+  }
+  FilterChainClass "365591" {
+   id 365591
+   name "FilterChain LFE"
+   comment ""
+   version 5
+   tl 235.182 -1905.723
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "364566:65" {
+       id 364566
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "362518:65" {
+       id 362518
+       port 65
+      }
+     }
+    }
+   }
+   ports 2
+  }
+  FilterChainClass "370711" {
+   id 370711
+   name "FilterChain LFE"
+   comment ""
+   version 5
+   tl 318.431 -1367.982
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "369686:65" {
+       id 369686
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "372758:65" {
+       id 372758
+       port 65
+      }
+     }
+    }
+   }
+   ports 2
+  }
+ }
+ vars {
+  VariableClass "186398" {
+   id 186398
+   name "Variable Vehicles_Engine"
+   comment ""
+   version 5
+   tl -752 688
+   ctl 0 0
+   parent ""
+   varName "Vehicles_Engine"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+   curve {
+    CurvePoint "1" {
+     X 0.35
+     Y 1
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "2" {
+     X 3.5
+     Y 0.5
+     Shape Linear
+     Modifier 1
+    }
+   }
+  }
+  VariableClass "191518" {
+   id 191518
+   name "Variable VON_Direct"
+   comment "Attenuate when VON direct"
+   version 5
+   tl -944 -496
+   ctl 0 -21
+   parent ""
+   varName "VON_Direct"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+   curve {
+    CurvePoint "1" {
+     X 0.5
+     Y 1
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "2" {
+     X 1
+     Y 0.8
+     Shape Linear
+     Modifier 1
+    }
+   }
+  }
+  VariableClass "281630" {
+   id 281630
+   name "Variable Tinnitus"
+   comment ""
+   version 5
+   tl 1073.323 -193.322
+   ctl 0 0
+   parent ""
+   varName "Tinnitus"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+   curve {
+    CurvePoint "1" {
+     X 0
+     Y 0
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "2" {
+     X 0.5
+     Y 1
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "3" {
+     X 2.5
+     Y 1
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "4" {
+     X 5
+     Y 0
+     Shape Linear
+     Modifier 1
+    }
+   }
+  }
+  VariableClass "311326" {
+   id 311326
+   name "Variable L4"
+   comment ""
+   version 5
+   tl -192 -432
+   ctl 0 0
+   parent ""
+   varName "Submix_L4"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+  }
+  VariableClass "312350" {
+   id 312350
+   name "Variable L3"
+   comment ""
+   version 5
+   tl -192 -352
+   ctl 0 0
+   parent ""
+   varName "Submix_L3"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+  }
+  VariableClass "313374" {
+   id 313374
+   name "Variable L2"
+   comment ""
+   version 5
+   tl -192 -272
+   ctl 0 0
+   parent ""
+   varName "Submix_L2"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+  }
+  VariableClass "321566" {
+   id 321566
+   name "Variable L1"
+   comment ""
+   version 5
+   tl -190.769 -195.385
+   ctl 0 0
+   parent ""
+   varName "Submix_L1"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+  }
+  VariableClass "368670" {
+   id 368670
+   name "Variable GInterior Width"
+   comment ""
+   version 5
+   tl 496 832
+   ctl 0 0
+   parent ""
+   varName "GInterior"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   varLocName ""
+   varLocalResource ""
+   curve {
+    CurvePoint "1" {
+     X 0
+     Y 0
+     Shape Linear
+     Modifier 1
+    }
+    CurvePoint "2" {
+     X 1
+     Y 0.9
+     Shape Linear
+     Modifier 1
+    }
+   }
+  }
+ }
+ Mixers {
+  OBusClass "6151" {
+   id 6151
+   name "WPN_Handling"
+   comment ""
+   version 1
+   tl -1264 -96
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 12
+   color 0.82 0.937 0.851 1
+  }
+  OBusClass "7175" {
+   id 7175
+   name "WPN_Shots"
+   comment ""
+   version 1
+   tl -1264 -1808
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 32
+   color 0.82 0.937 0.937 1
+  }
+  OBusClass "8199" {
+   id 8199
+   name "WPN_Explosions"
+   comment ""
+   version 1
+   tl -1264 -1568
+   ctl 0 0
+   parent ""
+   varName "Explosions_SubMix"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 32
+   color 0.82 0.851 0.937 1
+  }
+  OBusClass "9223" {
+   id 9223
+   name "WNP_BulletHits"
+   comment ""
+   version 1
+   tl -1264 -992
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 32
+   color 0.878 0.82 0.937 1
+  }
+  OBusClass "12295" {
+   id 12295
+   name "CHAR"
+   comment "Mainly footsteps and general movement"
+   version 1
+   tl -1264 320
+   ctl 0 -21
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 12
+   color 0.812 0.737 0.506 1
+  }
+  OBusClass "16391" {
+   id 16391
+   name "ENV_AMB_2D"
+   comment "Exterior Only <br>"\
+   "Voice limit handeled in acp"\
+   ""
+   version 1
+   tl -1248 736
+   ctl 0 -39.75
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.875 0.655 0.655 1
+  }
+  OBusClass "17415" {
+   id 17415
+   name "VEH_Animations"
+   comment ""
+   version 1
+   tl -1248 -592
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 6
+   color 0.765 0.655 0.875 1
+  }
+  OBusClass "18439" {
+   id 18439
+   name "Impacts"
+   comment ""
+   version 1
+   tl -1264 -1296
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "325654:65" {
+       id 325654
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 6
+   color 0.655 0.875 0.875 1
+  }
+  OBusClass "19463" {
+   id 19463
+   name "Dialog"
+   comment ""
+   version 1
+   tl -1264 2896
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 6
+   color 0.506 0.812 0.812 1
+  }
+  OBusClass "24583" {
+   id 24583
+   name "ENV_Doors"
+   comment "Add Reverb when camera InBuilding"
+   version 1
+   tl -1264 16
+   ctl 0 -21
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 4
+   color 0.765 0.875 0.655 1
+  }
+  OBusClass "70663" {
+   id 70663
+   name "VEH_Engine"
+   comment ""
+   version 1
+   tl -1248 -512
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 5
+   color 0.875 0.655 0.82 1
+  }
+  OBusClass "73735" {
+   id 73735
+   name "VEH_Tires"
+   comment ""
+   version 1
+   tl -1248 -432
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 12
+   color 0.812 0.506 0.506 1
+  }
+  OBusClass "77831" {
+   id 77831
+   name "VON"
+   comment ""
+   version 1
+   tl -1280 3840
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Voice
+   limit 8
+   color 0.659 0.506 0.812 1
+  }
+  OBusClass "79879" {
+   id 79879
+   name "SFX"
+   comment ""
+   version 1
+   tl -1264 -208
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.655 0.875 0.71 1
+  }
+  OBusClass "152583" {
+   id 152583
+   name "SFX_Reverb_OBSOLETE"
+   comment "Dont use. Will be removed"
+   version 1
+   tl -1248 1344
+   ctl 0 -24
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.506 0.812 0.584 1
+  }
+  OBusClass "160775" {
+   id 160775
+   name "VON_Reverb_Small"
+   comment ""
+   version 1
+   tl -1280 3920
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "296982:65" {
+       id 296982
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type In
+   mute 0
+   master Voice
+   limit 8
+   color 0.812 0.506 0.737 1
+  }
+  OBusClass "163847" {
+   id 163847
+   name "Dialog_Reverb"
+   comment ""
+   version 1
+   tl -1264 3136
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 8
+   color 0.506 0.584 0.812 1
+  }
+  OBusClass "165895" {
+   id 165895
+   name "Impacts_EXT"
+   comment ""
+   version 1
+   tl -1264 -1200
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "167958:65" {
+       id 167958
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 6
+   color 0.655 0.71 0.875 1
+  }
+  OBusClass "181255" {
+   id 181255
+   name "ENV_AMB_3D"
+   comment "Exterior Only"
+   version 1
+   tl -1248 832
+   ctl 0 -21
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 16
+   color 0.875 0.82 0.655 1
+  }
+  OBusClass "184327" {
+   id 184327
+   name "WPN_SonicCracks"
+   comment ""
+   version 1
+   tl -1264 -912
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "195606:65" {
+       id 195606
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 32
+   color 0.937 0.82 0.91 1
+  }
+  OBusClass "185351" {
+   id 185351
+   name "CHAR_Gear"
+   comment "OnStep/OffStep gear"
+   version 1
+   tl -1264 416
+   ctl 0 -21
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 9
+   color 0.659 0.812 0.506 1
+  }
+  OBusClass "193543" {
+   id 193543
+   name "PA"
+   comment ""
+   version 1
+   tl -1264 96
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 4
+   color 1 1 1 1
+  }
+  OBusClass "197639" {
+   id 197639
+   name "SFX_Reverb_Exterior"
+   comment ""
+   version 1
+   tl -1264 2592
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.506 0.812 0.584 1
+  }
+  OBusClass "204807" {
+   id 204807
+   name "ENV_AMB_3D_Reverb_Exterior"
+   comment ""
+   version 1
+   tl -1264 2704
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "61462:65" {
+       id 61462
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.506 0.812 0.584 1
+  }
+  OBusClass "282631" {
+   id 282631
+   name "SFX_Direct"
+   comment ""
+   version 1
+   tl -1264 -2048
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "300039" {
+   id 300039
+   name "SFX_Reverb_Small"
+   comment ""
+   version 1
+   tl -1248 1504
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "301063" {
+   id 301063
+   name "SFX_Reverb_Medium"
+   comment ""
+   version 1
+   tl -1248 1584
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "302087" {
+   id 302087
+   name "SFX_Reverb_Large"
+   comment ""
+   version 1
+   tl -1248 1664
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "326663" {
+   id 326663
+   name "WPN_Shots_Player"
+   comment ""
+   version 1
+   tl -1264 -1664
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 32
+   color 0.82 0.937 0.937 1
+  }
+  OBusClass "338951" {
+   id 338951
+   name "Dialog_Reverb_Small"
+   comment ""
+   version 1
+   tl -1264 3216
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "339975" {
+   id 339975
+   name "Dialog_Reverb_Medium"
+   comment ""
+   version 1
+   tl -1264 3296
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "340999" {
+   id 340999
+   name "Dialog_Reverb_Large"
+   comment ""
+   version 1
+   tl -1264 3376
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "342023" {
+   id 342023
+   name "WPN_TravelingProjectile"
+   comment ""
+   version 1
+   tl -1264 -832
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 0.937 0.82 0.91 1
+  }
+  OBusClass "343047" {
+   id 343047
+   name "Dialog_Delay_Exterior"
+   comment ""
+   version 1
+   tl -1264 3056
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "344086:65" {
+       id 344086
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master Dialog
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "346119" {
+   id 346119
+   name "SFX_Reverb_InCabin"
+   comment ""
+   version 1
+   tl -1264 2064
+   ctl 0 0
+   parent ""
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type In
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusClass "366599" {
+   id 366599
+   name "VON_Reverb_Medium"
+   comment ""
+   version 1
+   tl -1280 4000
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "298006:65" {
+       id 298006
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type In
+   mute 0
+   master Voice
+   limit 8
+   color 0.812 0.506 0.737 1
+  }
+  OBusClass "367623" {
+   id 367623
+   name "VON_Reverb_Large"
+   comment ""
+   version 1
+   tl -1280 4080
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "299030:65" {
+       id 299030
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type In
+   mute 0
+   master Voice
+   limit 8
+   color 0.812 0.506 0.737 1
+  }
+ }
+ Duckers {
+  ODuckerClass {
+   id 67610
+   name "Ducker VON"
+   comment "Duck SFX when VON <br>"\
+   "Peak amplitude ~ -20dB"
+   tl -480 -672
+   ctl 0 -40.091
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "244768:65" {
+       id 244768
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMax -24
+   maxGainReduction -8
+   attack 200
+   release 400
+  }
+  ODuckerClass {
+   id 89114
+   name "Ducker Loud"
+   tl -752 -592
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249888:65" {
+       id 249888
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMin -54
+   thresholdMax -15
+   maxGainReduction -30
+   attack 1
+   release 500
+  }
+  ODuckerClass {
+   id 100378
+   name "Expander VEH"
+   comment "Increase VON volume when driving"
+   tl 1024 3760
+   ctl 0 -21
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "242720:65" {
+       id 242720
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMin -45
+   thresholdMax -18
+   maxGainReduction 4
+   attack 1000
+   release 1000
+  }
+  ODuckerClass {
+   id 192538
+   name "Ducker VON+Dialogue"
+   comment "Duck when VON+Dialogue"
+   tl 1072 80
+   ctl 0 -21
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "244768:65" {
+       id 244768
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMax -18
+   maxGainReduction -6
+   attack 100
+   release 500
+  }
+  ODuckerClass {
+   id 323610
+   name "Ducker Loud"
+   tl -752 64
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249888:65" {
+       id 249888
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMin -54
+   thresholdMax -15
+   maxGainReduction -30
+   attack 1
+   release 500
+  }
+  ODuckerClass {
+   id 324634
+   name "Ducker Loud"
+   tl -752 608
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249888:65" {
+       id 249888
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMin -54
+   thresholdMax -20
+   maxGainReduction -45
+   attack 1
+   release 1000
+  }
+  ODuckerClass {
+   id 377882
+   name "Ducker Loud"
+   tl 1302.776 3761.113
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249888:65" {
+       id 249888
+       port 65
+      }
+     }
+    }
+   }
+   thresholdMin -40
+   thresholdMax -9
+   maxGainReduction -20
+   attack 1
+   release 500
+  }
+ }
+ Groups {
+  GroupClass "286723" {
+   id 286723
+   name "VON"
+   children {
+    77831 221215 100378 256032 160775 366599 367623
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "350211" {
+   id 350211
+   name "Reverb Vehicle Cabin"
+   children {
+    349206 345110 348183 346119 347168 350240 352279 354336 351254 353302
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "288771" {
+   id 288771
+   name "Dialog"
+   children {
+    163847 19463 222239 258080 244768 340999 338951 339975 343047 344086
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "363523" {
+   id 363523
+   name "LFE"
+   children {
+    355359 362518 361504 364566 365591
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "306179" {
+   id 306179
+   name "Reverb INT"
+   children {
+    294944 298006 299030 304160 251936 303136 295949 305184 253984 296982 292896 301063 302087 293920 152583 300039
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "307203" {
+   id 307203
+   name "Reverb EXT"
+   children {
+    200726 201750 250912 199702 197639 204807 202775
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass "338947" {
+   id 338947
+   name "Vibrations"
+   children {
+    329760 337942 330784 335894 336919 328736 327711 333846 334870
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+ }
+ bus_out {
+  OBusOutClass "221215" {
+   id 221215
+   name "Output Voice"
+   comment ""
+   version 1
+   tl 1792 3840
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "376864:65" {
+       id 376864
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type Out
+   mute 0
+   master Voice
+   limit 8
+   color 1 1 1 1
+  }
+  OBusOutClass "222239" {
+   id 222239
+   name "Output Dialog"
+   comment ""
+   version 1
+   tl 1840 3056
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "258080:65" {
+       id 258080
+       port 65
+      }
+      ConnectionClass "343047:65" {
+       id 343047
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type Out
+   mute 0
+   master Dialog
+   limit 8
+   color 1 1 1 1
+  }
+  OBusOutClass "223263" {
+   id 223263
+   name "Output SFX"
+   comment ""
+   version 1
+   tl 1792 176
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "224288:65" {
+       id 224288
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type Out
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusOutClass "327711" {
+   id 327711
+   name "Output Internal"
+   comment ""
+   version 1
+   tl 848 -2528
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "330784:65" {
+       id 330784
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type Out
+   mute 0
+   master Internal
+   limit 8
+   color 1 1 1 1
+  }
+  OBusOutClass "355359" {
+   id 355359
+   name "Output LFE"
+   comment ""
+   version 1
+   tl 475.182 -1809.723
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "361504:65" {
+       id 361504
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type Out
+   mute 0
+   master LFE
+   limit 8
+   color 1 1 1 1
+  }
+ }
+ bus_inout {
+  OBusInOutClass "224288" {
+   id 224288
+   name "SFX Master"
+   comment ""
+   version 1
+   tl 1536 176
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "64535:65" {
+       id 64535
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "225312:65" {
+       id 225312
+       port 65
+      }
+      ConnectionClass "282631:65" {
+       id 282631
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "225312" {
+   id 225312
+   name "SFX"
+   comment ""
+   version 1
+   tl 1072 176
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "63510:65" {
+       id 63510
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "192538:65" {
+       id 192538
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "250912:65" {
+       id 250912
+       port 65
+      }
+      ConnectionClass "308256:65" {
+       id 308256
+       port 65
+      }
+      ConnectionClass "309280:65" {
+       id 309280
+       port 65
+      }
+      ConnectionClass "307232:65" {
+       id 307232
+       port 65
+      }
+      ConnectionClass "303136:65" {
+       id 303136
+       port 65
+      }
+      ConnectionClass "304160:65" {
+       id 304160
+       port 65
+      }
+      ConnectionClass "305184:65" {
+       id 305184
+       port 65
+      }
+      ConnectionClass "310304:65" {
+       id 310304
+       port 65
+      }
+      ConnectionClass "347168:65" {
+       id 347168
+       port 65
+      }
+      ConnectionClass "350240:65" {
+       id 350240
+       port 65
+      }
+      ConnectionClass "371744:65" {
+       id 371744
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    6 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "233504" {
+   id 233504
+   name "WNP_BulletHits + WPN_SonicCracks"
+   comment ""
+   version 1
+   tl -1024 -960
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "109590:65" {
+       id 109590
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "9223:65" {
+       id 9223
+       port 65
+      }
+      ConnectionClass "184327:65" {
+       id 184327
+       port 65
+      }
+      ConnectionClass "342023:65" {
+       id 342023
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "235552" {
+   id 235552
+   name "ENV_Ambients"
+   comment ""
+   version 1
+   tl -752 768
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "186398:65" {
+       id 186398
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "61462:65" {
+       id 61462
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "324634:65" {
+       id 324634
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "181255:65" {
+       id 181255
+       port 65
+      }
+      ConnectionClass "16391:65" {
+       id 16391
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "242720" {
+   id 242720
+   name "Bus VEH 1"
+   comment ""
+   version 1
+   tl -752 -512
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "191518:65" {
+       id 191518
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "89114:65" {
+       id 89114
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "17415:65" {
+       id 17415
+       port 65
+      }
+      ConnectionClass "70663:65" {
+       id 70663
+       port 65
+      }
+      ConnectionClass "73735:65" {
+       id 73735
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "243744" {
+   id 243744
+   name "Bus VEH 2"
+   comment ""
+   version 1
+   tl -480 -512
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "316438:65" {
+       id 316438
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "67610:65" {
+       id 67610
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "242720:65" {
+       id 242720
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    6 0
+   }
+   varName "Submix_L3"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "244768" {
+   id 244768
+   name "Dialogue + VON"
+   comment ""
+   version 1
+   tl -624 3232
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "19463:65" {
+       id 19463
+       port 65
+      }
+      ConnectionClass "77831:65" {
+       id 77831
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "249888" {
+   id 249888
+   name "Loud SFX"
+   comment ""
+   version 1
+   tl -752 -1328
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "285709:2" {
+       id 285709
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "8199:65" {
+       id 8199
+       port 65
+      }
+      ConnectionClass "7175:65" {
+       id 7175
+       port 65
+      }
+      ConnectionClass "233504:65" {
+       id 233504
+       port 65
+      }
+      ConnectionClass "18439:65" {
+       id 18439
+       port 65
+      }
+      ConnectionClass "165895:65" {
+       id 165895
+       port 65
+      }
+      ConnectionClass "326663:65" {
+       id 326663
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   varName "Submix_L4"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "250912" {
+   id 250912
+   name "Reverb EXT"
+   comment ""
+   version 1
+   tl 688 2624
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "202775:65" {
+       id 202775
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "197639:65" {
+       id 197639
+       port 65
+      }
+      ConnectionClass "204807:65" {
+       id 204807
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "251936" {
+   id 251936
+   name "Doors Wet"
+   comment ""
+   version 1
+   tl -288 1408
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "60429:19" {
+       id 60429
+       port 19
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "24583:65" {
+       id 24583
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   varName ""
+   varResource ""
+   volume 0.251
+   volume_dB -12
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "253984" {
+   id 253984
+   name "SFX_Reverb"
+   comment ""
+   version 1
+   tl -64 1344
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "152583:65" {
+       id 152583
+       port 65
+      }
+      ConnectionClass "251936:65" {
+       id 251936
+       port 65
+      }
+      ConnectionClass "163847:65" {
+       id 163847
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "256032" {
+   id 256032
+   name "InVehicle Expander"
+   comment ""
+   version 1
+   tl 1024 3840
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "63510:65" {
+       id 63510
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "100378:65" {
+       id 100378
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "77831:65" {
+       id 77831
+       port 65
+      }
+      ConnectionClass "160775:65" {
+       id 160775
+       port 65
+      }
+      ConnectionClass "366599:65" {
+       id 366599
+       port 65
+      }
+      ConnectionClass "367623:65" {
+       id 367623
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    6 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "258080" {
+   id 258080
+   name "Dialogue"
+   comment ""
+   version 1
+   tl 1104 3056
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "63510:65" {
+       id 63510
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "19463:65" {
+       id 19463
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "284704" {
+   id 284704
+   name "Quiet SFX"
+   comment ""
+   version 1
+   tl -272 768
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "285709:51" {
+       id 285709
+       port 51
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "235552:65" {
+       id 235552
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   varName "Submix_L1"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "289824" {
+   id 289824
+   name "Medium SFX"
+   comment ""
+   version 1
+   tl -752 144
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "285709:39" {
+       id 285709
+       port 39
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "323610:65" {
+       id 323610
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "24583:65" {
+       id 24583
+       port 65
+      }
+      ConnectionClass "79879:65" {
+       id 79879
+       port 65
+      }
+      ConnectionClass "193543:65" {
+       id 193543
+       port 65
+      }
+      ConnectionClass "12295:65" {
+       id 12295
+       port 65
+      }
+      ConnectionClass "185351:65" {
+       id 185351
+       port 65
+      }
+      ConnectionClass "6151:65" {
+       id 6151
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    5 0
+   }
+   varName "Submix_L2"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "292896" {
+   id 292896
+   name "Bus Reverb Small TMP"
+   comment ""
+   version 1
+   tl 272 1120
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "295949:11" {
+       id 295949
+       port 11
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "253984:65" {
+       id 253984
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "293920" {
+   id 293920
+   name "Bus Reverb Medium TMP"
+   comment ""
+   version 1
+   tl 272 1344
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "295949:12" {
+       id 295949
+       port 12
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "253984:65" {
+       id 253984
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "294944" {
+   id 294944
+   name "Bus Reverb Large TPM"
+   comment ""
+   version 1
+   tl 272 1600
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "295949:13" {
+       id 295949
+       port 13
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "253984:65" {
+       id 253984
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "303136" {
+   id 303136
+   name "Bus Reverb Large"
+   comment ""
+   version 1
+   tl 496 1600
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:138" {
+       id 306189
+       port 138
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "299030:65" {
+       id 299030
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "294944:65" {
+       id 294944
+       port 65
+      }
+      ConnectionClass "302087:65" {
+       id 302087
+       port 65
+      }
+      ConnectionClass "340999:65" {
+       id 340999
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "304160" {
+   id 304160
+   name "Bus Reverb Small"
+   comment ""
+   version 1
+   tl 496 1088
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:138" {
+       id 306189
+       port 138
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "296982:65" {
+       id 296982
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "292896:65" {
+       id 292896
+       port 65
+      }
+      ConnectionClass "300039:65" {
+       id 300039
+       port 65
+      }
+      ConnectionClass "338951:65" {
+       id 338951
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "305184" {
+   id 305184
+   name "Bus Reverb Medium"
+   comment ""
+   version 1
+   tl 496 1344
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:138" {
+       id 306189
+       port 138
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "298006:65" {
+       id 298006
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "293920:65" {
+       id 293920
+       port 65
+      }
+      ConnectionClass "301063:65" {
+       id 301063
+       port 65
+      }
+      ConnectionClass "339975:65" {
+       id 339975
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "307232" {
+   id 307232
+   name "L4"
+   comment ""
+   version 1
+   tl 304 -608
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:11" {
+       id 306189
+       port 11
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "318486:65" {
+       id 318486
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249888:65" {
+       id 249888
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "308256" {
+   id 308256
+   name "L3"
+   comment ""
+   version 1
+   tl 304 -384
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:12" {
+       id 306189
+       port 12
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "315414:65" {
+       id 315414
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "243744:65" {
+       id 243744
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "309280" {
+   id 309280
+   name "L2"
+   comment ""
+   version 1
+   tl 304 -256
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:13" {
+       id 306189
+       port 13
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "289824:65" {
+       id 289824
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "310304" {
+   id 310304
+   name "L1"
+   comment ""
+   version 1
+   tl 304 -160
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:14" {
+       id 306189
+       port 14
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "284704:65" {
+       id 284704
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "328736" {
+   id 328736
+   name "Bus Explosions"
+   comment ""
+   version 1
+   tl 416 -2592
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "334870:65" {
+       id 334870
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "8199:65" {
+       id 8199
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "329760" {
+   id 329760
+   name "Bus Shots"
+   comment ""
+   version 1
+   tl 416 -2256
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "336919:65" {
+       id 336919
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "326663:65" {
+       id 326663
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "330784" {
+   id 330784
+   name "Bus Mix"
+   comment ""
+   version 1
+   tl 640 -2528
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "333846:65" {
+       id 333846
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "328736:65" {
+       id 328736
+       port 65
+      }
+      ConnectionClass "329760:65" {
+       id 329760
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "347168" {
+   id 347168
+   name "Bus Reverb InCabin"
+   comment ""
+   version 1
+   tl 496 2048
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "306189:138" {
+       id 306189
+       port 138
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "348183:65" {
+       id 348183
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "346119:65" {
+       id 346119
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "350240" {
+   id 350240
+   name "Bus Reverb Bass"
+   comment ""
+   version 1
+   tl 496 2288
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "352279:65" {
+       id 352279
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "354336:65" {
+       id 354336
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels "2"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "354336" {
+   id 354336
+   name "Bus To Mono"
+   comment ""
+   version 1
+   tl 256 2288
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "346119:65" {
+       id 346119
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 3.981
+   volume_dB 12
+   channels "1"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "361504" {
+   id 361504
+   name "Bus LFE"
+   comment ""
+   version 1
+   tl 235.182 -1809.723
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "365591:65" {
+       id 365591
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "7175:65" {
+       id 7175
+       port 65
+      }
+      ConnectionClass "326663:65" {
+       id 326663
+       port 65
+      }
+      ConnectionClass "8199:65" {
+       id 8199
+       port 65
+      }
+      ConnectionClass "18439:65" {
+       id 18439
+       port 65
+      }
+      ConnectionClass "165895:65" {
+       id 165895
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 0.063
+   volume_dB -24
+   channels "1"
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "371744" {
+   id 371744
+   name "Bus LFE"
+   comment ""
+   version 1
+   tl 318.431 -1271.982
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "370711:65" {
+       id 370711
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "373792:65" {
+       id 373792
+       port 65
+      }
+      ConnectionClass "374816:65" {
+       id 374816
+       port 65
+      }
+      ConnectionClass "375840:65" {
+       id 375840
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "373792" {
+   id 373792
+   name "Bus LFE_E"
+   comment ""
+   version 1
+   tl 71.588 -1258.03
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "8199:65" {
+       id 8199
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 3.981
+   volume_dB 12
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "374816" {
+   id 374816
+   name "Bus LFE_SP"
+   comment ""
+   version 1
+   tl 73.486 -1394.18
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "326663:65" {
+       id 326663
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 5.623
+   volume_dB 15
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "375840" {
+   id 375840
+   name "Bus LFE_S"
+   comment ""
+   version 1
+   tl 62.84 -1510.698
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "7175:65" {
+       id 7175
+       port 65
+      }
+     }
+    }
+   }
+   varName ""
+   varResource ""
+   volume 1.995
+   volume_dB 6
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+  OBusInOutClass "376864" {
+   id 376864
+   name "Bus 368"
+   comment ""
+   version 1
+   tl 1302.528 3841.366
+   ctl 0 0
+   parent ""
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "377882:65" {
+       id 377882
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "256032:65" {
+       id 256032
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    4 0
+   }
+   varName ""
+   varResource ""
+   volume 1
+   volume_dB 0
+   channels Default
+   sampleRate Default
+   type InOut
+   mute 0
+   master SFX
+   limit 8
+   color 1 1 1 1
+  }
+ }
+}

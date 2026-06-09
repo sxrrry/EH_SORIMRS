@@ -1,0 +1,4240 @@
+AudioClass {
+ signals {
+  SignalClass "72717" {
+   id 72717
+   name "Signal Wind"
+   tl -288.469 3120.782
+   res "{05DBFBD83F57FD95}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Wind.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:33" {
+         id 86029
+         port 33
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 3
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:34" {
+         id 86029
+         port 34
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 4
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:35" {
+         id 86029
+         port 35
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 5
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:36" {
+         id 86029
+         port 36
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 6
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:37" {
+         id 86029
+         port 37
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 45
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:46" {
+         id 86029
+         port 46
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 110
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "82957:120" {
+         id 82957
+         port 120
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 116
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "120845:24" {
+         id 120845
+         port 24
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 135
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass "197644:1" {
+         id 197644
+         port 1
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    2 3 4 5 6 45 74 110 116 135
+   }
+   outputsport {
+    47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 65 122 123 124 133 136 137 138 146
+   }
+   inputvalues {
+    0 0 0 1 0 0 0 0 0 -30
+   }
+   inputvaluesmin {
+    0 0 0 0 0 0 0 0 0 -30
+   }
+   inputvaluesmax {
+    1 1 1 1 1 1 1 1 1 30
+   }
+   path "{05DBFBD83F57FD95}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Wind.sig"
+  }
+  SignalClass "82957" {
+   id 82957
+   name "Signal Coast"
+   tl -233.084 -392.526
+   res "{5CE9437CFFC3401B}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Coast.sig"
+   inputsport {
+    93 116 117 118 119
+   }
+   outputsport {
+    120 121 122 123 124
+   }
+   inputvalues {
+    40 0 0 0 0
+   }
+   inputvaluesmin {
+    0 0 0 0 0
+   }
+   inputvaluesmax {
+    40 1 1 1 1
+   }
+   path "{5CE9437CFFC3401B}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Coast.sig"
+  }
+  SignalClass "83981" {
+   id 83981
+   name "Signal Rain"
+   tl -343.702 1417.083
+   res "{BA6A5E0645D58C88}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Rain.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:33" {
+         id 86029
+         port 33
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 3
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:34" {
+         id 86029
+         port 34
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 108
+     conn {
+      ConnectionsClass connections {
+       id 9
+       links {
+        ConnectionClass "86029:46" {
+         id 86029
+         port 46
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    1 2 3 99 108
+   }
+   outputsport {
+    48 49 50 52 53 54 56 57 58 73 92
+   }
+   inputvalues {
+    0 0 1 0 0.4
+   }
+   inputvaluesmin {
+    0 0 0 0 0
+   }
+   inputvaluesmax {
+    1 1 1 1 1
+   }
+   path "{BA6A5E0645D58C88}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Rain.sig"
+  }
+  SignalClass "86029" {
+   id 86029
+   name "Signal Environment Type"
+   tl -542.208 1442.382
+   res "{C30B8BE56D4932E0}Sounds/Environment/Ambients2D/Environment_Ambients_2D_EnvironmentType_Global.sig"
+   inputsport {
+    1 5 11 48 49 57
+   }
+   outputsport {
+    33 34 35 36 37 46
+   }
+   inputvalues {
+    0 0 40 0.005 1 0
+   }
+   inputvaluesmin {
+    0 0 0 0 0 0
+   }
+   inputvaluesmax {
+    1 1 40 1 1 1
+   }
+   path "{C30B8BE56D4932E0}Sounds/Environment/Ambients2D/Environment_Ambients_2D_EnvironmentType_Global.sig"
+  }
+  SignalClass "120845" {
+   id 120845
+   name "Signal River"
+   tl -352 -896
+   res "{C5D97AC3B1D441F4}Sounds/Environment/Ambients2D/Environment_Ambients_2D_River.sig"
+   inputsport {
+    11 15 30 32 46 50
+   }
+   outputsport {
+    12 21 24 27 28 29 52
+   }
+   inputvalues {
+    0 40 0 0 0 0
+   }
+   inputvaluesmin {
+    0 0 0 0 0 0
+   }
+   inputvaluesmax {
+    0.6 40 1 1 1 1
+   }
+   path "{C5D97AC3B1D441F4}Sounds/Environment/Ambients2D/Environment_Ambients_2D_River.sig"
+  }
+  SignalClass "146445" {
+   id 146445
+   name "Signal RainIntensity"
+   tl 166.873 5226.106
+   res "{2B0711F2EEDA6F10}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Thunder.sig"
+   inputsport {
+    12
+   }
+   outputsport {
+    4 15
+   }
+   inputvalues {
+    0
+   }
+   inputvaluesmin {
+    0
+   }
+   inputvaluesmax {
+    1
+   }
+   path "{2B0711F2EEDA6F10}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Thunder.sig"
+  }
+  SignalClass "154637" {
+   id 154637
+   name "Signal Night Ambients"
+   tl 765.153 5795.759
+   res "{7F39F5B489F7A039}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Night.sig"
+   inputsport {
+    3 18 19
+   }
+   outputsport {
+    2 11
+   }
+   inputvalues {
+    0 0.004 0
+   }
+   inputvaluesmin {
+    0 0 0
+   }
+   inputvaluesmax {
+    360 1 86400
+   }
+   path "{7F39F5B489F7A039}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Night.sig"
+  }
+  SignalClass "176141" {
+   id 176141
+   name "Signal Lake"
+   tl -226.402 -27.621
+   res "{25F1214A5DC068A7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Lake.sig"
+   inputsport {
+    93 116 117 118 119
+   }
+   outputsport {
+    120 121 122 123 124
+   }
+   inputvalues {
+    40 0 0 0 0
+   }
+   inputvaluesmin {
+    0 0 0 0 0
+   }
+   inputvaluesmax {
+    40 1 1 1 1
+   }
+   path "{25F1214A5DC068A7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Lake.sig"
+  }
+  SignalClass "189453" {
+   id 189453
+   name "Signal Room Size"
+   tl -80.514 5523.53
+   res "{D5026DCA9E1E0C80}Sounds/Environment/Ambients2D/Environment_Ambients_2D_RoomSize.sig"
+   outputsport {
+    19 22 24 26
+   }
+   path "{D5026DCA9E1E0C80}Sounds/Environment/Ambients2D/Environment_Ambients_2D_RoomSize.sig"
+  }
+  SignalClass "205837" {
+   id 205837
+   name "Signal Grass"
+   tl 736 4480
+   res "{51C29E145C78C3A7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Grass.sig"
+   inputsport {
+    1 6 9
+   }
+   outputsport {
+    2
+   }
+   inputvalues {
+    0 40 0
+   }
+   inputvaluesmin {
+    0 0 0
+   }
+   inputvaluesmax {
+    1 40 1
+   }
+   path "{51C29E145C78C3A7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Grass.sig"
+  }
+  SignalClass "206861" {
+   id 206861
+   name "Signal Gusts"
+   tl 771.172 6273.511
+   res "{B99C67D0440B95C7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_WindGust.sig"
+   inputsport {
+    29 54
+   }
+   outputsport {
+    4 38
+   }
+   inputvalues {
+    0 0
+   }
+   inputvaluesmin {
+    0 0
+   }
+   inputvaluesmax {
+    1 1
+   }
+   path "{B99C67D0440B95C7}Sounds/Environment/Ambients2D/Environment_Ambients_2D_WindGust.sig"
+  }
+  SignalClass "208909" {
+   id 208909
+   name "Environment Type"
+   tl 515.172 6321.511
+   res "{D6DC695AD2DEC0D1}Sounds/_SharedData/Signals/OneSignal/EnvironmentType.sig"
+   inputsport {
+    11
+   }
+   outputsport {
+    2
+   }
+   inputvalues {
+    0
+   }
+   inputvaluesmin {
+    0
+   }
+   inputvaluesmax {
+    4
+   }
+   path "{D6DC695AD2DEC0D1}Sounds/_SharedData/Signals/OneSignal/EnvironmentType.sig"
+  }
+  SignalClass "240653" {
+   id 240653
+   name "Signal Tinnitus"
+   tl -556.833 550.859
+   res "{2EC7D0B68D8F3303}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Tinnitus.sig"
+   outputsport {
+    2 20
+   }
+   path "{2EC7D0B68D8F3303}Sounds/Environment/Ambients2D/Environment_Ambients_2D_Tinnitus.sig"
+  }
+  SignalClass "246797" {
+   id 246797
+   name "Signal Tinnitus"
+   tl 149.311 522.058
+   res "{74886F3B6227C26F}Sounds/_SharedData/Signals/OneSignal/GTinnitus.sig"
+   inputsport {
+    1
+   }
+   outputsport {
+    2
+   }
+   inputvalues {
+    0
+   }
+   inputvaluesmin {
+    0
+   }
+   inputvaluesmax {
+    1
+   }
+   path "{74886F3B6227C26F}Sounds/_SharedData/Signals/OneSignal/GTinnitus.sig"
+  }
+  SignalClass "247821" {
+   id 247821
+   name "Signal Under Water"
+   tl -356.642 155.663
+   res "{D9A2674676070DA8}Sounds/_SharedData/Signals/FinalMix/FinalMix_AboveSea.sig"
+   inputsport {
+    28
+   }
+   outputsport {
+    2 4
+   }
+   inputvalues {
+    0
+   }
+   inputvaluesmin {
+    0
+   }
+   inputvaluesmax {
+    1
+   }
+   path "{D9A2674676070DA8}Sounds/_SharedData/Signals/FinalMix/FinalMix_AboveSea.sig"
+  }
+  SignalClass "252941" {
+   id 252941
+   name "Signal 216"
+   tl -989.214 401.332
+   res "{33447DCE4959C32C}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass "245772:2" {
+         id 245772
+         port 2
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    2 10
+   }
+   outputsport {
+    1 9
+   }
+   inputvalues {
+    0 0
+   }
+   inputvaluesmin {
+    0 0
+   }
+   inputvaluesmax {
+    1 1
+   }
+   path "{33447DCE4959C32C}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance.sig"
+  }
+ }
+ filters {
+  FilterClass "167958" {
+   id 167958
+   name "Filter Wind"
+   version 5
+   tl 352 2592
+   ctl 0 -21
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "72717:122" {
+       id 72717
+       port 122
+      }
+     }
+    }
+    ConnectionsClass "con:4" {
+     id 4
+     links {
+      ConnectionClass "72717:123" {
+       id 72717
+       port 123
+      }
+     }
+    }
+    ConnectionsClass "con:5" {
+     id 5
+     links {
+      ConnectionClass "72717:124" {
+       id 72717
+       port 124
+      }
+     }
+    }
+   }
+   pi {
+    53 0
+   }
+   pu {
+    52 0
+   }
+   volume_dB 1
+   DSPObject Equalizer4DSPTypeClass dsp {
+    gain1 4
+    gain2 -3
+    gain3 -2
+    gain4 4
+    fc1 180
+    fc2 540
+    fc3 1000
+    fc4 9000
+    qfactor2 1
+    qfactor3 1.4
+   }
+  }
+  FilterClass "193558" {
+   id 193558
+   name "Filter Low Shelf"
+   version 5
+   tl 463.486 5427.53
+   ins {
+    ConnectionsClass "con:4" {
+     id 4
+     links {
+      ConnectionClass "189453:22" {
+       id 189453
+       port 22
+      }
+     }
+    }
+   }
+   pi {
+    17 0
+   }
+   pu {
+    16 0
+   }
+   DSPObject BiquadDSPTypeClass dsp {
+    biquadType LowShelf
+    fc 110
+   }
+  }
+  FilterClass "224278" {
+   id 224278
+   name "Filter Low Pass"
+   version 5
+   tl 352 2752
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:146" {
+       id 72717
+       port 146
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   volume_dB -3
+   DSPObject OnePoleFilterDSPTypeClass dsp {
+   }
+  }
+  FilterClass "241686" {
+   id 241686
+   name "Filter 213"
+   version 5
+   tl -43.761 375.161
+   pi {
+    1 0
+   }
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 1182
+   }
+  }
+  FilterClass "243734" {
+   id 243734
+   name "Filter 213"
+   version 5
+   tl -583.832 283.932
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "240653:20" {
+       id 240653
+       port 20
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   DSPObject BiquadDSPTypeClass dsp {
+    fc 688
+   }
+  }
+ }
+ filter_chain {
+  FilterChainClass "225303" {
+   id 225303
+   name "FilterChain 220"
+   version 5
+   tl 352 2832
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "167958:65" {
+       id 167958
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "224278:65" {
+       id 224278
+       port 65
+      }
+     }
+    }
+   }
+  }
+ }
+ vars {
+  VariableClass "158750" {
+   id 158750
+   name "Variable Vegetation Wind"
+   version 5
+   tl 704 2848
+   varName "Ambients_3D_Vegetation"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 0.8
+     Y 1
+    }
+    CurvePoint "2" {
+     X 1.5
+     Y 0.85
+    }
+    CurvePoint "3" {
+     X 7.5
+     Y 0.5
+    }
+   }
+  }
+  VariableClass "163870" {
+   id 163870
+   name "Variable Vegetation Rain"
+   version 5
+   tl 673.636 1378.182
+   varName "Ambients_3D_Vegetation"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 1
+     Y 1
+     Shape Exponential
+     Modifier 2
+    }
+    CurvePoint "2" {
+     X 8
+     Y 0.7
+    }
+   }
+  }
+  VariableClass "164894" {
+   id 164894
+   name "Variable UnderWater"
+   comment "Increase volume for a few seconds when submerging"
+   version 5
+   tl 611.583 290.833
+   ctl -47 -32
+   varName "Ambients_2D_UnderWater"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 2
+     Y 2
+    }
+    CurvePoint "2" {
+     X 6
+     Y 1
+    }
+   }
+  }
+  VariableClass "165918" {
+   id 165918
+   name "Variable Props Wind"
+   version 5
+   tl 352 2928
+   varName "Props"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 0.1
+     Y 1
+    }
+    CurvePoint "2" {
+     X 0.4
+     Y 0.7
+    }
+    CurvePoint "3" {
+     X 1.5
+     Y 0.55
+    }
+   }
+  }
+  VariableClass "166942" {
+   id 166942
+   name "Variable Props Rain"
+   version 5
+   tl 375 1378.889
+   varName "Props"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 0.1
+     Y 1
+    }
+    CurvePoint "2" {
+     X 1.4
+     Y 0.7
+    }
+   }
+  }
+  VariableClass "220190" {
+   id 220190
+   name "Variable GInterior Trigger"
+   version 5
+   tl 768 6752
+   varName "GInterior"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 0.9
+    }
+    CurvePoint "2" {
+     X 1
+     Y 20000
+    }
+   }
+  }
+  VariableClass "221214" {
+   id 221214
+   name "Variable GInterior Volume"
+   version 5
+   tl 768 6832
+   varName "GInterior"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     X 0.5
+    }
+    CurvePoint "2" {
+     X 1
+     Y 1
+    }
+   }
+  }
+  VariableClass "222238" {
+   id 222238
+   name "Variable WIndIntensity Volume"
+   version 5
+   tl 256 6912
+   varName "GInterior"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   curve {
+    CurvePoint "1" {
+     Y 0.5
+    }
+    CurvePoint "2" {
+     X 1
+     Y 1
+    }
+   }
+  }
+ }
+ sounds {
+  SoundClass "46089" {
+   id 46089
+   name "SOUND_UNDERWATER"
+   version 5
+   tl 610.801 372.908
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "247821:2" {
+       id 247821
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "164894:65" {
+       id 164894
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "250884:65" {
+       id 250884
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   varName "Ambients_2D_UnderWater"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   priority 90
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "48137" {
+   id 48137
+   name "SOUND_RAIN_LP"
+   version 5
+   tl 673.421 1453.238
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:73" {
+       id 83981
+       port 73
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "163870:65" {
+       id 163870
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "141319:65" {
+       id 141319
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 80
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "70665" {
+   id 70665
+   name "SOUND_WIND_LP"
+   version 5
+   tl 704 3008
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "81932:1" {
+       id 81932
+       port 1
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "158750:65" {
+       id 158750
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "136199:65" {
+       id 136199
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 80
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "118793" {
+   id 118793
+   name "SOUND_RIVER"
+   version 5
+   tl 618.387 -924.702
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "120845:24" {
+       id 120845
+       port 24
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "119815:65" {
+       id 119815
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    49 0
+   }
+   priority 60
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "133129" {
+   id 133129
+   name "SOUND_COAST"
+   version 5
+   tl 612.795 -560.089
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "82957:120" {
+       id 82957
+       port 120
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "134151:65" {
+       id 134151
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    49 0
+   }
+   priority 70
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "147465" {
+   id 147465
+   name "SOUND_THUNDER"
+   version 5
+   tl 768 5184
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "146445:4" {
+       id 146445
+       port 4
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "142340:65" {
+       id 142340
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    49 0
+   }
+   priority 30
+   outState 87051
+   outStatePort 181255
+   type Timer
+  }
+  SoundClass "148489" {
+   id 148489
+   name "SOUND_ROOM_TONE"
+   version 5
+   tl 768 5520
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "189453:19" {
+       id 189453
+       port 19
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "189453:19" {
+       id 189453
+       port 19
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "192519:65" {
+       id 192519
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   outState 87051
+   outStatePort 79879
+  }
+  SoundClass "151561" {
+   id 151561
+   name "SOUND_NIGHT_AMB_LP"
+   version 5
+   tl 764.915 5942.318
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "154637:11" {
+       id 154637
+       port 11
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "154637:2" {
+       id 154637
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "152580:65" {
+       id 152580
+       port 65
+      }
+      ConnectionClass "155652:65" {
+       id 155652
+       port 65
+      }
+      ConnectionClass "156676:65" {
+       id 156676
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 40
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "174089" {
+   id 174089
+   name "SOUND_LAKE"
+   version 5
+   tl 616.426 -106.14
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "176141:120" {
+       id 176141
+       port 120
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "175111:65" {
+       id 175111
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    49 0
+   }
+   priority 70
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "179209" {
+   id 179209
+   name "SOUND_TINNITUS"
+   version 5
+   tl 605.556 612.222
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "240653:2" {
+       id 240653
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "249862:65" {
+       id 249862
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    49 0
+   }
+   varName "Tinnitus"
+   varResource "{A60F08955792B575}Sounds/_SharedData/Variables/GlobalVariables.conf"
+   priority 90
+   outState 87051
+   outStatePort 282631
+   type "One shot"
+   threshold 0.5
+   reset 0.5
+  }
+  SoundClass "203785" {
+   id 203785
+   name "SOUND_GRASS_LP"
+   version 5
+   tl 736 4608
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "205837:2" {
+       id 205837
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "205837:2" {
+       id 205837
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "198660:65" {
+       id 198660
+       port 65
+      }
+      ConnectionClass "199684:65" {
+       id 199684
+       port 65
+      }
+      ConnectionClass "200708:65" {
+       id 200708
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 80
+   outState 87051
+   outStatePort 16391
+  }
+  SoundClass "210953" {
+   id 210953
+   name "SOUND_WIND_GUST"
+   version 5
+   tl 768 6400
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "206861:38" {
+       id 206861
+       port 38
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "206861:4" {
+       id 206861
+       port 4
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "216070:65" {
+       id 216070
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 20
+   outState 87051
+   outStatePort 16391
+   type Timer
+  }
+  SoundClass "218121" {
+   id 218121
+   name "SOUND_WIND_GUST_INTERIOR"
+   version 5
+   tl 768 6912
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "220190:65" {
+       id 220190
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "221214:65" {
+       id 221214
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "219140:65" {
+       id 219140
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   pu {
+    2 0
+   }
+   priority 20
+   outState 87051
+   outStatePort 79879
+   type Timer
+  }
+ }
+ buses {
+  BusClass "119815" {
+   id 119815
+   name "Bus River"
+   version 7
+   tl 186.324 -919.622
+   ctl 0 -21
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "120845:28" {
+       id 120845
+       port 28
+      }
+     }
+    }
+    ConnectionsClass "con:3" {
+     id 3
+     links {
+      ConnectionClass "120845:52" {
+       id 120845
+       port 52
+      }
+     }
+    }
+    ConnectionsClass "con:4" {
+     id 4
+     links {
+      ConnectionClass "120845:29" {
+       id 120845
+       port 29
+      }
+     }
+    }
+    ConnectionsClass "con:5" {
+     id 5
+     links {
+      ConnectionClass "120845:27" {
+       id 120845
+       port 27
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "137220:65" {
+       id 137220
+       port 65
+      }
+      ConnectionClass "121860:65" {
+       id 121860
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    61 0
+   }
+   pu {
+    60 0
+   }
+   channels "4"
+   channelVolume 1
+  }
+  BusClass "134151" {
+   id 134151
+   name "Bus Cost"
+   version 7
+   tl 186.553 -557.232
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "82957:121" {
+       id 82957
+       port 121
+      }
+     }
+    }
+    ConnectionsClass "con:3" {
+     id 3
+     links {
+      ConnectionClass "82957:122" {
+       id 82957
+       port 122
+      }
+     }
+    }
+    ConnectionsClass "con:4" {
+     id 4
+     links {
+      ConnectionClass "82957:124" {
+       id 82957
+       port 124
+      }
+     }
+    }
+    ConnectionsClass "con:5" {
+     id 5
+     links {
+      ConnectionClass "82957:123" {
+       id 82957
+       port 123
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "40964:65" {
+       id 40964
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    61 0
+   }
+   pu {
+    60 0
+   }
+   channels "4"
+   channelVolume 1
+  }
+  BusClass "136199" {
+   id 136199
+   name "Bus Wind"
+   version 7
+   tl 352 3008
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "165918:65" {
+       id 165918
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "225303:65" {
+       id 225303
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "78852:65" {
+       id 78852
+       port 65
+      }
+      ConnectionClass "64516:65" {
+       id 64516
+       port 65
+      }
+      ConnectionClass "65540:65" {
+       id 65540
+       port 65
+      }
+      ConnectionClass "66564:65" {
+       id 66564
+       port 65
+      }
+      ConnectionClass "75780:65" {
+       id 75780
+       port 65
+      }
+      ConnectionClass "58372:65" {
+       id 58372
+       port 65
+      }
+      ConnectionClass "59396:65" {
+       id 59396
+       port 65
+      }
+      ConnectionClass "60420:65" {
+       id 60420
+       port 65
+      }
+      ConnectionClass "79876:65" {
+       id 79876
+       port 65
+      }
+      ConnectionClass "67588:65" {
+       id 67588
+       port 65
+      }
+      ConnectionClass "68612:65" {
+       id 68612
+       port 65
+      }
+      ConnectionClass "69636:65" {
+       id 69636
+       port 65
+      }
+      ConnectionClass "73732:65" {
+       id 73732
+       port 65
+      }
+      ConnectionClass "74756:65" {
+       id 74756
+       port 65
+      }
+      ConnectionClass "76804:65" {
+       id 76804
+       port 65
+      }
+      ConnectionClass "61444:65" {
+       id 61444
+       port 65
+      }
+      ConnectionClass "62468:65" {
+       id 62468
+       port 65
+      }
+      ConnectionClass "63492:65" {
+       id 63492
+       port 65
+      }
+      ConnectionClass "196612:65" {
+       id 196612
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    1 0
+   }
+   volume 0.398
+   volume_dB -8
+   enableLimitation 1
+   sourceLimit 4
+   sourceLimitType Dynamic
+   volumeCompensation 1
+  }
+  BusClass "141319" {
+   id 141319
+   name "Bus Rain"
+   version 7
+   tl 374.278 1457.056
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "166942:65" {
+       id 166942
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "49156:65" {
+       id 49156
+       port 65
+      }
+      ConnectionClass "50180:65" {
+       id 50180
+       port 65
+      }
+      ConnectionClass "51204:65" {
+       id 51204
+       port 65
+      }
+      ConnectionClass "52228:65" {
+       id 52228
+       port 65
+      }
+      ConnectionClass "53252:65" {
+       id 53252
+       port 65
+      }
+      ConnectionClass "54276:65" {
+       id 54276
+       port 65
+      }
+      ConnectionClass "55300:65" {
+       id 55300
+       port 65
+      }
+      ConnectionClass "56324:65" {
+       id 56324
+       port 65
+      }
+      ConnectionClass "57348:65" {
+       id 57348
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   volume 0.251
+   volume_dB -12
+   enableLimitation 1
+   sourceLimit 4
+   sourceLimitType Dynamic
+   volumeCompensation 1
+  }
+  BusClass "175111" {
+   id 175111
+   name "Bus Lake"
+   version 7
+   tl 180.061 -95.154
+   ins {
+    ConnectionsClass "con:2" {
+     id 2
+     links {
+      ConnectionClass "176141:121" {
+       id 176141
+       port 121
+      }
+     }
+    }
+    ConnectionsClass "con:3" {
+     id 3
+     links {
+      ConnectionClass "176141:122" {
+       id 176141
+       port 122
+      }
+     }
+    }
+    ConnectionsClass "con:4" {
+     id 4
+     links {
+      ConnectionClass "176141:123" {
+       id 176141
+       port 123
+      }
+     }
+    }
+    ConnectionsClass "con:5" {
+     id 5
+     links {
+      ConnectionClass "176141:124" {
+       id 176141
+       port 124
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "173060:65" {
+       id 173060
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    61 0
+   }
+   pu {
+    60 0
+   }
+   channels "4"
+   channelVolume 1
+  }
+  BusClass "192519" {
+   id 192519
+   name "Bus RoomTone"
+   version 7
+   tl 463.486 5523.53
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "193558:65" {
+       id 193558
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "149508:65" {
+       id 149508
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+  }
+  BusClass "239623" {
+   id 239623
+   name "Bus 214"
+   version 7
+   tl -573.155 400.515
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "243734:65" {
+       id 243734
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "251908:65" {
+       id 251908
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   pu {
+    1 0
+   }
+  }
+  BusClass "248839" {
+   id 248839
+   name "Bus 214"
+   version 7
+   tl -44.508 479.04
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "241686:65" {
+       id 241686
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:64" {
+     id 64
+     links {
+      ConnectionClass "254980:65" {
+       id 254980
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   pu {
+    1 0
+   }
+  }
+ }
+ selectors {
+  SelectorClass "216070" {
+   id 216070
+   name "Selector Gusts"
+   version 5
+   tl 515.172 6401.511
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "208909:2" {
+       id 208909
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:117461" {
+     id 117461
+     links {
+      ConnectionClass "207876:65" {
+       id 207876
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:740741984" {
+     id 740741984
+     links {
+      ConnectionClass "207876:65" {
+       id 207876
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:773058647" {
+     id 773058647
+     links {
+      ConnectionClass "215044:65" {
+       id 215044
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:911917167" {
+     id 911917167
+     links {
+      ConnectionClass "209924:65" {
+       id 209924
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   ports {
+    PortClass Meadows {
+     max 1
+    }
+    PortClass Forest {
+     min 1
+     max 2
+    }
+    PortClass Houses {
+     min 2
+     max 3
+    }
+    PortClass Sea {
+     min 3
+     max 4
+    }
+   }
+  }
+  SelectorClass "249862" {
+   id 249862
+   name "Selector 180"
+   version 5
+   tl 148.061 598.308
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "246797:2" {
+       id 246797
+       port 2
+      }
+     }
+    }
+    ConnectionsClass "con:886251294" {
+     id 886251294
+     links {
+      ConnectionClass "244741:65" {
+       id 244741
+       port 65
+      }
+      ConnectionClass "256004:65" {
+       id 256004
+       port 65
+      }
+      ConnectionClass "248839:65" {
+       id 248839
+       port 65
+      }
+      ConnectionClass "253956:65" {
+       id 253956
+       port 65
+      }
+      ConnectionClass "239623:65" {
+       id 239623
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:1391665971" {
+     id 1391665971
+     links {
+      ConnectionClass "242693:65" {
+       id 242693
+       port 65
+      }
+     }
+    }
+   }
+   ports {
+    PortClass NoTinnitus {
+     max 1
+    }
+    PortClass Tinnitus {
+     min 1
+     max 2
+    }
+   }
+  }
+ }
+ generators {
+  GeneratorClass "242693" {
+   id 242693
+   name "Generator Silence"
+   version 6
+   tl -356.057 574.274
+   ins {
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "240653:20" {
+       id 240653
+       port 20
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   function Silence
+   volume 0.003
+   volume_dB -50
+   time 2000
+   frequency 7000
+   "Attack Time " 10
+   "Release Time" 2000
+  }
+  GeneratorClass "244741" {
+   id 244741
+   name "Generator Tinnitus"
+   version 6
+   tl -348.311 669.757
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "245772:1" {
+       id 245772
+       port 1
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "240653:20" {
+       id 240653
+       port 20
+      }
+     }
+    }
+    ConnectionsClass "con:6" {
+     id 6
+     links {
+      ConnectionClass "245772:1" {
+       id 245772
+       port 1
+      }
+     }
+    }
+   }
+   pi {
+    67 0
+   }
+   function Square
+   volume 0.008
+   volume_dB -42
+   time 2000
+   frequency 8000
+   "Attack Time " 10
+   "Release Time" 2000
+  }
+ }
+ mixers {
+  MixerClass "87051" {
+   id 87051
+   name "OutputState"
+   version 4
+   tl 872.762 1736.857
+   res "{B764D803219C775E}Sounds/FinalMix.afm"
+   ins {
+    ConnectionsClass "con:16391" {
+     id 16391
+     links {
+      ConnectionClass "118793:65" {
+       id 118793
+       port 65
+      }
+      ConnectionClass "48137:65" {
+       id 48137
+       port 65
+      }
+      ConnectionClass "46089:65" {
+       id 46089
+       port 65
+      }
+      ConnectionClass "70665:65" {
+       id 70665
+       port 65
+      }
+      ConnectionClass "133129:65" {
+       id 133129
+       port 65
+      }
+      ConnectionClass "151561:65" {
+       id 151561
+       port 65
+      }
+      ConnectionClass "174089:65" {
+       id 174089
+       port 65
+      }
+      ConnectionClass "203785:65" {
+       id 203785
+       port 65
+      }
+      ConnectionClass "210953:65" {
+       id 210953
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:79879" {
+     id 79879
+     links {
+      ConnectionClass "148489:65" {
+       id 148489
+       port 65
+      }
+      ConnectionClass "218121:65" {
+       id 218121
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:181255" {
+     id 181255
+     links {
+      ConnectionClass "147465:65" {
+       id 147465
+       port 65
+      }
+     }
+    }
+    ConnectionsClass "con:282631" {
+     id 282631
+     links {
+      ConnectionClass "179209:65" {
+       id 179209
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    17047584 0
+   }
+   path "{B764D803219C775E}Sounds/FinalMix.afm"
+   inputs {
+    "WPN_Handling" "WPN_Shots" "WPN_Explosions" "WNP_BulletHits" "CHAR" "ENV_AMB_2D" "VEH_Animations" "Impacts" "Dialog" "ENV_Doors" "VEH_Engine" "VEH_Tires" "VON" "SFX" "SFX_Reverb_OBSOLETE" "VON_Reverb_Small" "Dialog_Reverb" "Impacts_EXT" "ENV_AMB_3D" "WPN_SonicCracks" "CHAR_Gear" "PA" "SFX_Reverb_Exterior" "ENV_AMB_3D_Reverb_Exterior" "SFX_Direct" "SFX_Reverb_Small" "SFX_Reverb_Medium" "SFX_Reverb_Large" "WPN_Shots_Player" "Dialog_Reverb_Small" "Dialog_Reverb_Medium" "Dialog_Reverb_Large" "WPN_TravelingProjectile" "Dialog_Delay_Exterior" "SFX_Reverb_InCabin" "VON_Reverb_Medium" "VON_Reverb_Large"
+   }
+  }
+ }
+ constants {
+  ConstantClass "81932" {
+   id 81932
+   name "Constant Trigger"
+   version 5
+   tl 699.214 2929.222
+   "Constant values" {
+    IOPConstantsValueClass Trigger {
+     Key "Trigger"
+     Value 1
+     Port 1
+    }
+   }
+  }
+  ConstantClass "197644" {
+   id 197644
+   name "Constant"
+   version 5
+   tl -480 3328
+   "Constant values" {
+    IOPConstantsValueClass DYNAMIC_RANGE {
+     Key "DYNAMIC_RANGE"
+     Value -20
+     Port 1
+    }
+   }
+  }
+  ConstantClass "245772" {
+   id 245772
+   name "SRY_TinnitusConsts"
+   version 5
+   tl -575.289 666.599
+   "Constant values" {
+    IOPConstantsValueClass Time {
+     Key "Time"
+     Value 5000
+     Port 1
+    }
+    IOPConstantsValueClass brth_rnd {
+     Key "brth_rnd"
+     Value 0.6
+     Port 2
+    }
+   }
+  }
+ }
+ banks_local {
+  BankLocalClass "40964" {
+   id 40964
+   name "SeaCoast_LP"
+   version 7
+   tl -236.987 -560.089
+   Volume -4
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_SeaCoast_LP.wav" {
+     Filename "{2E26D0EDD6A7CD2A}Sounds/Environment/Ambients2D/Samples/Panned/Environment_SeaCoast_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "49156" {
+   id 49156
+   name "Forest Low"
+   version 7
+   tl 1.333 992.667
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:48" {
+       id 83981
+       port 48
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   Volume -2
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Forest_Low_LP.wav" {
+     Filename "{F892E596A40AD065}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Forest_Low_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "50180" {
+   id 50180
+   name "Forest Mid"
+   version 7
+   tl 1.333 1089.333
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:49" {
+       id 83981
+       port 49
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Forest_Mid_LP.wav" {
+     Filename "{80782FA97E9CF97C}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Forest_Mid_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "51204" {
+   id 51204
+   name "Forest Hi"
+   version 7
+   tl 1.333 1187.111
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:50" {
+       id 83981
+       port 50
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Forest_Hi_LP.wav" {
+     Filename "{E9422242E319D601}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Forest_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "52228" {
+   id 52228
+   name "Meadow Lo"
+   version 7
+   tl 1.333 1337.667
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:52" {
+       id 83981
+       port 52
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   Volume -2
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Meadow_Low_LP.wav" {
+     Filename "{A96EC55244C8858A}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Meadow_Low_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "53252" {
+   id 53252
+   name "Meadow Mid"
+   version 7
+   tl 1.333 1437.111
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:53" {
+       id 83981
+       port 53
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Meadow_Mid_LP.wav" {
+     Filename "{D1840F6D9E5EAC93}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Meadow_Mid_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "54276" {
+   id 54276
+   name "Meadow Hi"
+   version 7
+   tl 3.555 1535.444
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:54" {
+       id 83981
+       port 54
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Meadow_Hi_LP.wav" {
+     Filename "{F975E31AD869F5D1}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Meadow_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "55300" {
+   id 55300
+   name "Houses Low"
+   version 7
+   tl 1.333 1681
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:56" {
+       id 83981
+       port 56
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   Volume -3.5
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Houses_Low_LP.wav" {
+     Filename "{89DFF98789130621}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Houses_Low_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "56324" {
+   id 56324
+   name "Houses Mid"
+   version 7
+   tl 1.333 1781
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:57" {
+       id 83981
+       port 57
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Houses_Mid_LP.wav" {
+     Filename "{F13533B853852F38}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Houses_Mid_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "57348" {
+   id 57348
+   name "Houses Hi"
+   version 7
+   tl -0.096 1882.428
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "83981:58" {
+       id 83981
+       port 58
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "83981:92" {
+       id 83981
+       port 92
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Rain_Houses_Hi_LP.wav" {
+     Filename "{8AE2018F24055EA6}Sounds/Environment/Ambients2D/Samples/Rain/Environment_Rain_Houses_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "58372" {
+   id 58372
+   name "Wind Forest Low"
+   version 7
+   tl -1.333 2245.334
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:48" {
+       id 72717
+       port 48
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Forest_Low_Kolguyev_LP.wav" {
+     Filename "{67800C47E178C72E}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Forest_Low_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "59396" {
+   id 59396
+   name "Wind Forest Mid"
+   version 7
+   tl -1.333 2346.667
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:49" {
+       id 72717
+       port 49
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Forest_Mid_LP.wav" {
+     Filename "{6FC51FE576265214}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Forest_Mid_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "60420" {
+   id 60420
+   name "Wind Forest Hi"
+   version 7
+   tl -1.333 2457.639
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:50" {
+       id 72717
+       port 50
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Forest_Hi_LP.wav" {
+     Filename "{A7292E19A2BA13D3}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Forest_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "61444" {
+   id 61444
+   name "Wind Meadow Low"
+   version 7
+   tl -2.429 2739.04
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:52" {
+       id 72717
+       port 52
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -1
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Meadow_Low_Kolguyev_LP.wav" {
+     Filename "{FBA4BEA308CE2CA0}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Meadow_Low_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "62468" {
+   id 62468
+   name "Wind Meadow Mid"
+   version 7
+   tl -2.429 2839.435
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:53" {
+       id 72717
+       port 53
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Meadow_Mid_Kolguyev_LP.wav" {
+     Filename "{2DF7D6D3E1E2A5F6}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Meadow_Mid_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "63492" {
+   id 63492
+   name "Wind Meadow Hi"
+   version 7
+   tl -4.75 2943.912
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:54" {
+       id 72717
+       port 54
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Meadow_Hi_Kolguyev_LP.wav" {
+     Filename "{8F18022FAD2F85FE}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Meadow_Hi_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "64516" {
+   id 64516
+   name "Wind Houses Low"
+   version 7
+   tl -7.285 3244.178
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:56" {
+       id 72717
+       port 56
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Houses_Low_KolguyevLP.wav" {
+     Filename "{19728B6EA710E0BF}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Houses_Low_KolguyevLP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "65540" {
+   id 65540
+   name "Wind Houses Mid"
+   version 7
+   tl -7.285 3346.678
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:57" {
+       id 72717
+       port 57
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Houses_Mid_Kolguyev_LP.wav" {
+     Filename "{9EA6CE81DA6789EC}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Houses_Mid_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "66564" {
+   id 66564
+   name "Wind Houses Hi"
+   version 7
+   tl -7.285 3455.289
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:58" {
+       id 72717
+       port 58
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Houses_Hi_LP.wav" {
+     Filename "{C4890DD465A69B74}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Houses_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "67588" {
+   id 67588
+   name "Wind Hills Low"
+   version 7
+   tl -5.286 3733.607
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:60" {
+       id 72717
+       port 60
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Hills_Low_Kolguyev_LP.wav" {
+     Filename "{345A5C7077164C34}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Hills_Low_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "68612" {
+   id 68612
+   name "Wind Hills Mid"
+   version 7
+   tl -5.286 3839.857
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:61" {
+       id 72717
+       port 61
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Hills_Mid_Kolguyev_LP.wav" {
+     Filename "{722B4EB82399AAAA}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Hills_Mid_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "69636" {
+   id 69636
+   name "Wind Hills Hi"
+   version 7
+   tl 0 3936
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:62" {
+       id 72717
+       port 62
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Hills_Hi_Kolguyev_LP.wav" {
+     Filename "{47F9479C9966257D}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Hills_Hi_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "73732" {
+   id 73732
+   name "Bed Ocean"
+   version 7
+   tl -4.524 4157.341
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:63" {
+       id 72717
+       port 63
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_Ocean_LP.wav" {
+     Filename "{FB8BC6405B2F855C}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_Ocean_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "74756" {
+   id 74756
+   name "Bed InAir"
+   version 7
+   tl -2.302 4270.675
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:65" {
+       id 72717
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume 3
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_InAir_LP.wav" {
+     Filename "{4010F4DA4EA23161}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_InAir_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "75780" {
+   id 75780
+   name "Bed Forest"
+   version 7
+   tl 0 2144
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:47" {
+       id 72717
+       port 47
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_Forest_Kolguyev_LP.wav" {
+     Filename "{6C5DBCC05C6B9B44}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_Forest_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "76804" {
+   id 76804
+   name "Bed Meadow"
+   version 7
+   tl -1.143 2631.715
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:51" {
+       id 72717
+       port 51
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -1
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_Meadow_Kolguyev_LP.wav" {
+     Filename "{C3A7F69B0B31BCAB}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_Meadow_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "78852" {
+   id 78852
+   name "Bed Houses"
+   version 7
+   tl -5.615 3129.564
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:55" {
+       id 72717
+       port 55
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -1
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_Houses_LP.wav" {
+     Filename "{F2876C6E90B32AB7}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_Houses_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "79876" {
+   id 79876
+   name "Bed Hills"
+   version 7
+   tl -5.429 3620
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:59" {
+       id 72717
+       port 59
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Bed_Hills_Kolguyev_LP.wav" {
+     Filename "{C27E95288F1111E8}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_Hills_Kolguyev_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "121860" {
+   id 121860
+   name "River Fast"
+   version 7
+   tl -104.556 -835.16
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "120845:21" {
+       id 120845
+       port 21
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -15
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Random start offset" 1
+   "Fade in function" SCurve
+   "Fade in time" 1000
+   "Fade out function" SCurve
+   Samples {
+    AudioBankSampleClass "Environment_River_Fast_LP.wav" {
+     Filename "{A495B2C6BF008214}Sounds/Environment/Ambients2D/Samples/Panned/Environment_River_Fast_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "137220" {
+   id 137220
+   name "River Slow"
+   version 7
+   tl -101.572 -952.022
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "120845:12" {
+       id 120845
+       port 12
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -15
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Random start offset" 1
+   "Fade in function" SCurve
+   "Fade in time" 1000
+   "Fade out function" SCurve
+   Samples {
+    AudioBankSampleClass "Environment_River_Slow_LP.wav" {
+     Filename "{AD5AF808D6B82684}Sounds/Environment/Ambients2D/Samples/Panned/Environment_River_Slow_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "142340" {
+   id 142340
+   name "Thunder"
+   version 7
+   tl 434.263 5171.12
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "146445:15" {
+       id 146445
+       port 15
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   Volume -4
+   "Volume variance" 2
+   "Pitch variance" 2
+   Samples {
+    AudioBankSampleClass "Environment_Thunder_1.wav" {
+     Filename "{3352A9509C12553F}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_Thunder_2.wav" {
+     Filename "{AA4C10C981F564AF}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_Thunder_3.wav" {
+     Filename "{DD46784175578BDF}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_Thunder_4.wav" {
+     Filename "{DA81821013D1311C}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_Thunder_5.wav" {
+     Filename "{AD8BEA98E773DE6C}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_Thunder_6.wav" {
+     Filename "{34955301FA94EFFC}Sounds/Environment/Ambients2D/Samples/Thunder/Environment_Thunder_6.wav"
+     Probability 100
+     Index 5
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "149508" {
+   id 149508
+   name "Room Tone"
+   version 7
+   tl 175.486 5555.53
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "189453:26" {
+       id 189453
+       port 26
+      }
+     }
+    }
+    ConnectionsClass "con:1" {
+     id 1
+     links {
+      ConnectionClass "189453:24" {
+       id 189453
+       port 24
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   pu {
+    3 0
+   }
+   Volume -26
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 100
+   "Fade in time" 100
+   Samples {
+    AudioBankSampleClass "Environment_RoomTone_Generic_LP.wav" {
+     Filename "{5171A643CA9A72E8}Sounds/Environment/Ambients2D/Samples/RoomTone/Environment_RoomTone_Generic_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "152580" {
+   id 152580
+   name "Forest"
+   version 7
+   tl 251.64 5825.037
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "86029:33" {
+       id 86029
+       port 33
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -29
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Night_MetalHum_1_LP.wav" {
+     Filename "{06F0578A38B15903}Sounds/Environment/Ambients2D/Samples/Night/Environment_Night_MetalHum_1_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "155652" {
+   id 155652
+   name "Houses"
+   version 7
+   tl 252.057 5934.423
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "86029:34" {
+       id 86029
+       port 34
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -32
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Night_CreepyHum_LP.wav" {
+     Filename "{E557DB517C87EB59}Sounds/Environment/Ambients2D/Samples/Night/Environment_Night_CreepyHum_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "156676" {
+   id 156676
+   name "Meadows"
+   version 7
+   tl 253.129 6048.529
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "86029:36" {
+       id 86029
+       port 36
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -35
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Night_MetalHum_2_LP.wav" {
+     Filename "{E8E4869BD1F487E3}Sounds/Environment/Ambients2D/Samples/Night/Environment_Night_MetalHum_2_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "173060" {
+   id 173060
+   name "LakeWave_LP"
+   version 7
+   tl -225.609 -107.58
+   Volume -30
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 2000
+   "Fade in time" 2000
+   Samples {
+    AudioBankSampleClass "Environment_Lake_Waves_LP.wav" {
+     Filename "{4821BC78F2BF30E3}Sounds/Environment/Ambients2D/Samples/Panned/Environment_Lake_Waves_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "196612" {
+   id 196612
+   name "Branches Forest"
+   version 7
+   tl 0 2048
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:133" {
+       id 72717
+       port 133
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -17
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Random start offset" 1
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Forest_Branches_LP.wav" {
+     Filename "{CAE439C2ADC57DEB}Sounds/Environment/Ambients2D/Samples/Misc/Environment_Forest_Branches_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "198660" {
+   id 198660
+   name "Grass Low"
+   version 7
+   tl 0 4608
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:136" {
+       id 72717
+       port 136
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -16
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Grass_Low_LP.wav" {
+     Filename "{BB41EA402C292C3E}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Grass_Low_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "199684" {
+   id 199684
+   name "Grass Mid"
+   version 7
+   tl 0 4704
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:137" {
+       id 72717
+       port 137
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -17
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Grass_Mid_LP.wav" {
+     Filename "{C3AB207FF6BF0527}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Grass_Mid_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "200708" {
+   id 200708
+   name "Grass Hi"
+   version 7
+   tl 0 4800
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "72717:138" {
+       id 72717
+       port 138
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -18
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 1000
+   "Fade in time" 1000
+   Samples {
+    AudioBankSampleClass "Environment_Wind_Grass_Hi_LP.wav" {
+     Filename "{DE2594804CD4ABC4}Sounds/Environment/Ambients2D/Samples/Wind/Environment_Wind_Grass_Hi_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "207876" {
+   id 207876
+   name "Meadow/Sea Low"
+   version 7
+   tl 256 6384
+   Volume -12
+   Samples {
+    AudioBankSampleClass "Environment_WindGust_Meadow_1.wav" {
+     Filename "{D757824EBC481C2B}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Meadow_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Meadow_2.wav" {
+     Filename "{4E493BD7A1AF2DBB}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Meadow_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Meadow_3.wav" {
+     Filename "{3943535F550DC2CB}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Meadow_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Meadow_4.wav" {
+     Filename "{3E84A90E338B7808}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Meadow_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Meadow_5.wav" {
+     Filename "{498EC186C7299778}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Meadow_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "209924" {
+   id 209924
+   name "Houses Low"
+   version 7
+   tl 259.172 6561.511
+   Volume -13
+   Samples {
+    AudioBankSampleClass "Environment_WindGust_Houses_1.wav" {
+     Filename "{5D15413201746503}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Houses_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Houses_2.wav" {
+     Filename "{C40BF8AB1C935493}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Houses_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Houses_3.wav" {
+     Filename "{B3019023E831BBE3}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Houses_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Houses_4.wav" {
+     Filename "{B4C66A728EB70120}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Houses_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Houses_5.wav" {
+     Filename "{C3CC02FA7A15EE50}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Houses_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "215044" {
+   id 215044
+   name "Forest Low"
+   version 7
+   tl 256 6480
+   Volume -14
+   Samples {
+    AudioBankSampleClass "Environment_WindGust_Forest_1.wav" {
+     Filename "{EF088247B3623295}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Forest_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Forest_2.wav" {
+     Filename "{76163BDEAE850305}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Forest_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Forest_3.wav" {
+     Filename "{011C53565A27EC75}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Forest_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Forest_4.wav" {
+     Filename "{06DBA9073CA156B6}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Forest_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Forest_5.wav" {
+     Filename "{71D1C18FC803B9C6}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Forest_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "219140" {
+   id 219140
+   name "Interior"
+   version 7
+   tl 512 6912
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "222238:65" {
+       id 222238
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   Volume -26
+   Samples {
+    AudioBankSampleClass "Environment_WindGust_Interior_1.wav" {
+     Filename "{6A795B08CF588864}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Interior_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Interior_2.wav" {
+     Filename "{F367E291D2BFB9F4}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Interior_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Interior_3.wav" {
+     Filename "{846D8A19261D5684}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Interior_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Interior_4.wav" {
+     Filename "{83AA7048409BEC47}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Interior_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "Environment_WindGust_Interior_5.wav" {
+     Filename "{F4A018C0B4390337}Sounds/Environment/Ambients2D/Samples/WindGust/Environment_WindGust_Interior_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "250884" {
+   id 250884
+   name "UnderWater_Bed_LP"
+   version 7
+   tl -124.333 118.283
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "247821:2" {
+       id 247821
+       port 2
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   pu {
+    1 0
+   }
+   Volume -13
+   "Loop count" 255
+   "Infinite loop" 1
+   "Termination Fade Out" 100
+   "Fade in time" 100
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass "Environment_Bed_UnderWater_LP.wav" {
+     Filename "{E6A430B79FFAA1AE}Sounds/Environment/Ambients2D/Samples/Bed/Environment_Bed_UnderWater_LP.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "251908" {
+   id 251908
+   name "Breathing"
+   version 7
+   tl -803.096 400.999
+   ins {
+    ConnectionsClass "con:0" {
+     id 0
+     links {
+      ConnectionClass "252941:1" {
+       id 252941
+       port 1
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   Volume -18
+   "Pitch variance" 0.25
+   Silence 500
+   "Disable streaming" 1
+   Preload 1
+   Samples {
+    AudioBankSampleClass "LCY_concBreathing_1.wav" {
+     Filename "{E52EFEC686154B66}Lib/Concussion/breathing/LCY_concBreathing_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_10.wav" {
+     Filename "{931D9F59FA81A587}Lib/Concussion/breathing/LCY_concBreathing_10.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_11.wav" {
+     Filename "{E417F7D10E234AF7}Lib/Concussion/breathing/LCY_concBreathing_11.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_12.wav" {
+     Filename "{7D094E4813C47B67}Lib/Concussion/breathing/LCY_concBreathing_12.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_2.wav" {
+     Filename "{7C30475F9BF27AF6}Lib/Concussion/breathing/LCY_concBreathing_2.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_3.wav" {
+     Filename "{0B3A2FD76F509586}Lib/Concussion/breathing/LCY_concBreathing_3.wav"
+     Probability 100
+     Index 5
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_4.wav" {
+     Filename "{0CFDD58609D62F45}Lib/Concussion/breathing/LCY_concBreathing_4.wav"
+     Probability 100
+     Index 6
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_5.wav" {
+     Filename "{7BF7BD0EFD74C035}Lib/Concussion/breathing/LCY_concBreathing_5.wav"
+     Probability 100
+     Index 7
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_6.wav" {
+     Filename "{E2E90497E093F1A5}Lib/Concussion/breathing/LCY_concBreathing_6.wav"
+     Probability 100
+     Index 8
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_7.wav" {
+     Filename "{95E36C1F14311ED5}Lib/Concussion/breathing/LCY_concBreathing_7.wav"
+     Probability 100
+     Index 9
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_8.wav" {
+     Filename "{ED66F0352D9E8423}Lib/Concussion/breathing/LCY_concBreathing_8.wav"
+     Probability 100
+     Index 10
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concBreathing_9.wav" {
+     Filename "{9A6C98BDD93C6B53}Lib/Concussion/breathing/LCY_concBreathing_9.wav"
+     Probability 100
+     Index 11
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "253956" {
+   id 253956
+   name "MuffLoop"
+   version 7
+   tl -344.238 272.257
+   Volume -6
+   "Volume variance" 3
+   Pitch -7
+   "Pitch variance" 1
+   "Loop count" 255
+   "Infinite loop" 1
+   Silence 150
+   "Random start offset" 1
+   Sustain 3000
+   "Fade out function" SCurve
+   "Fade out time" 1000
+   "Disable streaming" 1
+   Preload 1
+   Samples {
+    AudioBankSampleClass "LCY_concussion_muffledLoop.wav" {
+     Filename "{E9D160CAE635C9BF}Lib/Concussion/loops/LCY_concussion_muffledLoop.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "254980" {
+   id 254980
+   name "Shrapnel"
+   version 7
+   tl -366.597 423.01
+   Volume 9
+   "Volume variance" 3
+   Pitch 14
+   "Pitch variance" 3
+   Silence 350
+   Sustain 200
+   "Fade out function" Cos
+   "Fade out time" 300
+   "Disable streaming" 1
+   Preload 1
+   Samples {
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_1.wav" {
+     Filename "{CF738D3BB65396F5}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_2.wav" {
+     Filename "{566D34A2ABB4A765}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_3.wav" {
+     Filename "{21675C2A5F164815}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_4.wav" {
+     Filename "{26A0A67B3990F2D6}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_5.wav" {
+     Filename "{51AACEF3CD321DA6}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_6.wav" {
+     Filename "{C8B4776AD0D52C36}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_6.wav"
+     Probability 100
+     Index 5
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_7.wav" {
+     Filename "{BFBE1FE22477C346}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_7.wav"
+     Probability 100
+     Index 6
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "SR_ExplosionShrapnel_Big_8.wav" {
+     Filename "{C73B83C81DD859B0}Lib/Concussion/shrapnelSFX/SR_ExplosionShrapnel_Big_8.wav"
+     Probability 100
+     Index 7
+     SampleMetadata ""
+    }
+   }
+  }
+  BankLocalClass "256004" {
+   id 256004
+   name "Shockwave"
+   version 7
+   tl -356.912 505.087
+   Volume 12
+   "Pitch variance" 2
+   Sustain 400
+   "Fade out function" SCurve
+   "Fade out time" 500
+   "Disable streaming" 1
+   Preload 1
+   Samples {
+    AudioBankSampleClass "LCY_concussion_shockwave_1.wav" {
+     Filename "{16F5413A36732A2C}Lib/Concussion/shockwaves/LCY_concussion_shockwave_1.wav"
+     Probability 100
+     Index 0
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concussion_shockwave_2.wav" {
+     Filename "{7014CB36CF4412D8}Lib/Concussion/shockwaves/LCY_concussion_shockwave_2.wav"
+     Probability 100
+     Index 1
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concussion_shockwave_3.wav" {
+     Filename "{071EA3BE3BE6FDA8}Lib/Concussion/shockwaves/LCY_concussion_shockwave_3.wav"
+     Probability 100
+     Index 2
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concussion_shockwave_4.wav" {
+     Filename "{00D959EF5D60476B}Lib/Concussion/shockwaves/LCY_concussion_shockwave_4.wav"
+     Probability 100
+     Index 3
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concussion_shockwave_5.wav" {
+     Filename "{77D33167A9C2A81B}Lib/Concussion/shockwaves/LCY_concussion_shockwave_5.wav"
+     Probability 100
+     Index 4
+     SampleMetadata ""
+    }
+    AudioBankSampleClass "LCY_concussion_shockwave_6.wav" {
+     Filename "{EECD88FEB425998B}Lib/Concussion/shockwaves/LCY_concussion_shockwave_6.wav"
+     Probability 100
+     Index 5
+     SampleMetadata ""
+    }
+   }
+  }
+ }
+ groups {
+  GroupClass {
+   id 135171
+   name "Coast"
+   children {
+    134151 82957 40964 133129
+   }
+   parent -1
+   Color 1 0 0.498 0.251
+  }
+  GroupClass {
+   id 138243
+   name "River"
+   children {
+    137220 120845 118793 119815 121860
+   }
+   parent -1
+   Color 0.333 0.333 1 0.251
+  }
+  GroupClass {
+   id 157699
+   name "Night Ambience"
+   children {
+    156676 152580 153622 154637 155652 151561
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass {
+   id 177155
+   name "Lake"
+   children {
+    174089 173060 175111 176141
+   }
+   parent -1
+   Color 0.753 0.376 0.376 0.251
+  }
+  GroupClass {
+   id 194563
+   name "RoomTone"
+   children {
+    149508 148489 189453 193558 192519
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass {
+   id 195587
+   name "Thunder"
+   children {
+    147465 142340 146445
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass {
+   id 217091
+   name "Gusts"
+   children {
+    213022 207876 209924 210953 206861 215044 211972 214020 208909 216070
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+  GroupClass {
+   id 223235
+   name "Gusts Interior"
+   children {
+    220190 219140 218121 222238 221214
+   }
+   parent -1
+   Color 0.6 0.6 0.6 0.251
+  }
+ }
+ version 1
+ sourcesLimit 3
+}

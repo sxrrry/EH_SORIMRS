@@ -1,0 +1,48 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef BulletCase {
+   ShapeType Point
+   ConeAngle 360 0 5
+   MaxNum 100
+   BirthRate 1
+   Angles 70 180 0
+   LocalTransform 0
+   LodMin 0
+   LodMax 0
+   Material "{170ADEA667847CF8}Particles/_Materials/Solid/CasingHolder.emat"
+   StretchMultiplier 1
+   StreakFullUV 0
+   SizeMultiplier 0.04
+   ScaleX 1
+   ScaleY 1
+   CenterY 0
+   RotMultiplier 1000
+   RandomRotDir 1
+   BillboardingType Full
+   VelAngle 0
+   RandomAngle 1
+   Velocity 1
+   VelocityRND 1
+   VelAffect 0.7
+   AirResistance 0.1
+   GravityMultiply 1
+   EnableCollisions 1
+   CollisionDistThresh 0.01
+   NormalRestitution 0.4
+   Friction 0.991
+   RotDampBySliding 0.963
+   AnimOnce 1
+   RandomFrame 0
+   Lifetime 120
+   RotationSpeed {
+    0 1 0.207 0.987 1 0
+   }
+   EmittingTime 0.1
+   Repeat 0
+   BRateMast {
+    0 0 0.498 0 0.502 1 1 1
+   }
+  }
+ }
+}

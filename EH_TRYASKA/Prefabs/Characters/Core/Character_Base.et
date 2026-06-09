@@ -1,0 +1,29 @@
+SCR_ChimeraCharacter {
+ ID "520EC961A090B1EE"
+ components {
+  SCR_CharacterStaminaComponent "{520EA1D2F659C824}" {
+   StaminaRegainPerS 0.03
+   StaminaDrainRun -0.003
+   StaminaDrainSprint -0.008
+   EncumbranceMassMax 130
+   EncumbranceDrainMax -0.05
+  }
+  SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
+   components {
+    SCR_CharacterCommandHandlerComponent "{520EA1D2F659C99A}" {
+     MoveSettings ScriptCharacterCommandMoveSettings "{520EA1D2F659C99B}" {
+      OverencumberanceWorstSpeedMultiplier 0.3
+      RotationChangeBlend 0.8
+      HeadingChangeLimiterWalk 1
+      HeadingChangeLimiterRun 0.1
+      InnertiaCurve {
+       0 0.499 0.061 0.813 0.246 0.825 0.493 0.516 0.75 0.483 0.996 0.322
+      }
+      HeadingChangeSpeedMin 150
+      HeadingChangeSpeedMax 90
+     }
+    }
+   }
+  }
+ }
+}

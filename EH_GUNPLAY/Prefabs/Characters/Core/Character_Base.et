@@ -1,0 +1,17 @@
+SCR_ChimeraCharacter {
+ ID "520EC961A090B1EE"
+ components {
+  SCR_CharacterControllerComponent "{520EA1D2F659CEA5}" {
+   LeanSpeed 3
+  }
+  SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
+   components {
+    SCR_CharacterCommandHandlerComponent "{520EA1D2F659C99A}" {
+     MoveSettings ScriptCharacterCommandMoveSettings "{520EA1D2F659C99B}" {
+      SpeedMultiplierADS 0.6
+     }
+    }
+   }
+  }
+ }
+}

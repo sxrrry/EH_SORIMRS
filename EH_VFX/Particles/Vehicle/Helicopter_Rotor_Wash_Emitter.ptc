@@ -1,0 +1,31 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef invisible_trigger_emmiter {
+   ShapeSize 3 0.2 3
+   ConeAngle 360 0 30
+   MaxNum 40
+   BirthRate 20
+   Offset 0 0 0
+   Angles 180 0 0
+   ParticleType Prefab
+   Prefab "{9FCC7F3E6FA4B4B7}Prefabs/Particles/Vehicles/Helicopter_Wash_Invisible_Trigger.et"
+   SizeMultiplier 0.1
+   Velocity 150
+   EnableCollisions 1
+   CollisionDistThresh 0
+   NormalRestitution 0
+   TagentialRestitution 0
+   Friction 0
+   Lifetime 0.25
+   LifetimeRND 0
+   LifetimeShortening 1
+   Size {
+    0 1 0.191 0.912 0.561 0 1 0
+   }
+   EmittingTime 0.2
+  }
+ }
+ MinFPS 30
+ CollisionPreset "{5DC8DBF6E2ACBAF5}"
+}

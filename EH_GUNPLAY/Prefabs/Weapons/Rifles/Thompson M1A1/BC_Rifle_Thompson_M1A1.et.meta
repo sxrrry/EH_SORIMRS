@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B6673927CF21BE87}Prefabs/Weapons/Rifles/Thompson M1A1/BC_Rifle_Thompson_M1A1.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

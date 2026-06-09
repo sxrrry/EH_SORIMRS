@@ -1,0 +1,27 @@
+GenericEntity : "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{5D9F3AF79EC9FB26}" {
+       AngularData RecoilData "{5D9F3AF79EC9FBDB}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 2
+       }
+       TurnOffsetData RecoilData "{5D9F3AF79EC9FBDA}" {
+        "Curve Mins" -6 4.5 0
+        "Curve Maxs" 6 6 0
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

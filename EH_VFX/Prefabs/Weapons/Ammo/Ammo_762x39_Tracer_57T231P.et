@@ -1,0 +1,6 @@
+TracerProjectile : "{2FBCA0A7CEDDE7B0}Prefabs/Weapons/Ammo/Ammo_762x39_Ball_57N231.et" {
+ ID "DA5C6308000CDEF2"
+ ProjectileModel "{9B94135A47E1A917}Assets/Weapons/Ammo/Tracers/LONG/EHVFX_Tracer_v2_long_RED.xob"
+ "Tracer Burn Start After" 0.03
+ "Tracer Burn Time" 3.5
+}

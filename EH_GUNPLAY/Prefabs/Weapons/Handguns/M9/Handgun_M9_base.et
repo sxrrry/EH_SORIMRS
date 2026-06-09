@@ -1,0 +1,27 @@
+GenericEntity : "{EE7028E9DF49763A}Prefabs/Weapons/Core/Handgun_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C45E7271D47}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{58FCF59C4258A0B9}" {
+       AngularData RecoilData "{58FCF59C4660D2CC}" {
+        "Curve X" {
+         0 0.5 0.103 0.245 0.23 0.614 0.412 0.451 0.57 0.545 0.787 0.474 1 0.5
+        }
+        "Curve Mins" -2 8 1
+        "Curve Maxs" 2 10 1
+       }
+       TurnOffsetData RecoilData "{58FCF59C4660D2CF}" {
+        "Curve Mins" -5 20 0
+        "Curve Maxs" 5 25 0
+        "Base Recoil Scale" 3
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

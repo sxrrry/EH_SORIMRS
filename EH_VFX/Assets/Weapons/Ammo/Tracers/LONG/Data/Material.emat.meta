@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{BBB5D4741A3220C8}Assets/Weapons/Ammo/Tracers/LONG/Data/Material.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

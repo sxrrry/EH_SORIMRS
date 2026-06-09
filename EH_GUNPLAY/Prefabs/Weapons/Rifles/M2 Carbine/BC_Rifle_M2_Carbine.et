@@ -1,0 +1,28 @@
+GenericEntity : "{A314981748872A43}Prefabs/Weapons/Rifles/M1 Carbine/BC_Rifle_M1_Carbine.et" {
+ ID "5260C45AAAA407F4"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{58C899E212CAEAAC}" {
+       AngularData RecoilData "{58C899E2064B3F15}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 4.5
+       }
+       TurnOffsetData RecoilData "{58C899E2064B3F16}" {
+        "Curve Mins" -6 4.5 0
+        "Curve Maxs" 6 6 0
+        "Base Recoil Scale" 4.5
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

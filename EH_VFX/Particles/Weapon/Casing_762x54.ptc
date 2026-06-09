@@ -1,0 +1,153 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef BulletCase {
+   ShapeType Point
+   ConeAngle 360 0 5
+   MaxNum 100
+   BirthRate 1
+   Angles 70 180 0
+   LocalTransform 0
+   LodMin 0
+   LodMax 0
+   ParticleType Prefab
+   Material "{D2FD66DE0DF6BC58}Particles/_Materials/Solid/BulletCase_MachineGun.emat"
+   Prefab "{581926176C1D3C2C}Prefabs/Particles/Bullet_Case/Bullet_Case_762x54.et"
+   StretchMultiplier 1
+   StreakFullUV 0
+   SizeMultiplier 1
+   SizeRND 0
+   ScaleX 1
+   ScaleY 0.25
+   CenterY 0
+   CenterZ -0.02
+   RotMultiplier 1000
+   RotRND_3D 0 360 0
+   RandomRotDir 1
+   BillboardingType Full
+   VelAngle 0
+   Velocity 3
+   VelocityRND 1
+   VelAffect 0.7
+   AirResistance 0.1
+   GravityMultiply 1
+   EnableCollisions 1
+   CollisionDistThresh 0.2
+   NormalRestitution 0.463
+   TagentialRestitution 0.903
+   Friction 0.98
+   RotDampBySliding 0.956
+   AnimOnce 1
+   RandomFrame 0
+   Lifetime 120
+   Alpha {
+    0 1 0.9211 1 1 0
+   }
+   RotationSpeed {
+    0 1 0.0085 0.9873 0.0157 0
+   }
+   Size {
+    0 1
+   }
+   EmittingTime 0.1
+   Repeat 0
+   BRateMast {
+    0 0 0.498 0 0.502 1 1 1
+   }
+  }
+  EmitterDef BulletCase_LOD1 {
+   ShapeType Point
+   ConeAngle 360 0 5
+   MaxNum 100
+   BirthRate 1
+   Angles 70 180 0
+   LocalTransform 0
+   LodMin 1
+   LodMax 1
+   Material "{D2FD66DE0DF6BC58}Particles/_Materials/Solid/BulletCase_MachineGun.emat"
+   Prefab "{581926176C1D3C2C}Prefabs/Particles/Bullet_Case/Bullet_Case_762x54.et"
+   StretchMultiplier 1
+   StreakFullUV 0
+   SizeMultiplier 0.04
+   SizeRND 0
+   ScaleX 1
+   ScaleY 0.25
+   CenterY 0
+   CenterZ -0.02
+   RotMultiplier 1000
+   RotMultiplier_3D 360 190 280
+   RandomRotDir 1
+   BillboardingType Full
+   VelAngle 0
+   RandomAngle 1
+   Velocity 3
+   VelocityRND 1
+   VelAffect 0.7
+   AirResistance 0.1
+   GravityMultiply 1
+   Friction 0.95
+   AnimOnce 1
+   RandomFrame 0
+   Lifetime 3
+   RotationSpeed {
+    0 1 0.207 0.987 0.599 0
+   }
+   Size {
+    0 1 0.892 0.959 1 0
+   }
+   EmittingTime 0.1
+   Repeat 0
+   BRateMast {
+    0 0 0.498 0 0.502 1 1 1
+   }
+  }
+  EmitterDef smoke {
+   ShapeType Sphere
+   ConeAngle 360 0 5
+   MaxNum 100
+   BirthRate 5
+   BirthRateRND 0
+   BirthRateVel 0
+   Offset 0 0 0
+   Angles -90 25 0
+   LocalTransform 0
+   LodMin 0
+   LodMax 0
+   Material "{2C146AAE20C6F61E}Particles/_Materials/Gas/Smoke_Cloud_Anim_Weapons.emat"
+   SizeMultiplier 1
+   SizeRND 1
+   RotMultiplier 50
+   RandomRotDir 1
+   RandomAngle 1
+   Velocity 2
+   VelocityRND 1
+   VelAffect 1
+   AirResistance 2
+   AirResistanceRND 2
+   WindInfluence 0.05
+   GravityMultiply 0.01
+   GravityMultiplyRND 0
+   AnimOnce 1
+   AnimFPS 55
+   LifetimeByAnim 1
+   RandomFrame 0
+   Lifetime 2
+   LifetimeRND 0.1
+   Color {
+    0 0.462 0.462 0.462 1 0.462 0.462 0.462
+   }
+   Alpha {
+    0 0 0.055 0.311 1 0
+   }
+   RotationSpeed {
+    0 1 1 0
+   }
+   Size {
+    0 0.193 1 0.6
+   }
+   EmittingTime 0.1
+   Repeat 0
+  }
+ }
+ CollisionPreset "{5D9EE44C68755DF5}"
+}

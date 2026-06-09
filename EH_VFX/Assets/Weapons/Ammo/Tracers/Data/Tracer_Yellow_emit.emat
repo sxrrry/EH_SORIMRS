@@ -1,0 +1,4 @@
+MatCommon {
+ Emissive 0.857 0.956 0.004 0
+ EmissiveLV 9
+}

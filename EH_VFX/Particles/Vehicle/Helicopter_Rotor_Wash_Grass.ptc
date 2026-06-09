@@ -1,0 +1,138 @@
+EffectDef {
+ Version 2
+ Emitters {
+  EmitterDef dust {
+   ShapeType Sphere
+   ShapeSize 2 2 2000
+   ConeAngle 360 -150 -175.6
+   MaxNum 20
+   BirthRate 7
+   BirthRateRND 12
+   BirthRateVel 0
+   Material "{6717581547F2F2B2}Particles/_Materials/Gas/Smoke_Cloud_Anim_2.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   SizeMultiplier 4
+   SizeRND 7
+   RotMultiplier 150
+   RandomAngle 1
+   FlipU Random
+   Velocity 10
+   VelocityRND 7
+   AirResistance 0.1
+   WindInfluence 1
+   ParentVelRelToAir 0
+   GravityMultiply -0.065
+   GravityMultiplyRND -0.13
+   Spring 0
+   AnimFPS 20
+   Lifetime 1.25
+   Color {
+    0 0.235 0.213 0.183
+   }
+   Alpha {
+    0 0 0.232 0.109 0.515 0.382 0.771 0.333 1 0
+   }
+   RotationSpeed {
+    0 1 1 0.504
+   }
+   Size {
+    0 0 0.183 0.176 0.419 0.902 1 1
+   }
+   EmittingTime 1
+   Repeat 0
+   AlphaMast {
+    0.413 0.6
+   }
+  }
+  EmitterDef eh_longdust {
+   ShapeType Sphere
+   ShapeSize 2 2 2000
+   ConeAngle 360 -150 -175.6
+   MaxNum 3
+   BirthRate 7
+   BirthRateRND 12
+   BirthRateVel 0
+   Material "{6717581547F2F2B2}Particles/_Materials/Gas/Smoke_Cloud_Anim_2.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   SizeMultiplier 4
+   SizeRND 7
+   RotMultiplier 30
+   RandomRotDir 1
+   RandomAngle 1
+   FlipU Random
+   Velocity 22.7
+   VelocityRND 9.7
+   AirResistance 1.15
+   AirResistanceRND 0.35
+   WindInfluence 0.33
+   ParentVelRelToAir 0.76
+   GravityMultiply 0.231
+   GravityMultiplyRND -0.509
+   Spring 0
+   AnimOnce 1
+   AnimFPS 3
+   Lifetime 10
+   Color {
+    0 0.235 0.213 0.183
+   }
+   Alpha {
+    0 0 0.0669 0.1571 0.3499 0.4301 0.6059 0.3811 1 0
+   }
+   RotationSpeed {
+    0 1 1 0.504
+   }
+   Size {
+    0 0 0.0001 0.4327 0.2294 1 1 1
+   }
+   EmittingTime 1
+   Repeat 0
+   AlphaMast {
+    0.413 0.6
+   }
+  }
+  EmitterDef Leaves {
+   ShapeType Sphere
+   ShapeSize 5 2 2
+   ConeAngle 360 -172 -175.6
+   MaxNum 40
+   BirthRate 20
+   BirthRateRND 25
+   BirthRateVel 0
+   LodMin 0
+   LodMax 0
+   Material "{1D816DC83DA25617}Particles/_Materials/Solid/Leaves_Base_01.emat"
+   Prefab "{29FBEC1991810EEF}system/wbdata/ParticleEditor/defaultPrefab.et"
+   SizeMultiplier 0.25
+   SizeRND 0.1
+   ScaleX 0.2
+   RotMultiplier 500
+   RandomAngle 1
+   FlipU Random
+   Velocity 20
+   AirResistance 0.1
+   AirResistanceRND 0.05
+   WindInfluence 1
+   ParentVelRelToAir 0
+   GravityMultiply 0.456
+   GravityMultiplyRND -0.846
+   Spring 0
+   AnimFPS 1
+   RandomFrame 1
+   Lifetime 1
+   Color {
+    0.08 0.241 0.305 0.232
+   }
+   Alpha {
+    0 0 0.184 0 0.398 0.502 0.822 0.375 1 0
+   }
+   RotationSpeed {
+    0 1 1 0.256
+   }
+   Size {
+    0 0 0.184 1 0.728 0.888 1 0
+   }
+   EmittingTime 1
+   Repeat 0
+  }
+ }
+}

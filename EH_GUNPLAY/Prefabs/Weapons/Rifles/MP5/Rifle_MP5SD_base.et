@@ -1,0 +1,26 @@
+GenericEntity : "{895D628B8A9529F6}Prefabs/Weapons/Rifles/MP5/Rifle_MP5_base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{61D32A9C91D3BD28}" {
+       AngularData RecoilData "{61D32A9C91D3BD2B}" {
+        "Curve X" +{
+        }
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
+       }
+       TurnOffsetData RecoilData "{61D32A9C91D3BD2E}" {
+        "Curve Mins" -6 4.5 0
+        "Curve Maxs" 6 6 0
+        "Base Recoil Scale" 1.5
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

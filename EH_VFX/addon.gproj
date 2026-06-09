@@ -1,0 +1,8 @@
+GameProject {
+ ID "EHVFX"
+ GUID "6916A1F3A1370367"
+ TITLE "EH_VFX"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

@@ -1,0 +1,28 @@
+GenericEntity : "{F9E6107C47C1B088}Prefabs/Weapons/Core/LongRangeRifle_Base.et" {
+ ID "5260C45AAAA407F4"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{60F0ED00B9A2F220}" {
+       AngularData RecoilData "{60F0ED00C0B926F0}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Mins" -3 4 1
+        "Curve Maxs" 3 5 1
+        "Base Recoil Scale" 4.5
+       }
+       TurnOffsetData RecoilData "{60F0ED00C3854064}" {
+        "Curve Mins" -7 6 0
+        "Curve Maxs" 7 8 0
+        "Base Recoil Scale" 4.5
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

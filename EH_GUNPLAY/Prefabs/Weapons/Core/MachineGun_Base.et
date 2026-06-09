@@ -1,0 +1,36 @@
+GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
+ ID "CFBAA4B725411E45"
+ components {
+  SCR_WeaponAttachmentsStorageComponent "{51F080D5CE45A1A2}" {
+   Attributes SCR_ItemAttributeCollection "{51F080D5C64F12C5}" {
+    CustomAttributes {
+     ItemMovementSwayAttributes "{58B9009CD03086A9}" {
+      BobSpring 0.6 0.4 0.9
+      BobDamper 0.85 0.85 1
+      BobMagnitudeLinear 0.05 -0.05 -0.05
+     }
+    }
+   }
+  }
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{50F64C4591CD7AA6}" {
+     WeaponAimModifiers {
+      SwayWeaponAimModifier "{521AE9A27BDC1E6F}" {
+       "Linear Damping" 5 4 2
+       "Angular Damping" 25 15 18
+       "ADS Multiplier" 0.5
+       "Focus Multiplier" 0.35
+       "Stamina Scale Mins" 0.7 0.8 0
+       "Stamina Scale Maxs" 2 2.5 2
+       "Linear Inertia Magnitude" 0.01 0.02 0.02
+       "Angular Inertia Magnitude ADS" 25 20 35
+       "Linear Inertia Decay Speed" 2
+       "Angular Inertia Decay Speed" 2.5
+      }
+     }
+    }
+   }
+  }
+ }
+}

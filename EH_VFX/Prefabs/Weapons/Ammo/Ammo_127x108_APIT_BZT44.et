@@ -1,0 +1,4 @@
+TracerProjectile : "{158CA8519769A66F}Prefabs/Weapons/Ammo/Ammo_127x108_API_B32.et" {
+ ID "DA5C6308000CDEF2"
+ ProjectileModel "{F3C4DC9721CC6E0C}Assets/Weapons/Ammo/Tracers/LONG/EHVFX_Tracer_v2_long_YELLOW.xob"
+}
