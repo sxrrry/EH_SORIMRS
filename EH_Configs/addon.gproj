@@ -1,7 +1,7 @@
 GameProject {
- ID "EHTRYASKA"
+ ID "EH_Configs"
  GUID "68B6E3FBBF8F086A"
- TITLE "EH_TRYASKA"
+ TITLE "EH_Configs"
  Dependencies {
   "684CE8AA3B1D6573" "58D0FB3206B6F859"
  }

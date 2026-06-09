@@ -1,7 +1,7 @@
 GameProject {
- ID "worseradio"
+ ID "EH_RadioQuality"
  GUID "6923044FBC59F322"
- TITLE "worseradio"
+ TITLE "EH_RadioQuality"
  Dependencies {
   "58D0FB3206B6F859"
  }
