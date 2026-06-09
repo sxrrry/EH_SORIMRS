@@ -1,0 +1,12 @@
+SCR_GameModeEditor GameMode_Editor_Full1 : "{DA3986AF1B5032B7}Prefabs/MP/Modes/Editor/GameMode_Editor_Full.et" {
+ components {
+  SCR_TimeAndWeatherHandlerComponent "{6986B18CC8D056F1}" {
+   m_bRandomWeatherChanges 1
+  }
+  SR_WeatherPlannerComponent "{6986B18E0051E4DA}" {
+   m_bPlannerEnabled 1
+   m_sMiddleWeatherStateID "LightRain"
+  }
+ }
+ coords 3118.052 11.385 2828.588
+}

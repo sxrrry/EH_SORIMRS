@@ -1,0 +1,206 @@
+RagdollDef {
+ Object "{9F3AF591CD6DFE1A}Assets/Characters/Basebody/Basebody_Male_01.xob"
+ {
+  RagdollBone Hips {
+   Mass 0.4
+   Offset 0 0.074 0.004
+   Orientation -2.791 0 0
+   Geometries {
+    PhysicsModelGeometry "{5A68A802F0003823}" {
+     SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+     Collider "UCS_Buttocks"
+    }
+   }
+   Blocks {
+    "LeftLeg"
+    "RightLeg"
+   }
+   {
+    RagdollBone Spine3 {
+     Mass 0.4
+     Offset 0 0.267 0.016
+     Orientation -3.467 0 0
+     Geometries {
+      PhysicsModelGeometry "{5A8AB71FA1F99205}" {
+       SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+       Collider "UCX_Belly"
+      }
+      PhysicsModelGeometry "{5A8E86DE372ED119}" {
+       SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+       Mass 0.2
+       Collider "UCX_Chest"
+      }
+     }
+     Blocks {
+      "LeftLeg"
+      "RightLeg"
+     }
+     JointMinLimits -10 0 0
+     JointMaxLimits 50 0 0
+     JointDamper 0.5
+     {
+      RagdollBone Head {
+       Mass 0.025
+       Offset 0 0.05 0
+       Orientation 0 -180 0
+       Geometries {
+        PhysicsModelGeometry "{5A689A59A1AE3320}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCX_Head"
+        }
+       }
+       JointMinLimits -5 -35 -20
+       JointMaxLimits 25 35 20
+       JointStiffness 0
+       JointDamper 0.1
+      }
+      RagdollBone LeftArm {
+       Mass 0.07
+       Offset 0 0.143 0
+       Orientation 0 -89.807 0
+       Geometries {
+        PhysicsModelGeometry "{5A689A5904783C5D}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCS_Arm_L"
+        }
+       }
+       JointAngles 0 0 44
+       JointMinLimits -90 0 -60
+       JointMaxLimits 90 0 45
+       JointDamper 0.1
+       {
+        RagdollBone LeftForeArm {
+         Mass 0.1
+         Offset 0.006 0.147 0.006
+         Orientation 3.339 -149.627 -0.831
+         Geometries {
+          PhysicsModelGeometry "{5A689A5BB564EF55}" {
+           SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+           Collider "UCS_Forearm_L"
+          }
+          PhysicsModelGeometry "{5A689A5BBE04EF9F}" {
+           SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+           Collider "UCX_Hand_L"
+          }
+         }
+         JointAngles 0 0 44
+         JointMinLimits -90 0 0
+         JointMaxLimits 15 0 0
+         JointDamper 0.1
+        }
+       }
+      }
+      RagdollBone RightArm {
+       Mass 0.07
+       Offset 0 -0.143 0
+       Orientation 0 90.193 180
+       Geometries {
+        PhysicsModelGeometry "{5A689A5AE9A8DE0C}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCS_Arm_R"
+        }
+       }
+       JointAngles 0 0 -44
+       JointMinLimits -90 0 -25
+       JointMaxLimits 45 0 60
+       JointDamper 0.1
+       {
+        RagdollBone RightForeArm {
+         Mass 0.1
+         Offset -0.006 -0.147 -0.006
+         Orientation -3.339 30.374 -179.168
+         Geometries {
+          PhysicsModelGeometry "{5A689A5B63BBCFEF}" {
+           SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+           Collider "UCS_Forearm_R"
+          }
+          PhysicsModelGeometry "{5A689A5B6D02E845}" {
+           SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+           Collider "UCX_Hand_R"
+          }
+         }
+         JointAngles 0 0 -44
+         JointMinLimits -90 0 0
+         JointMaxLimits 15 0 0
+         JointDamper 0.1
+        }
+       }
+      }
+     }
+    }
+    RagdollBone LeftLeg {
+     Mass 0.2
+     Offset 0 0.208 0
+     Orientation 0 0.231 0
+     Geometries {
+      PhysicsModelGeometry "{5A689A5F4004DB0D}" {
+       SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+       Collider "UCS_Thigh_L"
+      }
+     }
+     Blocks {
+      "RightLeg"
+     }
+     JointMinLimits -5 0 -35
+     JointMaxLimits 3 0 5
+     JointDamper 0.1
+     {
+      RagdollBone LeftKnee {
+       Mass 0.15
+       Offset 0 0.204 0
+       Orientation 0 -0.01 0
+       Geometries {
+        PhysicsModelGeometry "{5A689A5B1C49C4D5}" {
+         LayerPreset "Building"
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCS_Calf_L"
+        }
+        PhysicsModelGeometry "{5A689A5B268956A3}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCX_Foot_L"
+        }
+       }
+       JointMinLimits 0 0 0
+       JointMaxLimits 80 0 0
+       JointDamper 0.1
+      }
+     }
+    }
+    RagdollBone RightLeg {
+     Mass 0.2
+     Offset 0 -0.208 0
+     Orientation 0 -179.769 180
+     Geometries {
+      PhysicsModelGeometry "{5A689A5FBDA7AB7C}" {
+       SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+       Collider "UCS_Thigh_R"
+      }
+     }
+     JointMinLimits -5 0 -5
+     JointMaxLimits 3 0 35
+     JointDamper 0.1
+     {
+      RagdollBone RightKnee {
+       Mass 0.15
+       Offset 0 -0.204 0
+       Orientation 0 179.99 -180
+       Geometries {
+        PhysicsModelGeometry "{5A689A5B2BE7C0DF}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCS_Calf_R"
+        }
+        PhysicsModelGeometry "{5A689A5B37E49920}" {
+         SurfaceProperties "{DA94EA1EF2914EB7}Common/Materials/Game/flesh.gamemat"
+         Collider "UCX_Foot_R"
+        }
+       }
+       JointMinLimits 0 0 0
+       JointMaxLimits 80 0 0
+       JointDamper 0.1
+      }
+     }
+    }
+   }
+  }
+ }
+}

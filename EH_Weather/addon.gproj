@@ -1,0 +1,8 @@
+GameProject {
+ ID "EHWeather"
+ GUID "69850CCFBB7FC9A4"
+ TITLE "EH_Weather"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{579AA3522575CB8F}Common/Materials/Physics/flesh.physmat"
+ Configurations {
+  PhysicsMaterialResourceClass PC {
+  }
+  PhysicsMaterialResourceClass XBOX_ONE : PC {
+  }
+  PhysicsMaterialResourceClass XBOX_SERIES : PC {
+  }
+  PhysicsMaterialResourceClass PS4 : PC {
+  }
+  PhysicsMaterialResourceClass PS5 : PC {
+  }
+  PhysicsMaterialResourceClass HEADLESS : PC {
+  }
+ }
+}
