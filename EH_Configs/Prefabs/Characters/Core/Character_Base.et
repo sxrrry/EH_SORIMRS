@@ -17,7 +17,7 @@ SCR_ChimeraCharacter {
       HeadingChangeLimiterWalk 1
       HeadingChangeLimiterRun 0.1
       InnertiaCurve {
-       0 0.499 0.061 0.813 0.246 0.825 0.493 0.516 0.75 0.483 0.996 0.322
+       0 0.405 0.027 1 0.25 1 0.497 0.691 0.754 0.658 1 0.497
       }
       HeadingChangeSpeedMin 150
       HeadingChangeSpeedMax 90
