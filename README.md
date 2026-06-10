@@ -4,4 +4,5 @@
 * EH_Gunplay - Оверрайд отдачи и инерции оружия.
 * EH_SORIMRS_AIO - Мод-коллектор (сборка), содержит в себе донастройки дистанции отрисовки энтити.
 * EH_Weather - Изменения погоды, новые стейты.
-* EH_RadioQuality - Изменение кривых QualityTransmittion и Noise_V в VON.acp (шум и искажение голоса)
+* EH_RadioQuality - Изменение кривых QualityTransmittion и Noise_V в VON.acp (шум и искажение голоса).
+* EH_VFX - Визуальные эффекты.
