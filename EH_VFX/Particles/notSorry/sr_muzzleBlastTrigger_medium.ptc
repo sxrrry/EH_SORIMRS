@@ -12,7 +12,7 @@ EffectDef {
    LodMin 0
    LodMax 0
    ParticleType Prefab
-   Prefab "{58E62C5D17281925}Prefabs/Particles/Blasts/Blast_small_Invisible_Trigger.et"
+   Prefab "{0C0285BD3CBB2AA8}Prefabs/Particles/Blasts/MuzzleBlast_small_Invisible_Trigger.et"
    Velocity 5
    EnableCollisions 1
    NormalRestitution 0
