@@ -11,12 +11,10 @@ GenericEntity : "{1FA22B1F5E7BC80B}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_short_
         }
         "Curve Mins" -2 2 1
         "Curve Maxs" 2 3 1
-        "Base Recoil Scale" 4
+        "Base Recoil Scale" 3
        }
        TurnOffsetData RecoilData "{58789524E0951484}" {
-        "Curve Mins" -6 4.5 0
-        "Curve Maxs" 6 6 0
-        "Base Recoil Scale" 4
+        "Base Recoil Scale" 4.6
        }
       }
      }

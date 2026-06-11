@@ -1,3 +1,18 @@
 GenericEntity : "{43497A18DD888667}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_base.et" {
  ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       TurnOffsetData RecoilData "{58789524E0951484}" {
+        "Base Recoil Scale" 4.3
+       }
+      }
+     }
+    }
+   }
+  }
+ }
 }

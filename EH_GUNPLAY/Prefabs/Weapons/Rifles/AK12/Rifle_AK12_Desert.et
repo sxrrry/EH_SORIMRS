@@ -6,17 +6,22 @@ GenericEntity : "{923D948AB0D57A50}Prefabs/Weapons/Rifles/AK74/Rifle_AK74_long_b
     MuzzleComponent "{CA6BE4D6B867541F}" {
      WeaponAimModifiers {
       RecoilWeaponAimModifier "{55349E9229B55D9A}" {
+       LinearData RecoilData "{58789524E765774D}" {
+        "Curve Magnitudes" 1 1 1
+       }
        AngularData RecoilData "{58789524E7CAB55F}" {
         "Curve X" +{
         }
+        "Curve Magnitudes" 1 1 1
         "Curve Mins" -2 2 1
         "Curve Maxs" 2 3 1
         "Base Recoil Scale" 2
        }
        TurnOffsetData RecoilData "{58789524E0951484}" {
-        "Curve Mins" -6 4.5 0
-        "Curve Maxs" 6 6 0
-        "Base Recoil Scale" 2
+        "Curve Magnitudes" 1 1 0
+        "Curve Mins" -4 4.5 0
+        "Curve Maxs" 4 6 0
+        "Base Recoil Scale" 4
        }
       }
      }

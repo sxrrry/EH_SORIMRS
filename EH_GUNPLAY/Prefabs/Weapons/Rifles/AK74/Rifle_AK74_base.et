@@ -14,10 +14,12 @@ GenericEntity : "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et" {
         }
         "Curve Mins" -2 2 1
         "Curve Maxs" 2 3 1
+        "Base Recoil Scale" 2
        }
        TurnOffsetData RecoilData "{58789524E0951484}" {
-        "Curve Mins" -6 4.5 0
-        "Curve Maxs" 6 6 0
+        "Curve Mins" -4 4.5 0
+        "Curve Maxs" 4 6 0
+        "Base Recoil Scale" 4
        }
       }
      }

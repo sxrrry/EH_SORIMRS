@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{01E6B9D33CE5608F}Prefabs/Weapons/Attachments/Muzzle/ARY_FlashHider_AKM/ARY_FlashHider_AKM_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

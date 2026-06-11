@@ -7,10 +7,10 @@ GenericEntity : "{4B5BB86FFAC9FE27}Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKM_
      WeaponAimModifiers {
       RecoilWeaponAimModifier "{669EFCE3E3E6E1BC}" {
        AngularData RecoilData "{669EFCE3E3E6E1B1}" {
-        "Base Recoil Scale" 3.5
+        "Base Recoil Scale" 2
        }
        TurnOffsetData RecoilData "{669EFCE3E3E6E1B7}" {
-        "Base Recoil Scale" 3.5
+        "Base Recoil Scale" 4
        }
       }
      }

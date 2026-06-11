@@ -1,0 +1,16 @@
+GenericEntity : "{5E3F62F66878C9B8}Prefabs/Weapons/Core/FlashHider_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  InventoryItemComponent "{52627A1F45CD4EB6}" {
+   Attributes SCR_ItemAttributeCollection "{52627A1EBB0698FD}" {
+    CustomAttributes {
+     SCR_WeaponAttachmentSuppressorAttributes "{5284D858FFF9BE66}" {
+      m_vLinearFactors 0.75 1 1
+      m_vAngularFactors 0.75 1 1
+      m_vTurnFactors 0.75 1 1
+     }
+    }
+   }
+  }
+ }
+}

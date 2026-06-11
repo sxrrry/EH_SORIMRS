@@ -1,0 +1,5 @@
+MatPBRBasic : "{264CD2391C9F70D5}Assets/Weapons/Attachments/Optics/_SharedMaterials/collimator_base.emat" {
+ Color 1 1 1 1
+ Emissive 1 0.004 0.004 1
+ EmissiveLV 14.14
+}

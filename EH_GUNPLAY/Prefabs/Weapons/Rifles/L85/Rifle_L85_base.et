@@ -6,17 +6,47 @@ GenericEntity : "{911D6C8DC7BA2D63}Prefabs/Weapons/Core/Rifle_Base.et" {
     MuzzleComponent "{CA6BE4D6B867541F}" {
      WeaponAimModifiers {
       RecoilWeaponAimModifier "{5D9F3AF79EC9FB26}" {
+       LinearData RecoilData "{58789524F404F395}" {
+        "Curve X" {
+         0 0.5 0.034 0.553 0.051 0.905 0.203 0.641 0.301 0.518 1 0.5
+        }
+        "Curve Y" {
+         0 0.5 0.032 0.55 0.045 0.75 0.071 0.65 0.095 0.5 0.261 0.5 1 0.5
+        }
+        "Curve Z" {
+         0 0.5 0.008 0.809 0.026 0.997 0.032 0.944 0.046 0.948 0.081 0.62 0.177 0.512 0.436 0.5 1 0.5
+        }
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" -0.001 -0.001 -0.022
+        "Curve Maxs" 0 -0.001 -0.018
+       }
        AngularData RecoilData "{5D9F3AF79EC9FBDB}" {
         "Curve X" {
          0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
         }
+        "Curve Y" {
+         0 0.5 0.038 0.796 0.093 1 0.222 0.765 0.349 0.571 0.529 0.508 1 0.5
+        }
+        "Curve Z" {
+         0 0.5 0.033 0.641 0.049 0.892 0.095 0.7 0.238 0.487 0.443 0.5 0.7 0.5 1 0.5
+        }
+        "Curve Time Scale" 1.25
+        "Curve Magnitudes" 1 1 1
         "Curve Mins" -2 2 1
         "Curve Maxs" 2 3 1
-        "Base Recoil Scale" 2
+        "Base Recoil Scale" 1.9
        }
        TurnOffsetData RecoilData "{5D9F3AF79EC9FBDA}" {
-        "Curve Mins" -6 4.5 0
-        "Curve Maxs" 6 6 0
+        "Curve X" {
+         0 0.5 0.06 1 0.093 0.752 0.116 0.539 0.148 0.502 1 0.5
+        }
+        "Curve Y" {
+         0.031 0.998 0.105 0.576 0.236 0.5 1 0.5
+        }
+        "Curve Magnitudes" 1 1 0
+        "Curve Mins" -4 4.5 0
+        "Curve Maxs" 4 6 0
+        "Base Recoil Scale" 3.8
        }
       }
      }
