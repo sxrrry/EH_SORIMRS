@@ -7,8 +7,31 @@ GenericEntity : "{4B5BB86FFAC9FE27}Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKM_
      WeaponAimModifiers {
       RecoilWeaponAimModifier "{669EFCE3E3E6E1BC}" {
        AngularData RecoilData "{587895243A80771D}" {
+        "Curve X" {
+         0 0.5 0.101 0.255 0.226 0.6 0.403 0.454 0.598 0.531 0.796 0.5 1 0.5
+        }
+        "Curve Y" {
+         0 0.5 0.038 0.796 0.093 1 0.222 0.765 0.349 0.571 0.529 0.508 1 0.5
+        }
+        "Curve Z" {
+         0 0.5 0.033 0.641 0.049 0.892 0.095 0.7 0.238 0.487 0.443 0.5 0.7 0.5 1 0.5
+        }
+        "Curve Time Scale" 1.25
+        "Curve Magnitudes" 1 1 1
+        "Curve Mins" -2 2 1
+        "Curve Maxs" 2 3 1
        }
        TurnOffsetData RecoilData "{587895243B6FE433}" {
+        "Curve X" {
+         0 0.5 0.025 0.75 0.06 1 0.094 0.75 0.116 0.539 0.148 0.502 1 0.5
+        }
+        "Curve Y" {
+         0.031 0.998 0.105 0.576 0.236 0.5 1 0.5
+        }
+        "Curve Magnitudes" 1 1 0
+        "Curve Mins" -4 4.5 0
+        "Curve Maxs" 4 6 0
+        "Base Recoil Scale" 5
        }
       }
      }
