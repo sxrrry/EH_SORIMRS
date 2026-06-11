@@ -1,3 +1,19 @@
 GenericEntity : "{4B5BB86FFAC9FE27}Prefabs/Weapons/Rifles/ARY_AKM/ARY_Rifle_AKM_base.et" {
  ID "CFBAA4B725411E45"
+ components {
+  WeaponComponent "{CFBAA4B706BA66E8}" {
+   components {
+    MuzzleComponent "{CA6BE4D6B867541F}" {
+     WeaponAimModifiers {
+      RecoilWeaponAimModifier "{669EFCE3E3E6E1BC}" {
+       AngularData RecoilData "{587895243A80771D}" {
+       }
+       TurnOffsetData RecoilData "{587895243B6FE433}" {
+       }
+      }
+     }
+    }
+   }
+  }
+ }
 }
