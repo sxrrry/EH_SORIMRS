@@ -1,0 +1,53 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ {
+  FrameWidgetClass "{69A2FB31FCFE2164}" {
+   Name "StaminaBarWrapper"
+   Slot FrameWidgetSlot "{69A2FB31FCFE217D}" {
+    Anchor 0.5 1 0.5 1
+    PositionX -50
+    OffsetLeft -50
+    PositionY -30
+    OffsetTop -30
+    SizeX 100
+    OffsetRight -50
+    SizeY 30
+    OffsetBottom 0
+   }
+   {
+    TextWidgetClass "{69A2FB3191464A16}" {
+     Name "m_wTDbgStamina"
+     Slot FrameWidgetSlot "{69A2FB31914655F8}" {
+      Anchor 0.5 0.5 0.5 0.5
+      PositionX -162
+      OffsetLeft -162
+      PositionY -31
+      OffsetTop -31
+      SizeX 328
+      OffsetRight -166
+      SizeY 14
+      OffsetBottom 17
+     }
+     Text "stamina"
+     "Font Size" 10
+     "Min Font Size" 10
+    }
+    ProgressBarWidgetClass "{69A2F0E6F96A0D62}" {
+     Name "m_wPBHandsStamina"
+     Slot FrameWidgetSlot "{69A2F0E6F96A0D4D}" {
+      Anchor 0.5 0.5 0.5 0.5
+      PositionX -168
+      OffsetLeft -168
+      PositionY -17
+      OffsetTop -17
+      SizeX 336
+      OffsetRight -168
+      SizeY 8
+      OffsetBottom 9
+     }
+     style SimpleOutline
+    }
+   }
+  }
+ }
+}

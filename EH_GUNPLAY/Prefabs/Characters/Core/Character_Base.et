@@ -4,6 +4,8 @@ SCR_ChimeraCharacter {
   SCR_CharacterControllerComponent "{520EA1D2F659CEA5}" {
    LeanSpeed 3
   }
+  SRGP_HandsStaminaCharacterComponent "{69A2FB37880C136B}" {
+  }
   SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
    components {
     SCR_CharacterCommandHandlerComponent "{520EA1D2F659C99A}" {

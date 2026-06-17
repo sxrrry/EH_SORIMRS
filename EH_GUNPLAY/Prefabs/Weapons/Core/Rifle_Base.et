@@ -32,6 +32,9 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        "Linear Inertia Decay Speed" 4
        "Angular Inertia Decay Speed" 5
       }
+      SRGP_HandsStaminaWeaponAimModifier "{69A35ABE30C5EE63}" {
+       Name "SR Stam"
+      }
      }
     }
    }
