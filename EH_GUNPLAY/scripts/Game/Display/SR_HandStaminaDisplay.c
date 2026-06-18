@@ -41,13 +41,18 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		m_wPBHandsStamina.SetCurrent(m_fCurrentStamina);
 		m_wTDbgStamina.SetText(m_fCurrentStamina.ToString());
 		
-		if (m_fCurrentStamina < 30)
-			m_wPBHandsStamina.SetColor(Color.Red);
-		else if (m_fCurrentStamina >= 30 && m_fCurrentStamina < 60)
-			m_wPBHandsStamina.SetColor(Color.Yellow);
-		else if (m_fCurrentStamina >= 60)
-			m_wPBHandsStamina.SetColor(Color.White);
+		//--------------------------------------------------------------------------
+		// Color
 		
+		if (m_fCurrentStamina < 30)
+			AnimateWidget.Color(m_wPBHandsStamina, Color.Red, 1);
+		else if (m_fCurrentStamina >= 30 && m_fCurrentStamina < 60)
+			AnimateWidget.Color(m_wPBHandsStamina, Color.Yellow, 1);
+		else if (m_fCurrentStamina >= 60)
+			AnimateWidget.Color(m_wPBHandsStamina, Color.White, 1);
+		
+		//--------------------------------------------------------------------------
+		// Fadeout management
 		if(HSCC.SRGP_IsInADS(player))
 		{
 			m_bIsShown = true;
@@ -87,9 +92,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 			}
 		}
 		
-		
 		widget.SetOpacity(m_fAlpha);
 		
 	}
-
 }

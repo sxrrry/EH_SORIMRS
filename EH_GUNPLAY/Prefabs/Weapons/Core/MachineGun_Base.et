@@ -21,7 +21,7 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        "Angular Damping" 25 15 18
        "ADS Multiplier" 0.5
        "Focus Multiplier" 0.35
-       "Stamina Scale Mins" 0.7 0.8 0
+       "Stamina Scale Mins" 0.5 0.65 0
        "Stamina Scale Maxs" 2 2.5 2
        "Linear Inertia Magnitude" 0.01 0.02 0.02
        "Angular Inertia Magnitude ADS" 25 20 35

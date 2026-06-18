@@ -16,6 +16,9 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        "Linear Inertia Decay Speed" 1
        "Angular Inertia Decay Speed" 1
       }
+      SRGP_HandsStaminaWeaponAimModifier "{69A4CEFBA25F27C8}" {
+       Name "SR Sway"
+      }
      }
     }
    }

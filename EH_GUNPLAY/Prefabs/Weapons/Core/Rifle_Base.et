@@ -24,7 +24,7 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
       SwayWeaponAimModifier "{521AE9A27BDC1E6F}" {
        "ADS Multiplier" 0.5
        "Focus Multiplier" 0.35
-       "Stamina Scale Mins" 0.5 0.6 0
+       "Stamina Scale Mins" 0.3 0.4 0
        "Stamina Scale Maxs" 1.8 2.2 2
        "Linear Inertia Magnitude" 0.009 0.02 0.02
        "Angular Inertia Magnitude" 10 7 14

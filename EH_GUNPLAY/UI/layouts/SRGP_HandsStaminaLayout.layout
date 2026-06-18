@@ -28,6 +28,7 @@ FrameWidgetClass {
       SizeY 14
       OffsetBottom 17
      }
+     "Is Visible" 0
      Text "stamina"
      "Font Size" 10
      "Min Font Size" 10
@@ -42,8 +43,8 @@ FrameWidgetClass {
       OffsetTop -17
       SizeX 336
       OffsetRight -168
-      SizeY 8
-      OffsetBottom 9
+      SizeY 6
+      OffsetBottom 11
      }
      style SimpleOutline
     }

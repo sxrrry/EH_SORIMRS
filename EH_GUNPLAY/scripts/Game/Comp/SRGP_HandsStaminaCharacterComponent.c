@@ -43,6 +43,11 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		return m_fHandsStamina;
 	}
 	
+	void SetStamina(float handsStamina)
+	{
+		m_fHandsStamina = handsStamina;
+	}
+	
 	protected float RegenTick(IEntity owner, float stamina)
 	{
 		float weight = SRGP_GetWeaponWeight(owner);
