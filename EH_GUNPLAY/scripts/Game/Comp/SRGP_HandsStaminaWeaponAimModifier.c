@@ -5,6 +5,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	int deploymentState = 0;
 	float deploymentFactor = 1;
 	const int STAMINA_TO_START = 90;
+	const float OVERALL_TREMOR_MULT = 0.5;
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
@@ -26,9 +27,9 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 			return;
 		}
 		else if (stance == 1)
-			stanceFactor == 0.5;
+			stanceFactor = 0.5;
 		else if (stanceFactor < 1)
-			stanceFactor == 1;
+			stanceFactor = 1;
 		
 		deploymentState = HSCC.SRGP_IsWeaponDeployed(player);
 		
@@ -57,30 +58,37 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	
 	protected void CalculateTremor(float stamina, out vector turnOffset)
 	{
-		
 		float t = GetGame().GetWorld().GetWorldTime() * 0.001;
-
-		float staminaFactor = 1.0 - (stamina / STAMINA_TO_START);
+	    float staminaFactor = 1.0 - Math.InverseLerp(0, STAMINA_TO_START, stamina);
 		
-		float freq = 1.5 + staminaFactor * 1;
-		//PrintFormat("STM:%1 | STF:%2 | FRQ:%3", stamina, staminaFactor, freq);
+		float freqX = 2 + staminaFactor * 1.6;
+		float freqY = 2 + staminaFactor * 3;
 		
-		turnOffset[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
-		turnOffset[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
+		float noiseX = Math.PerlinNoise(t + freqX) * 5;
+		float noiseY = Math.PerlinNoise(t + freqY) * 5;
+	   
+		Print(stanceFactor);
+		
+	    turnOffset[0] = noiseX * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
+	    turnOffset[1] = noiseY * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
+		
+		//PrintFormat("TO=%1|NO=%2|SF=%3|ST=%4", turnOffset[0], noiseX, staminaFactor, stamina);
 
 	}
 	
 	protected void CalculateRotation(float stamina, out vector rotation)
 	{
-		
 		float t = GetGame().GetWorld().GetWorldTime() * 0.001;
-
-		float staminaFactor = 1.0 - (stamina / STAMINA_TO_START);
+    
+	    float staminaFactor = 1.0 - Math.InverseLerp(0, STAMINA_TO_START, stamina);
+	    
+		float freqX = 2 + staminaFactor * 1.6;
+		float freqY = 2 + staminaFactor * 3;
 		
-		float freq = 1.5 + staminaFactor * 1;
-		
-		rotation[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
-		rotation[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
-
+		float noiseX = Math.PerlinNoise(t + freqX) * 5;
+		float noiseY = Math.PerlinNoise(t + freqY) * 5;
+	    
+	    rotation[0] = noiseX * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
+	    rotation[1] = noiseY * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
 	}
 }

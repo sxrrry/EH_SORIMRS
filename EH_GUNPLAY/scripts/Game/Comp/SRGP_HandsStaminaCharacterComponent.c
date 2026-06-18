@@ -50,8 +50,6 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		ECurveType.CurveProperty2D,
 		weight,
 		m_cWeaponWeightRegenCurve)[1];
-		Print(weight);
-		Print(weightFactor);
 		
 		if (SRGP_GetStance(owner) == 0)
 			stamina += m_fHSRegen * weightFactor;
@@ -72,8 +70,6 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		ECurveType.CurveProperty2D,
 		weight,
 		m_cWeaponWeightDrainCurve)[1];
-		Print(weight);
-		Print(weightFactor);
 		
 		if (SRGP_GetStance(owner) == 0)
 			stamina -= m_fHSDrain * weightFactor;
