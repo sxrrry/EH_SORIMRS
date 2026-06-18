@@ -66,8 +66,6 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		
 		float noiseX = Math.PerlinNoise(t + freqX) * 5;
 		float noiseY = Math.PerlinNoise(t + freqY) * 5;
-	   
-		Print(stanceFactor);
 		
 	    turnOffset[0] = noiseX * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
 	    turnOffset[1] = noiseY * staminaFactor * stanceFactor * deploymentFactor * OVERALL_TREMOR_MULT;
