@@ -1,6 +1,9 @@
 class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 {
+	
 	float stanceFactor = 1; // def 1
+	int deploymentState = 0;
+	float deploymentFactor = 1;
 	const int STAMINA_TO_START = 90;
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
@@ -27,6 +30,22 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor == 1;
 		
+		deploymentState = HSCC.SRGP_IsWeaponDeployed(player);
+		
+		switch (deploymentState)
+		{
+			case 1:
+				deploymentFactor = 0.5;
+				break;
+			case 2:
+				deploymentFactor = 0.2;
+				break;
+			default:
+				deploymentFactor = 1;
+				break;
+		}
+		
+		
 		if (HSCC.GetStamina() < 90 && HSCC.SRGP_IsInADS(player))
 		{
 			CalculateTremor(HSCC.GetStamina(), turnOffset);
@@ -46,8 +65,8 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		float freq = 1.5 + staminaFactor * 1;
 		//PrintFormat("STM:%1 | STF:%2 | FRQ:%3", stamina, staminaFactor, freq);
 		
-		turnOffset[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor;
-		turnOffset[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor;
+		turnOffset[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
+		turnOffset[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
 
 	}
 	
@@ -60,8 +79,8 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		
 		float freq = 1.5 + staminaFactor * 1;
 		
-		rotation[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor;
-		rotation[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor;
+		rotation[0] = Math.PerlinNoise(t * freq + 10.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
+		rotation[1] = Math.PerlinNoise(t * freq + 100.0, -5, 5) * staminaFactor * stanceFactor * deploymentFactor;
 
 	}
 }
