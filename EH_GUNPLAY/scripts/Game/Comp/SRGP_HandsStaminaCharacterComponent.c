@@ -7,6 +7,8 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 	protected IEntity m_Owner;
 	
 	protected float m_fHandsStamina;
+	protected float m_fHandsStaminaDebuff;
+	protected float m_fHandsStaminaMax;
 	protected float m_fWeaponWeight;
 	
 	[Attribute("0.1", uiwidget: UIWidgets.Auto, desc: "Drain rate on fixed frame", params: "0 1")]
@@ -21,11 +23,20 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 	[Attribute("0 2 20 0.2", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina regen", category: "Settings", params: "20 2 0 0")]
 	protected ref Curve m_cWeaponWeightRegenCurve;
 
+	[Attribute("0 0 2 50", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina regen", category: "Settings", params: "2 100 0 0")]
+	protected ref Curve m_cArmsDamageDebuff;
+	
+	SCR_CharacterDamageManagerComponent m_dmgManagerComponent;
+	protected int m_iDmgCheckTickPeriod = 300;
+	
+	
 	override void OnPostInit(IEntity owner)
 	{
 		m_Owner = owner;
 		m_fHandsStamina = 100;
+		m_dmgManagerComponent = SCR_CharacterDamageManagerComponent.Cast(owner.FindComponent(SCR_CharacterDamageManagerComponent));
 		SetEventMask(owner, EntityEvent.FIXEDFRAME);
+		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, m_iDmgCheckTickPeriod, true);
 	}
 	
 	override void EOnFixedFrame(IEntity owner, float timeSlice)
@@ -34,19 +45,12 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		{
 			m_fHandsStamina = DrainTick(owner, m_fHandsStamina);
 		}
-		else if ((!SRGP_IsInADS(owner) && m_fHandsStamina < 100) || SRGP_GetStance(owner) == 2 || SRGP_IsWeaponDeployed(owner) >= 1)
+		else if ((!SRGP_IsInADS(owner) && m_fHandsStamina < 100) || SRGP_GetStance(owner) == 2 || SRGP_IsWeaponDeployed(owner) >= 1 && m_fHandsStamina < m_fHandsStaminaMax)
 			m_fHandsStamina = RegenTick(owner, m_fHandsStamina);
 	}
 	
-	float GetStamina()
-	{
-		return m_fHandsStamina;
-	}
-	
-	void SetStamina(float handsStamina)
-	{
-		m_fHandsStamina = handsStamina;
-	}
+	float GetStamina() { return m_fHandsStamina; }
+	void SetStamina(float handsStamina) { m_fHandsStamina = handsStamina; }
 	
 	protected float RegenTick(IEntity owner, float stamina)
 	{
@@ -65,6 +69,8 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		stamina = Math.Round(stamina * Math.Pow(10, 3)) / Math.Pow(10, 3);
 		if (stamina > 100)
 			stamina = 100;
+		if (stamina > m_fHandsStaminaMax)
+			stamina = m_fHandsStaminaMax;
 		return stamina;
 	}
 	
@@ -135,6 +141,20 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
     	}
 		// in case if something went wrong, but weapon in hands :)
 		return 3;
+	}
+	
+	void SRGP_SetStaminaDebuff()
+	{
+		float aimDamage = m_dmgManagerComponent.GetAimingDamage();
+		float aimDamageFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		aimDamage,
+		m_cArmsDamageDebuff)[1];
+		
+		m_fHandsStaminaMax = 100 - aimDamageFactor;
+		
+		if (m_fHandsStamina > m_fHandsStaminaMax)
+			m_fHandsStamina = m_fHandsStaminaMax;
 	}
 	
 }
