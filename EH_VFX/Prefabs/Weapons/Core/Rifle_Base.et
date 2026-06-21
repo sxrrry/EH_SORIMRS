@@ -23,6 +23,12 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        ResetOnFire 0
       }
      }
+     WeaponAimModifiers {
+      SRGP_HandsStaminaWeaponAimModifier "{69A35ABE30C5EE63}" {
+      }
+      SRGP_HandsStaminaWeaponMicroTremorAimModifier "{69A87E8B84032610}" {
+      }
+     }
     }
    }
   }

@@ -2,6 +2,8 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 {
 	[Attribute("{1FC52263BDF15CFB}UI/layouts/SRGP_HandsStaminaLayout.layout")]
 	protected string m_sHandStaminaDisplayLayout;
+	[Attribute("0 0 100 1", uiwidget: UIWidgets.CurveDialog, desc: "Relation of stamina to indicator alpha", category: "Settings", params: "100 1 0 0")]
+	protected ref Curve m_cStaminaToAlpha;
 	
 	float m_fAlpha = 0;		// opacity
 	float m_fCurrentStamina; // current hands stamina
@@ -44,9 +46,9 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		//--------------------------------------------------------------------------
 		// Color
 		
-		if (m_fCurrentStamina < 30)
+		if (m_fCurrentStamina < 15)
 			AnimateWidget.Color(m_wPBHandsStamina, Color.Red, 1);
-		else if (m_fCurrentStamina >= 30 && m_fCurrentStamina < 60)
+		else if (m_fCurrentStamina >= 15 && m_fCurrentStamina < 60)
 			AnimateWidget.Color(m_wPBHandsStamina, Color.Yellow, 1);
 		else if (m_fCurrentStamina >= 60)
 			AnimateWidget.Color(m_wPBHandsStamina, Color.White, 1);
@@ -85,10 +87,14 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		}
 		else
 		{
-			m_fAlpha = Math.Lerp(m_fAlpha, 0.5, fadeSpeed * timeSlice);
-			if (m_fAlpha > 0.99)
+			float maxAlpha = LegacyCurve.Curve(
+			ECurveType.CurveProperty2D,
+			m_fCurrentStamina,
+			m_cStaminaToAlpha)[1];
+			m_fAlpha = Math.Lerp(m_fAlpha, maxAlpha, fadeSpeed * timeSlice);
+			if (m_fAlpha > maxAlpha)
 			{
-				m_fAlpha = 1;
+				m_fAlpha = maxAlpha;
 			}
 		}
 		

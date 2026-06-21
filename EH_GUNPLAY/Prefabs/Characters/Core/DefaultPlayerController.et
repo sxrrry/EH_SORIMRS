@@ -9,6 +9,10 @@ SCR_PlayerController {
      VisibleAtParent 1
      m_LayoutPath "{1FC52263BDF15CFB}UI/layouts/SRGP_HandsStaminaLayout.layout"
      m_eLayer HIGH
+     m_eShow 7
+     m_cStaminaToAlpha {
+      0 0.4 0.399 0.1 0.8 0
+     }
     }
    }
   }

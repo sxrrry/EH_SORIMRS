@@ -17,7 +17,23 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        "Angular Inertia Decay Speed" 1
       }
       SRGP_HandsStaminaWeaponAimModifier "{69A4CEFBA25F27C8}" {
-       Name "SR Sway"
+       Name "SR Tremor"
+       m_fOverallTremorMult 0.3
+       m_fCrouchMultiplier 0.35
+       m_cTremorOnStamina {
+        0 1 0.118 0.598 0.239 0.351 0.437 0.15 0.8 0 1 0
+       }
+      }
+      SRGP_HandsStaminaWeaponMicroTremorAimModifier "{69A8821A4E46864E}" {
+       Name "SR Microtremor"
+       m_fOverallTremorMult 0.1
+       m_fCrouchMultiplier 0.4
+       m_cTremorOnStamina {
+        0 1 0.118 0.598 0.239 0.351 0.437 0.15 0.8 0 1 0
+       }
+       m_cTremorOnWeaponWeight {
+        0 0.332 0.252 0.256 0.5 0.139 0.647 0.04 1 0
+       }
       }
      }
     }

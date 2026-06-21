@@ -37,14 +37,14 @@ FrameWidgetClass {
      Name "m_wPBHandsStamina"
      Slot FrameWidgetSlot "{69A2F0E6F96A0D4D}" {
       Anchor 0.5 0.5 0.5 0.5
-      PositionX -168
-      OffsetLeft -168
-      PositionY -17
-      OffsetTop -17
-      SizeX 336
-      OffsetRight -168
+      PositionX -100
+      OffsetLeft -100
+      PositionY -7
+      OffsetTop -7
+      SizeX 200
+      OffsetRight -100
       SizeY 6
-      OffsetBottom 11
+      OffsetBottom 1
      }
      style SimpleOutline
     }
