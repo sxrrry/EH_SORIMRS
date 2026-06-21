@@ -1,0 +1,20 @@
+SCR_PlayerController {
+ ID "1A9BA6BEFA06E3B1"
+ components {
+  SCR_HUDManagerComponent "{2FDC275D9EBCDB8B}" {
+   InfoDisplays {
+    SCR_ScreenEffectsManager "{5AF2CE6B10209B7D}" {
+    }
+    SR_HandStaminaDisplay "{69A2F0E78D04CDFE}" {
+     VisibleAtParent 1
+     m_LayoutPath "{1FC52263BDF15CFB}UI/layouts/SRGP_HandsStaminaLayout.layout"
+     m_eLayer HIGH
+     m_eShow 7
+     m_cStaminaToAlpha {
+      0 0.4 0.399 0.1 0.8 0
+     }
+    }
+   }
+  }
+ }
+}

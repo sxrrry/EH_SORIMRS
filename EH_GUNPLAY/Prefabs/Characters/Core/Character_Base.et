@@ -4,6 +4,14 @@ SCR_ChimeraCharacter {
   SCR_CharacterControllerComponent "{520EA1D2F659CEA5}" {
    LeanSpeed 3
   }
+  SRGP_HandsStaminaCharacterComponent "{69A2FB37880C136B}" {
+   m_cWeaponWeightDrainCurve {
+    0 0 0.016 0.086 0.295 0.255 0.686 0.542 1 1
+   }
+   m_cWeaponWeightRegenCurve {
+    0 0.813 0.11 0.505 0.4 0.303 1 0.106
+   }
+  }
   SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
    components {
     SCR_CharacterCommandHandlerComponent "{520EA1D2F659C99A}" {
