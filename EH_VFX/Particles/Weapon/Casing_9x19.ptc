@@ -39,7 +39,7 @@ EffectDef {
    RotDampBySliding 0.961
    AnimOnce 1
    RandomFrame 0
-   Lifetime 120
+   Lifetime 60
    Alpha {
     0 0 0.003 0 0.005 1 0.9182 1 1 0
    }

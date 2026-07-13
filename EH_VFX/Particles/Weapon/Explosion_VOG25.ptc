@@ -273,31 +273,6 @@ EffectDef {
    EmittingTime 0.1
    Repeat 0
   }
-  EmitterDef shrapnel_trigger_blast_small {
-   ShapeSize 15 0 15
-   ConeAngle 360 90 360
-   ConeAngleMinDist 80
-   MaxNum 100
-   BirthRate 50000
-   Offset 0 1.5 0
-   Angles 180 0 0
-   LodMin 0
-   LodMax 1
-   ParticleType Prefab
-   Prefab "{B8FEB160B494D12C}Prefabs/Particles/Blasts/Blast_tiny_Invisible_Trigger.et"
-   Velocity 500
-   AirResistance 10.45
-   GravityMultiply 2.361
-   GravityMultiplyRND 10
-   EnableCollisions 1
-   NormalRestitution 0
-   TagentialRestitution 0
-   Friction 0
-   Lifetime 2
-   LifetimeShortening 0
-   EmittingTime 0.1
-   Repeat 0
-  }
   EmitterDef smoke_explosion {
    ShapeSize 10 0 10
    ConeAngle 360 120 0

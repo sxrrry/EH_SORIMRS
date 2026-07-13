@@ -121,7 +121,7 @@ EffectDef {
   }
   EmitterDef sparks {
    ConeAngle 360 60 180
-   MaxNum 30
+   MaxNum 15
    BirthRate 50000
    LodMin 0
    LodMax 1

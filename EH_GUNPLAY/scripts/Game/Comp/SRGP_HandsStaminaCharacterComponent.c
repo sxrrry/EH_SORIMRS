@@ -6,6 +6,8 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 {
 	protected IEntity m_Owner;
 	
+	protected const float MAX_STAMINA = 100;
+	
 	protected float m_fHandsStamina;
 	protected float m_fHandsStaminaDebuff;
 	protected float m_fHandsStaminaMax;
@@ -27,7 +29,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 	protected ref Curve m_cArmsDamageDebuff;
 	
 	SCR_CharacterDamageManagerComponent m_dmgManagerComponent;
-	protected int m_iDmgCheckTickPeriod = 300;
+	protected const int DMG_CHECK_TICK_PERIOD = 1000; // optimal 1000
 	
 	
 	override void OnPostInit(IEntity owner)
@@ -36,7 +38,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		m_fHandsStamina = 100;
 		m_dmgManagerComponent = SCR_CharacterDamageManagerComponent.Cast(owner.FindComponent(SCR_CharacterDamageManagerComponent));
 		SetEventMask(owner, EntityEvent.FIXEDFRAME);
-		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, m_iDmgCheckTickPeriod, true);
+		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, DMG_CHECK_TICK_PERIOD, true);
 	}
 	
 	override void EOnFixedFrame(IEntity owner, float timeSlice)
@@ -51,6 +53,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 	
 	float GetStamina() { return m_fHandsStamina; }
 	void SetStamina(float handsStamina) { m_fHandsStamina = handsStamina; }
+	float GetArmsDamage() { return m_dmgManagerComponent.GetAimingDamage(); }
 	
 	protected float RegenTick(IEntity owner, float stamina)
 	{
@@ -143,6 +146,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		return 3;
 	}
 	
+	
 	void SRGP_SetStaminaDebuff()
 	{
 		float aimDamage = m_dmgManagerComponent.GetAimingDamage();
@@ -151,7 +155,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		aimDamage,
 		m_cArmsDamageDebuff)[1];
 		
-		m_fHandsStaminaMax = 100 - aimDamageFactor;
+		m_fHandsStaminaMax = MAX_STAMINA - aimDamageFactor;
 		
 		if (m_fHandsStamina > m_fHandsStaminaMax)
 			m_fHandsStamina = m_fHandsStaminaMax;

@@ -31,7 +31,13 @@ sealed class SR_StanceTimeout : GameSystem
 
 	private void PreventExploiting()
 	{
-		IEntity player = GetGame().GetPlayerController().GetControlledEntity();
+		ArmaReforgerScripted game = GetGame();
+		if (!game)
+			return;
+		PlayerController pc = game.GetPlayerController();
+		if (!pc)
+			return;
+		IEntity player = pc.GetControlledEntity();
 		if (!player)
 			return;
 		SCR_CharacterControllerComponent characterController = SCR_CharacterControllerComponent.Cast(player.FindComponent(SCR_CharacterControllerComponent));

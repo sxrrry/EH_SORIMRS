@@ -9,6 +9,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 	float m_fCurrentStamina; // current hands stamina
 	float m_fFadeoutTimer = 0;
 	
+	ImageWidget m_wDamagedArmsIcon;
 	TextWidget m_wTDbgStamina;
 	ProgressBarWidget m_wPBHandsStamina;
 	
@@ -47,11 +48,11 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		// Color
 		
 		if (m_fCurrentStamina < 15)
-			AnimateWidget.Color(m_wPBHandsStamina, Color.Red, 1);
+			AnimateWidget.Color(m_wPBHandsStamina, Color.Red, 2);
 		else if (m_fCurrentStamina >= 15 && m_fCurrentStamina < 60)
-			AnimateWidget.Color(m_wPBHandsStamina, Color.Yellow, 1);
+			AnimateWidget.Color(m_wPBHandsStamina, Color.Yellow, 2);
 		else if (m_fCurrentStamina >= 60)
-			AnimateWidget.Color(m_wPBHandsStamina, Color.White, 1);
+			AnimateWidget.Color(m_wPBHandsStamina, Color.White, 2);
 		
 		//--------------------------------------------------------------------------
 		// Fadeout management

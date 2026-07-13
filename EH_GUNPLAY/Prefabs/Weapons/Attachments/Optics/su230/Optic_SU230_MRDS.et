@@ -1,0 +1,14 @@
+GameEntity : "{143130DC9D28C2FC}Prefabs/Weapons/Attachments/Optics/su230/Optic_SU230_base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  SCR_CollimatorSightsComponent "{5DC6A36044106B3B}" {
+   ReticleDefaultAngularSize 0.35
+   ReticleColors {
+    BaseCollimatorReticleColor "{5DC6A3607D619F14}" {
+     ReticleColor 1 0.3236 0.3236 1
+     GlowColor 1 0.0028 0.0103 1
+    }
+   }
+  }
+ }
+}
