@@ -45,19 +45,28 @@ AudioSignalResClass {
    EnableCustomCurve 1
    CustomCurve {
     CurvePoint "1" {
+     X 0
      Y 1
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "2" {
-     X 0.58048
-     Y 0.62722
+     X 0.22165
+     Y 0.63652
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "3" {
-     X 0.78048
-     Y 0.52722
+     X 0.49944
+     Y 0.5249
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "4" {
      X 1
      Y 0.5
+     Shape Linear
+     Modifier 1
     }
    }
   }
@@ -81,19 +90,28 @@ AudioSignalResClass {
    EnableCustomCurve 1
    CustomCurve {
     CurvePoint "1" {
+     X 0
      Y 1
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "2" {
-     X 0.6
-     Y 0.25
+     X 0.23755
+     Y 0.30115
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "3" {
-     X 0.9
+     X 0.53197
      Y 0.03
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "4" {
      X 1
      Y 0.01
+     Shape Linear
+     Modifier 1
     }
    }
   }
@@ -131,19 +149,28 @@ AudioSignalResClass {
    EnableCustomCurve 1
    CustomCurve {
     CurvePoint "1" {
+     X 0
      Y 0.25
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "2" {
      X 0.25
      Y 0.6
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "3" {
      X 0.6
      Y 1
+     Shape Linear
+     Modifier 1
     }
     CurvePoint "4" {
      X 1
      Y 1
+     Shape Linear
+     Modifier 1
     }
    }
   }
@@ -181,74 +208,6 @@ AudioSignalResClass {
    tl 227 477.287
    input 14
   }
- }
- compiled IOPCompiledClass "{692098B96626BDBF}" {
-  visited {
-   261 519 133 263 5 391 262 135 134 7 6
-  }
-  ins {
-   IOPCompiledIn "{692098B96626BD91}" {
-    data {
-     3 3 65539 196611
-    }
-   }
-   IOPCompiledIn "{692098B96626BD9E}" {
-    data {
-     1 131075
-    }
-   }
-   IOPCompiledIn "{692098B96626BD60}" {
-    data {
-     1 262147
-    }
-   }
-  }
-  ops {
-   IOPCompiledOp "{692098B96626BD70}" {
-    data {
-     1 2 2 0 0
-    }
-   }
-   IOPCompiledOp "{692098B96626BD79}" {
-    data {
-     1 65538 4 131073 4 0 0
-    }
-   }
-   IOPCompiledOp "{692098B96626BD41}" {
-    data {
-     1 65539 2 65536 0
-    }
-   }
-   IOPCompiledOp "{692098B96626BD48}" {
-    data {
-     1 131074 4 262145 3 0 0
-    }
-   }
-   IOPCompiledOp "{692098B96626BD53}" {
-    data {
-     1 196611 2 131072 0
-    }
-   }
-  }
-  outs {
-   IOPCompiledOut "{692098B96626BD20}" {
-    data {
-     0
-    }
-   }
-   IOPCompiledOut "{692098B96626BD2A}" {
-    data {
-     0
-    }
-   }
-   IOPCompiledOut "{692098B96626BD2F}" {
-    data {
-     0
-    }
-   }
-  }
-  processed 11
-  version 2
  }
  Input_Order {
   ItemDetailListItemClass TransmissionQuality {

@@ -1,0 +1,14 @@
+Tank : "{BC07885176C7FF8A}Prefabs/Vehicles/Tracked/T-72A/T72A_base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  WCS_Armament_VehicleCameraComponent "{631842D1747055FF}" {
+   m_Cameras {
+    WCS_Armament_VehicleCameraProps "{69E8E7D36F016B6D}" {
+     m_pPosition PointInfo "{69E8E7D3564D621B}" {
+      Offset -0.3128 -0.0125 0.2504
+     }
+    }
+   }
+  }
+ }
+}
