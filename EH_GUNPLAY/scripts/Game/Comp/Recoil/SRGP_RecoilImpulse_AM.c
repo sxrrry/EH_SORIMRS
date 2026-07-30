@@ -1,0 +1,63 @@
+class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
+{
+	const float MAXIMAL_VERTICAL_DEGREES = 10;
+	const float MAXIMAL_VERTICAL_IMPULSE = 100;
+	const float MAXIMAL_HORIZONTAL_DEGREES = 6;
+	const float MAXIMAL_HORIZONTAL_IMPULSE = 100;
+	const float RECOIL_SPEED_MULT = 10;
+	
+	float m_fTotalVerticalImpulse;
+	float m_fCurrentVerticalImpulse;
+	float m_fTotalHorizontalImpulse;
+	float m_fCurrentHorizontalImpulse;
+	
+	private float m_fVerticalVelocity = 0.8;
+	private float m_fHorizontalVelocity = 0.9;
+	
+	float m_fWeaponMass;
+	IEntity m_weaponEnt
+	IEntity m_weaponOwner;
+	SRGP_HandsStaminaCharacterComponent m_HandsStamCharComp;
+	
+	override protected void OnInit(IEntity weaponEnt)
+	{
+		m_weaponEnt = weaponEnt;
+	}
+	
+	override protected void OnActivated(IEntity weaponOwner)
+	{
+		m_weaponOwner = weaponOwner;
+		m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
+	}
+	
+	override void OnWeaponFired()
+	{
+		if (!m_HandsStamCharComp)
+			m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
+		
+		m_fWeaponMass = m_HandsStamCharComp.SRGP_GetWeaponWeight(m_weaponOwner);
+		float m_fWeaponMassFactor = Math.InverseLerp(0, 20, m_fWeaponMass);
+		m_fTotalVerticalImpulse = Math.Lerp(MAXIMAL_VERTICAL_IMPULSE, 0, m_fWeaponMassFactor);
+		m_fTotalHorizontalImpulse = Math.Lerp(MAXIMAL_VERTICAL_IMPULSE, 0, m_fWeaponMassFactor);
+		
+		Print(m_fWeaponMass);
+		Print(m_fWeaponMassFactor);
+		Print(m_fTotalVerticalImpulse);
+	}
+	
+	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
+	{
+		
+		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);
+		m_fTotalHorizontalImpulse = Math.Clamp(m_fTotalHorizontalImpulse, 0, MAXIMAL_HORIZONTAL_DEGREES) * Math.RandomFloat(-1, 1);
+		
+		m_fCurrentVerticalImpulse = Math.SmoothSpring(m_fCurrentVerticalImpulse, m_fTotalVerticalImpulse, m_fVerticalVelocity, 0.9, 0.5, timeSlice * RECOIL_SPEED_MULT);
+		m_fCurrentHorizontalImpulse = Math.SmoothSpring(m_fCurrentHorizontalImpulse, m_fTotalHorizontalImpulse, m_fHorizontalVelocity, 0.9, 0.5, timeSlice * RECOIL_SPEED_MULT);
+		
+		
+		rotation[1] = m_fCurrentVerticalImpulse;
+		rotation[0] = m_fCurrentHorizontalImpulse;
+		m_fTotalHorizontalImpulse = 0;
+		m_fTotalVerticalImpulse = 0;
+	}
+}
