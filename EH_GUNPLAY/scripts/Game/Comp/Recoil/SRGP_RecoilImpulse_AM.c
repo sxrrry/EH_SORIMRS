@@ -129,8 +129,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		translation[0] = m_fCurrentHorizontalImpulse * 0.0015; // decorative side sway
 		translation[2] = m_fCurrentVerticalImpulse * 0.015 * -1; // kick
 		
-		//turnOffset[0] = m_fCurrentHorizontalImpulse;
-		//turnOffset[1] = m_fCurrentVerticalImpulse * -10; // compensate vanilla recoil
+		turnOffset[0] = m_fCurrentHorizontalImpulse * 3;
+		turnOffset[1] = m_fCurrentVerticalImpulse * 3;
 		
 		m_fTotalHorizontalImpulse = 0;
 		m_fTotalVerticalImpulse = 0;
