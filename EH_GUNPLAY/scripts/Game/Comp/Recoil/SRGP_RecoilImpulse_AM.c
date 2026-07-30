@@ -55,7 +55,13 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		float bulletSpeed;
 		
 		if (!m_HandsStamCharComp)
+		{
 			m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
+			
+			if(!m_HandsStamCharComp)
+				return;
+			
+		}
 		
 		if(!m_muzzleComp)
 			return;
