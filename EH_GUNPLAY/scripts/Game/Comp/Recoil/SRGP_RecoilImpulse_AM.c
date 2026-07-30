@@ -7,8 +7,11 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	const float MAXIMAL_VERTICAL_IMPULSE = 100;
 	const float MAXIMAL_HORIZONTAL_DEGREES = 10;
 	const float MAXIMAL_HORIZONTAL_IMPULSE = 100;
-	const float RECOIL_SPEED_MULT = 18;
-	const float RECOIL_POWER = 0.15;
+	const float RECOIL_SPEED_MULT = 16;
+	
+	[Attribute("0.15", uiwidget: UIWidgets.Auto, desc: "Overall recoil * this", category: "Settings", params: "0 100")]
+	float RECOIL_POWER;
+	
 	const float RECOIL_HOR_POWER = 0.5;
 	const float RECOIL_VERT_POWER = 0.5;
 	const float RECOIL_ROLL_POWER = 3;
@@ -17,10 +20,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	
 	float m_fTotalVerticalImpulse;
 	float m_fCurrentVerticalImpulse;
-	float m_fMaxVerticalImpulse;
 	float m_fTotalHorizontalImpulse;
 	float m_fCurrentHorizontalImpulse;
-	float m_fMaxHorizontalImpulse;
 	
 	private float m_fVerticalVelocity = 0.8;
 	private float m_fHorizontalVelocity = 0.9;
@@ -103,7 +104,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
 		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor* RECOIL_HOR_POWER * RECOIL_POWER;
 		
-		PrintFormat("%1|%2|%3", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse);
+		//PrintFormat("%1|%2|%3", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse);
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
