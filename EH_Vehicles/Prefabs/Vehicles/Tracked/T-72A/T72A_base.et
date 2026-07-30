@@ -1,0 +1,61 @@
+Tank : "{8A883ABED22B6E27}Prefabs/Vehicles/Core/Tracked_Base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  SCR_BaseCompartmentManagerComponent "{20FB66C5DCB8DF72}" {
+   CompartmentSlots {
+    PilotCompartmentSlot PilotCompartment {
+     PassengerPositionInfo EntitySlotInfo "{A1CB25848A3D93A8}" {
+      Offset 0 0.2212 -0.0356
+      Angles 16.7393 0 0
+     }
+    }
+   }
+  }
+  WCS_Armament_VehicleCameraComponent "{631842D1747055FF}" {
+   m_Cameras {
+    WCS_Armament_VehicleCameraProps "{69E8E7D36F016B6D}" {
+     m_pPosition PointInfo "{69E8E7D3564D621B}" {
+      PivotID "v_driver_hatch"
+      Offset -0.3128 -0.0586 0.2504
+     }
+     m_bIsInstant 1
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "drivercamera_front"
+    }
+    WCS_Armament_VehicleCameraProps "{69E8E7D2E089B0F0}" {
+     m_pPosition PointInfo "{69E8E7D2E089B071}" {
+      PivotID "v_driver_hatch"
+      Offset -0.2311 -0.007 0.0777
+      Angles 0 15 0
+     }
+     m_bIsInstant 1
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "drivercamera_right"
+    }
+    WCS_Armament_VehicleCameraProps "{69E8E7D2C3D9C2D1}" {
+     m_pPosition PointInfo "{69E8E7D2C3D9C277}" {
+      PivotID "v_driver_hatch"
+      Offset -0.5329 -0.007 0.009
+      Angles 0 -45 0
+     }
+     m_bIsInstant 1
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "drivercamera_left"
+    }
+   }
+  }
+  ActionsManagerComponent "{C97BE5489221AE18}" {
+   additionalActions {
+    WCS_Armament_VehicleCameraAction "{631853506B6F80BD}" {
+     m_sCameraId "drivercamera_front"
+    }
+    WCS_Armament_VehicleCameraAction "{65E548C93611B901}" {
+     m_sCameraId "drivercamera_left"
+    }
+    WCS_Armament_VehicleCameraAction "{65E548C93716252A}" {
+     m_sCameraId "drivercamera_right"
+    }
+   }
+  }
+ }
+}

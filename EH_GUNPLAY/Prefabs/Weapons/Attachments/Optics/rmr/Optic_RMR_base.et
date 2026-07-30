@@ -1,0 +1,14 @@
+GameEntity : "{6AC534A7590A67B5}Prefabs/Weapons/Attachments/Core/Optic_Collimator_Base.et" {
+ ID "4BA426CBAED42A14"
+ components {
+  RHS_CollimatorSightsComponent "{5D0CC83435B55855}" {
+   ReticleDefaultAngularSize 0.1
+   ReticleColors {
+    BaseCollimatorReticleColor "{5DBA61F08E10C488}" {
+     ReticleColor 1 0.3236 0.3236 1
+     GlowColor 1 0.0028 0.0103 1
+    }
+   }
+  }
+ }
+}

@@ -292,7 +292,7 @@ EffectDef {
    ConeAngle 360 0 150
    ConeAngleMinDist 30
    ConeAngleRndRange 30
-   MaxNum 5
+   MaxNum 2
    BirthRate 50
    BirthRateRND 0
    LodMin 0
@@ -343,13 +343,13 @@ EffectDef {
    LodMin 0
    LodMax 1
    Material "{442703F925ADC2EE}Particles/_Materials/Gas/Smoke_Explosion_02_forImpacts.emat"
-   SizeMultiplier 2.5
+   SizeMultiplier 1.3
    SizeRND 1.5
    RotMultiplier 45
    RandomRotDir 1
    VelAngle 0
    RandomAngle 1
-   Velocity 10
+   Velocity 3
    VelocityRND 10
    AirResistance 7.95
    AirResistanceRND 1

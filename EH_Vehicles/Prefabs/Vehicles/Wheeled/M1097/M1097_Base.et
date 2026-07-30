@@ -1,0 +1,12 @@
+Vehicle : "{1F9BB80C3EC3C891}Prefabs/Vehicles/Core/Wheeled_Car_Base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  VehicleWheeledSimulation "{731B26FCA2F19855}" {
+   Simulation Wheeled "{4D8B26DEA5F25978}" {
+    Engine Engine Engine {
+     MaxTorque 515
+    }
+   }
+  }
+ }
+}

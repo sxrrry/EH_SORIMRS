@@ -57,6 +57,7 @@ EffectDef {
   }
   EmitterDef eh_complex_sparks_1 {
    ConeAngle 360 0 180
+   MaxNum 15
    BirthRate 100000
    LodMin 0
    LodMax 1
@@ -330,46 +331,6 @@ EffectDef {
    Lifetime 0.02
    LifetimeRND 0.02
    LifetimeShortening 0
-   EmittingTime 0.1
-   Repeat 0
-  }
-  EmitterDef aluminum_cloud {
-   ShapeType Sphere
-   ShapeSize 0.5 0.5 0.5
-   ConeAngle 360 0 170
-   MaxNum 100
-   BirthRate 2000
-   LodMin 0
-   LodMax 1
-   Material "{2DF4058A4066E031}Particles/_Materials/Fire/Base_Sparks_07.emat"
-   StretchMultiplier 1.01
-   SizeMultiplier 0.01
-   SizeRND 0
-   ScaleX 0.25
-   ScaleY 0.5
-   CenterY 0
-   BillboardingType Full
-   VelAngle 1
-   RandomAngle 0
-   Velocity 25
-   VelocityRND 35
-   AirResistance 20
-   AirResistanceRND 14
-   WindInfluence 0.15
-   GravityMultiply 0.3
-   GravityMultiplyRND 1.944
-   RandomFrame 1
-   Lifetime 0.2
-   LifetimeRND 1.2
-   Color {
-    0 1 1 1 1 1 1 1
-   }
-   Alpha {
-    0 1 0.5754 0.7865 1 0
-   }
-   Emissivity {
-    0 1
-   }
    EmittingTime 0.1
    Repeat 0
   }

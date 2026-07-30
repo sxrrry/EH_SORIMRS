@@ -11,6 +11,9 @@ SCR_ChimeraCharacter {
    m_cWeaponWeightRegenCurve {
     0 0.813 0.11 0.505 0.4 0.303 1 0.106
    }
+   m_cArmsDamageDebuff {
+    0 0 0.25 0.5 0.6 1
+   }
   }
   SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
    components {
