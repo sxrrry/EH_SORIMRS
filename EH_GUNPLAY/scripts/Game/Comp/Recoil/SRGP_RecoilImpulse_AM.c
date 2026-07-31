@@ -131,7 +131,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		rotation[2] = m_fCurrentHorizontalImpulse * RECOIL_ROLL_POWER;
 		
 		translation[0] = m_fCurrentHorizontalImpulse * 0.0015; // decorative side sway
-		translation[2] = Math.Max(m_fCurrentVerticalImpulse * 0.015 * -1, -0.009); // kick
+		translation[2] = Math.Max(m_fCurrentVerticalImpulse * 0.005 * -1, -0.003); // kick
 		
 		turnOffset[0] = m_fCurrentHorizontalImpulse * 3;
 		turnOffset[1] = m_fCurrentVerticalImpulse * 3;
