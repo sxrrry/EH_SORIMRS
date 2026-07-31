@@ -31,6 +31,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	int m_DeploymentState;
 	
 	float m_fWeaponMass;
+	float m_fBulletInitSpeedCoef;
 	float m_fAmmoPower;
 	IEntity m_weaponEnt
 	IEntity m_weaponOwner;
@@ -97,6 +98,9 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		
 		bulletMass = muzzEffComp.GetBulletMass();
 		bulletSpeed = muzzEffComp.GetBulletSpeed();
+		m_fBulletInitSpeedCoef = m_muzzleComp.GetBulletInitSpeedCoef();
+		bulletSpeed *= m_fBulletInitSpeedCoef;
+		
 		float energy = (bulletMass * bulletSpeed * bulletSpeed) / 2; // bullet energy in J
 
 		float energyFactor = Math.InverseLerp(200, 3000, energy);
@@ -110,7 +114,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
 		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor* RECOIL_HOR_POWER * RECOIL_POWER;
 		
-		//PrintFormat("%1|%2|%3", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse);
+		//PrintFormat("%1|%2|%3|%4", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse, m_fBulletInitSpeedCoef);
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
@@ -127,7 +131,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		rotation[2] = m_fCurrentHorizontalImpulse * RECOIL_ROLL_POWER;
 		
 		translation[0] = m_fCurrentHorizontalImpulse * 0.0015; // decorative side sway
-		translation[2] = m_fCurrentVerticalImpulse * 0.015 * -1; // kick
+		translation[2] = Math.Max(m_fCurrentVerticalImpulse * 0.015 * -1, -0.009); // kick
 		
 		turnOffset[0] = m_fCurrentHorizontalImpulse * 3;
 		turnOffset[1] = m_fCurrentVerticalImpulse * 3;
