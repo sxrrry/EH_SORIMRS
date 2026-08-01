@@ -12,9 +12,9 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	[Attribute("0.15", uiwidget: UIWidgets.Auto, desc: "Overall recoil * this", category: "Settings", params: "0 100")]
 	float RECOIL_POWER;
 	
-	const float RECOIL_HOR_POWER = 0.5;
-	const float RECOIL_VERT_POWER = 0.5;
-	const float RECOIL_ROLL_POWER = 3;
+	const float RECOIL_HOR_POWER = 0.7;  // \/
+	const float RECOIL_VERT_POWER = 0.5; // > ~0.5 realistic
+	const float RECOIL_ROLL_POWER = 11; // 0.5 hor = ~15 this - best
 	const float RECOIL_SPRING = 0.8;
 	const float RECOIL_DAMPING = 0.7;
 	
@@ -128,7 +128,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		
 		rotation[1] = m_fCurrentVerticalImpulse;
 		rotation[0] = m_fCurrentHorizontalImpulse;
-		rotation[2] = m_fCurrentHorizontalImpulse * RECOIL_ROLL_POWER;
+		rotation[2] = Math.Min(Math.Max(m_fCurrentHorizontalImpulse * RECOIL_ROLL_POWER, -3), 3);
 		
 		translation[0] = m_fCurrentHorizontalImpulse * 0.0015; // decorative side sway
 		translation[2] = Math.Max(m_fCurrentVerticalImpulse * 0.005 * -1, -0.003); // kick
