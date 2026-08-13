@@ -6,6 +6,18 @@ Vehicle : "{F59ACADCE289DA28}Prefabs/Vehicles/Wheeled/M998/M998_3.et" {
     Engine Engine Engine {
      MaxTorque 515
     }
+    Axles {
+     Axle "{4D8B26DF957A8E1C}" {
+      Suspension Suspension "{4D8B26DFF8859A7B}" {
+       SpringRate 130
+      }
+     }
+     Axle "{4D8B26DF8CF2F3D8}" {
+      Suspension Suspension "{4D8B26DF2B10AE05}" {
+       SpringRate 130
+      }
+     }
+    }
    }
   }
  }

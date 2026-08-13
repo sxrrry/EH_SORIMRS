@@ -37,6 +37,8 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
       }
       SRGP_RecoilImpulse_AM "{69FCC39D8D25E6FC}" {
       }
+      SRGP_ADSSway_AM "{6A12E65D4716B1A9}" {
+      }
      }
     }
    }

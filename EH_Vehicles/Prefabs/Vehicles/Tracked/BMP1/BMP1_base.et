@@ -1,0 +1,134 @@
+Tank : "{8A883ABED22B6E27}Prefabs/Vehicles/Core/Tracked_Base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  WCS_Armament_VehicleCameraComponent "{631B7A0D26FB4A72}" {
+   m_Cameras {
+    WCS_Armament_VehicleCameraProps "{6A027028A592FD82}" {
+     m_pPosition PointInfo "{6A027028A7ACB0DA}" {
+      PivotID "v_driver_idle"
+      Offset 0 0.993 0.4022
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_m01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270289C8D9CFB}" {
+     m_pPosition PointInfo "{6A0270289C8D9C9A}" {
+      PivotID "v_driver_idle"
+      Offset 0.2503 0.9796 0.369
+      Angles 0 33.0626 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_r01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270288F5E51DF}" {
+     m_pPosition PointInfo "{6A0270288F5E5160}" {
+      PivotID "v_driver_idle"
+      Offset -0.2456 0.9796 0.3687
+      Angles 0 -28.6388 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_l01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027028FEEA7571}" {
+     m_pPosition PointInfo "{6A027028FEEA7534}" {
+      PivotID "v_driver_idle"
+      Offset -0.3474 0.9961 0.0943
+      Angles 0 -90 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_l02"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027028311C7AC9}" {
+     m_pPosition PointInfo "{6A027028311C7A65}" {
+      PivotID "v_passenger_idle_L01"
+      Offset 0.3539 0.9228 0.4655
+      Angles 0 53.3988 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_l01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270281258BF98}" {
+     m_pPosition PointInfo "{6A0270281258BF26}" {
+      PivotID "v_passenger_idle_L01"
+      Offset -0.2474 0.9228 0.4135
+      Angles 0 30 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_l02"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027028035ECC79}" {
+     m_pPosition PointInfo "{6A027028035ECC17}" {
+      PivotID "v_passenger_idle_L01"
+      Offset -0.6837 0.9228 0.4111
+      Angles 0 30 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_l03"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270280D3FB68F}" {
+     m_pPosition PointInfo "{6A0270280D3FB649}" {
+      PivotID "v_passenger_idle_L01"
+      Offset -0.9645 0.9228 0.4132
+      Angles 0 30 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_l04"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270284B2F5C11}" {
+     m_pPosition PointInfo "{6A0270284B2F5FA8}" {
+      PivotID "v_passenger_idle_R01"
+      Offset -0.3567 0.9292 0.4712
+      Angles 0 -54.5012 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_r01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027029AD530F1A}" {
+     m_pPosition PointInfo "{6A027029AD530EAA}" {
+      PivotID "v_passenger_idle_R01"
+      Offset 0.2468 0.9292 0.4229
+      Angles 0 -31.4066 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_r02"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270299D53A137}" {
+     m_pPosition PointInfo "{6A0270299D53A095}" {
+      PivotID "v_passenger_idle_R01"
+      Offset 0.673 0.9292 0.4183
+      Angles 0 -30 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_r03"
+    }
+    WCS_Armament_VehicleCameraProps "{6A0270298E416A77}" {
+     m_pPosition PointInfo "{6A0270298E416A3F}" {
+      PivotID "v_passenger_idle_R01"
+      Offset 0.9619 0.9292 0.4261
+      Angles 0 -30 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_r04"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027029E0504554}" {
+     m_pPosition PointInfo "{6A027029E05044EF}" {
+      PivotID "v_rear_hatch_L"
+      Offset 0.5456 0.5138 -0.221
+      Angles 0 180 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_rear_01"
+    }
+    WCS_Armament_VehicleCameraProps "{6A027029359BF8B8}" {
+     m_pPosition PointInfo "{6A027029359BF853}" {
+      PivotID "v_rear_hatch_R"
+      Offset -0.5432 0.5138 -0.221
+      Angles 0 180 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_passenger_rear_02"
+    }
+   }
+  }
+ }
+}

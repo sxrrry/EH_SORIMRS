@@ -47,6 +47,10 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
         0 0.332 0.252 0.256 0.5 0.139 0.647 0.04 1 0
        }
       }
+      SRGP_RecoilImpulse_AM "{6A12F16A93E93EEE}" {
+      }
+      SRGP_ADSSway_AM "{6A12E65CAD4D9FA3}" {
+      }
      }
     }
    }

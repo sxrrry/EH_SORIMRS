@@ -1,27 +1,53 @@
 class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 {
-	[Attribute("0.65", uiwidget: UIWidgets.Auto, desc: "Recoil * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
+	[Attribute("0.65", uiwidget: UIWidgets.Slider, desc: "Recoil * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
 	
 	const float MAXIMAL_VERTICAL_DEGREES = 20;
 	const float MAXIMAL_VERTICAL_IMPULSE = 100;
 	const float MAXIMAL_HORIZONTAL_DEGREES = 10;
 	const float MAXIMAL_HORIZONTAL_IMPULSE = 100;
-	const float RECOIL_SPEED_MULT = 16;
-	
-	[Attribute("0.15", uiwidget: UIWidgets.Auto, desc: "Overall recoil * this", category: "Settings", params: "0 100")]
+
+	[Attribute("0.15", uiwidget: UIWidgets.Slider, desc: "Overall recoil * this", category: "Settings", params: "0 5")]
 	float RECOIL_POWER;
 	
-	const float RECOIL_HOR_POWER = 0.7;  // \/
-	const float RECOIL_VERT_POWER = 0.5; // > ~0.5 realistic
-	const float RECOIL_ROLL_POWER = 11; // 0.5 hor = ~15 this - best
-	const float RECOIL_SPRING = 0.8;
-	const float RECOIL_DAMPING = 0.7;
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
+	float RECOIL_HOR_POWER;  // \/
 	
-	float m_fTotalVerticalImpulse;
-	float m_fCurrentVerticalImpulse;
-	float m_fTotalHorizontalImpulse;
-	float m_fCurrentHorizontalImpulse;
+	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
+	float RECOIL_VERT_POWER; // > ~0.5 realistic
+	
+	[Attribute("11", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
+	float RECOIL_ROLL_POWER; // 0.5 hor = ~15 this - best
+	
+	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 1")]
+	float RECOIL_SPRING;
+	
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 1")]
+	float RECOIL_DAMPING;
+	
+	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How fast all recoil happens...?", category: "Settings", params: "0.1 50")]
+	float RECOIL_SPEED_MULT;
+	
+	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
+	float RECOIL_AIMKICK_VERTICAL;
+	
+	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
+	float RECOIL_AIMKICK_HORIZONTAL;
+	
+	[Attribute("0.0015", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally in hands (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
+	float RECOIL_GUN_SIDEMOVE;
+	
+	[Attribute("0.005", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally into shoulder (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
+	float RECOIL_GUN_SHOULDERKICK;
+	
+	[Attribute("-0.003", uiwidget: UIWidgets.Slider, desc: "Limits gun kick distance by this (so gun wont pierce shoulder)", category: "Settings", params: "-0.5 0")]
+	float RECOIL_GUN_SHOULDERKICK_LIMIT;
+	
+	private float m_fTotalVerticalImpulse;
+	private float m_fCurrentVerticalImpulse;
+	private float m_fTotalHorizontalImpulse;
+	private float m_fCurrentHorizontalImpulse;
 	
 	private float m_fVerticalVelocity = 0.8;
 	private float m_fHorizontalVelocity = 0.9;
@@ -130,11 +156,11 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		rotation[0] = m_fCurrentHorizontalImpulse;
 		rotation[2] = Math.Min(Math.Max(m_fCurrentHorizontalImpulse * RECOIL_ROLL_POWER, -3), 3);
 		
-		translation[0] = m_fCurrentHorizontalImpulse * 0.0015; // decorative side sway
-		translation[2] = Math.Max(m_fCurrentVerticalImpulse * 0.005 * -1, -0.003); // kick
+		translation[0] = m_fCurrentHorizontalImpulse * RECOIL_GUN_SIDEMOVE; // decorative side sway
+		translation[2] = Math.Max(m_fCurrentVerticalImpulse * RECOIL_GUN_SHOULDERKICK * -1, RECOIL_GUN_SHOULDERKICK_LIMIT); // kick
 		
-		turnOffset[0] = m_fCurrentHorizontalImpulse * 3;
-		turnOffset[1] = m_fCurrentVerticalImpulse * 3;
+		turnOffset[0] = m_fCurrentHorizontalImpulse * RECOIL_AIMKICK_HORIZONTAL;
+		turnOffset[1] = m_fCurrentVerticalImpulse * RECOIL_AIMKICK_VERTICAL;
 		
 		m_fTotalHorizontalImpulse = 0;
 		m_fTotalVerticalImpulse = 0;
