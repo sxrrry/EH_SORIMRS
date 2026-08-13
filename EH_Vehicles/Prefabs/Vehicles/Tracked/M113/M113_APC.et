@@ -1,0 +1,89 @@
+Tank : "{F43F9F04A97FC994}Prefabs/Vehicles/Tracked/M113/M113_base.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  WCS_Armament_VehicleCameraComponent "{632343ADE0F553BB}" {
+   m_Cameras {
+    WCS_Armament_VehicleCameraProps "{69FCFBF9559B8B72}" {
+     m_pPosition PointInfo "{69FCFBF958A81C59}" {
+      PivotID "driver_idle"
+      Offset 0.0379 0.9369 0.3535
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_m01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF8B373A5A4}" {
+     m_pPosition PointInfo "{69FCFBF8B373A4E1}" {
+      PivotID "driver_idle"
+      Offset 0.2973 0.9369 0.2554
+      Angles 0 48.9759 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_r01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF8AB1832EC}" {
+     m_pPosition PointInfo "{69FCFBF8AB183284}" {
+      PivotID "driver_idle"
+      Offset -0.2605 0.9369 0.2372
+      Angles 0 -45 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_l01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF89B75731B}" {
+     m_pPosition PointInfo "{69FCFBF89B7572BF}" {
+      PivotID "driver_idle"
+      Offset -0.3974 0.9369 -0.0666
+      Angles 0 -88.1546 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_driver_l02"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF82FD99016}" {
+     m_pPosition PointInfo "{69FCFBF82FD993B1}" {
+      PivotID "commander_idle"
+      Offset 0.0125 1.2594 -1.1278
+      Angles 0 180 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_commander_m01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF800C834FF}" {
+     m_pPosition PointInfo "{69FCFBF800C83495}" {
+      PivotID "commander_idle"
+      Offset 0.3486 1.2615 -0.9164
+      Angles 0 121.025 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_commander_l01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBF85CF017DE}" {
+     m_pPosition PointInfo "{69FCFBF85CF0174A}" {
+      PivotID "commander_idle"
+      Offset 0.3467 1.2615 -0.5241
+      Angles 0 61.9822 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_commander_l02"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBFBB1618848}" {
+     m_pPosition PointInfo "{69FCFBFBB161881F}" {
+      PivotID "commander_idle"
+      Offset -0.3295 1.2594 -0.9233
+      Angles 0 -120 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_commander_r01"
+    }
+    WCS_Armament_VehicleCameraProps "{69FCFBFBBF9B2D82}" {
+     m_pPosition PointInfo "{69FCFBFBBF9B2D57}" {
+      PivotID "commander_idle"
+      Offset -0.3342 1.2594 -0.5301
+      Angles 0 -60 0
+     }
+     m_OverlayLayout "{35C2D6E3BB1E379B}UI/layouts/Editor/Overlays/Vignettes/WCS_Armament_Vignette_Heavy.layout"
+     m_sId "periscope_commander_r02"
+    }
+   }
+  }
+ }
+}

@@ -1,4 +1,22 @@
 Vehicle : "{BB57B86A46E76C65}Prefabs/Vehicles/Wheeled/M1114/M1114_Base.et" {
  ID "BBCBA43A9778AE21"
+ components {
+  VehicleWheeledSimulation "{731B26FCA2F19855}" {
+   Simulation Wheeled "{4D8B26DEA5F25978}" {
+    Axles {
+     Axle "{4D8B26DF957A8E1C}" {
+      Suspension Suspension "{4D8B26DFF8859A7B}" {
+       SpringRate 130
+      }
+     }
+     Axle "{4D8B26DF8CF2F3D8}" {
+      Suspension Suspension "{4D8B26DF2B10AE05}" {
+       SpringRate 130
+      }
+     }
+    }
+   }
+  }
+ }
  coords -5.793 -8.2 -4.58
 }

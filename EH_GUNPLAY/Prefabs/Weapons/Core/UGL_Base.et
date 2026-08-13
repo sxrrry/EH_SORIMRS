@@ -1,0 +1,18 @@
+GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
+ ID "50D6D3D8D7C645EE"
+ components {
+  MuzzleInMagComponent "{B3A264F493CC5A18}" {
+   WeaponAimModifiers {
+    SRGP_HandsStaminaWeaponMicroTremorAimModifier "{69FCC39D986874D1}" {
+    }
+    SRGP_HandsStaminaWeaponAimModifier "{69FCC39D97467B53}" {
+    }
+    SRGP_RecoilImpulse_AM "{69FCC39D97A57400}" {
+     RECOIL_POWER 1
+    }
+    SRGP_ADSSway_AM "{6A12E65C962ACC44}" {
+    }
+   }
+  }
+ }
+}

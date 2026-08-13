@@ -14,6 +14,10 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        ResetOnFire 0
       }
      }
+     WeaponAimModifiers {
+      SRGP_RecoilImpulse_AM "{69FC9626088F08DF}" {
+      }
+     }
     }
    }
   }
