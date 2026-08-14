@@ -2,7 +2,6 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 {
 	IEntity m_weaponEnt
 	IEntity m_weaponOwner;
-	MuzzleComponent m_muzzleComp;
 	SRGP_HandsStaminaCharacterComponent m_HandsStamCharComp;
 	bool m_bWasADSPrev;
 	
@@ -83,7 +82,7 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		if (!m_weaponOwner)
 			return;
 		
-		if (m_HandsStamCharComp.SRGP_IsInADS(m_weaponOwner) && !m_bWasADSPrev)
+		if (SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && !m_bWasADSPrev)
 		{
 			m_fSwayImpulsePower = 0.3;
 			m_fNoiseSeed = Math.RandomFloat(0, 100);
@@ -91,10 +90,10 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 			m_bWasADSPrev = true;
 		}
 		
-		if (!m_HandsStamCharComp.SRGP_IsInADS(m_weaponOwner) && m_bWasADSPrev)
+		if (!SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && m_bWasADSPrev)
 			m_bWasADSPrev = false;
 		
-		int stance = m_HandsStamCharComp.SRGP_GetStance(m_weaponOwner);
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		if (stance == 2)
 		{
 			m_fStanceFactor = m_fCrouchMultiplier * 0.3;
@@ -104,7 +103,7 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		else if (m_fStanceFactor < 1)
 			m_fStanceFactor = 1;
 		
-		m_DeploymentState = m_HandsStamCharComp.SRGP_IsWeaponDeployed(m_weaponOwner);
+		m_DeploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (m_DeploymentState)
 		{

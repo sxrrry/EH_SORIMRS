@@ -6,15 +6,6 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
     SCR_MuzzleInMagComponent "{50F65D04F21F7633}" {
      WeaponAimModifiers {
       SwayWeaponAimModifier "{521AE9A3284CB1B0}" {
-       "Linear Damping" 5 4 2
-       "Angular Damping" 25 15 18
-       "ADS Multiplier" 0.5
-       "Focus Multiplier" 0.35
-       "Stamina Scale Mins" 0.7 0.6 1.5
-       "Stamina Scale Maxs" 4 4 3
-       "Angular Inertia Magnitude ADS" 25 20 35
-       "Linear Inertia Decay Speed" 1
-       "Angular Inertia Decay Speed" 1
       }
       SRGP_HandsStaminaWeaponAimModifier "{69A4CEFBA25F27C8}" {
        Name "SR Tremor"
@@ -36,6 +27,8 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        }
       }
       SRGP_ADSSway_AM "{6A12E65E9BB035C7}" {
+      }
+      SRGP_InertiaSway_AM "{6A1CB49C8335DDC9}" {
       }
      }
     }

@@ -28,7 +28,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		if(!HSCC)
 			return;
 		
-		int stance = HSCC.SRGP_GetStance(player);
+		int stance = SRGP_Utils.SRGP_GetStance(player);
 		
 		if (stance == 2)
 		{
@@ -40,7 +40,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = HSCC.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
 		
 		switch (deploymentState)
 		{
@@ -55,9 +55,9 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		if (HSCC.SRGP_IsInADS(player))
+		if (SRGP_Utils.SRGP_IsInADS(player))
 		{
-			float weight = HSCC.SRGP_GetWeaponWeight(player);
+			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
 			weightFactor = LegacyCurve.Curve(
 			ECurveType.CurveProperty2D,
 			weight,
@@ -66,7 +66,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 			CalculateMicroTremorTurn(HSCC.GetStamina(), turnOffset);
 			CalculateMicroTremorRot(HSCC.GetStamina(), rotation);
 		}
-		else if (!HSCC.SRGP_IsInADS(player))
+		else if (!SRGP_Utils.SRGP_IsInADS(player))
 			turnOffset = vector.Zero;
 	}
 	

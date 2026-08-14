@@ -37,7 +37,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		if (!player)
 			return;
 		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
-		if(!HSCC)
+		if (!HSCC)
 			return;
 		m_fCurrentStamina = HSCC.GetStamina();
 		
@@ -56,7 +56,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		
 		//--------------------------------------------------------------------------
 		// Fadeout management
-		if(HSCC.SRGP_IsInADS(player))
+		if (SRGP_Utils.SRGP_IsInADS(player))
 		{
 			m_bIsShown = true;
 			m_fFadeoutTimer = 0;

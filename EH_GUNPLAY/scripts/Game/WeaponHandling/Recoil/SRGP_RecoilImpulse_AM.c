@@ -62,7 +62,6 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	IEntity m_weaponEnt
 	IEntity m_weaponOwner;
 	MuzzleComponent m_muzzleComp;
-	SRGP_HandsStaminaCharacterComponent m_HandsStamCharComp;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -72,7 +71,6 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	override protected void OnActivated(IEntity weaponOwner)
 	{
 		m_weaponOwner = weaponOwner;
-		m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
 		m_muzzleComp = MuzzleComponent.Cast(m_weaponEnt.FindComponent(MuzzleComponent));
 	}
 	
@@ -81,23 +79,11 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		float bulletMass;
 		float bulletSpeed;
 		
-		if (!m_HandsStamCharComp)
-		{
-			m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
-			
-			if(!m_HandsStamCharComp)
-				return;
-			
-		}
-		
-		if(!m_muzzleComp)
-			return;
-		
 		SCR_MuzzleEffectComponent muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 		if (!muzzEffComp)
 			return;
 		
-		int stance = m_HandsStamCharComp.SRGP_GetStance(m_weaponOwner);
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		if (stance == 2)
 		{
 			m_fStanceFactor = m_fCrouchMultiplier * 0.3;
@@ -107,7 +93,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		else if (m_fStanceFactor < 1)
 			m_fStanceFactor = 1;
 		
-		m_DeploymentState = m_HandsStamCharComp.SRGP_IsWeaponDeployed(m_weaponOwner);
+		m_DeploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (m_DeploymentState)
 		{
@@ -132,7 +118,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		float energyFactor = Math.InverseLerp(200, 3000, energy);
 		m_fAmmoPower = energyFactor;
 		
-		m_fWeaponMass = m_HandsStamCharComp.SRGP_GetWeaponWeight(m_weaponOwner);
+		m_fWeaponMass = SRGP_Utils.SRGP_GetWeaponWeight(m_weaponOwner);
 		float m_fWeaponMassFactor = Math.InverseLerp(20, 0, m_fWeaponMass);
 		m_fWeaponMassFactor = Math.Min(m_fWeaponMassFactor, 1);
 		m_fWeaponMassFactor = Math.Max(m_fWeaponMassFactor, 0.1);

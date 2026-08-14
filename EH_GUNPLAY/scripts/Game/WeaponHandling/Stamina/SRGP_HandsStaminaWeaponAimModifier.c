@@ -26,10 +26,10 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		if (!player)
 			return;
 		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
-		if(!HSCC)
+		if (!HSCC)
 			return;
 		
-		int stance = HSCC.SRGP_GetStance(player);
+		int stance = SRGP_Utils.SRGP_GetStance(player);
 		
 		if (stance == 2)
 		{
@@ -41,7 +41,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = HSCC.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
 		
 		switch (deploymentState)
 		{
@@ -56,9 +56,9 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		if (HSCC.SRGP_IsInADS(player))
+		if (SRGP_Utils.SRGP_IsInADS(player))
 		{
-			float weight = HSCC.SRGP_GetWeaponWeight(player);
+			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
 			float weightFactor = LegacyCurve.Curve(
 			ECurveType.CurveProperty2D,
 			weight,
@@ -67,7 +67,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 			CalculateTurn(HSCC.GetStamina(), turnOffset);
 			CalculateRotation(HSCC.GetStamina(), rotation);
 		}
-		else if (!HSCC.SRGP_IsInADS(player))
+		else if (!SRGP_Utils.SRGP_IsInADS(player))
 			turnOffset = vector.Zero;
 	}
 	
