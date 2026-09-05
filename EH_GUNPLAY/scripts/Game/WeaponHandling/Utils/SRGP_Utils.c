@@ -6,6 +6,15 @@ class SRGP_Utils
 	    if (!cc)
 	        return false;
    		return cc.IsWeaponADS();
+		
+	}
+	
+	static bool SRGP_IsFreeloking(IEntity owner)
+	{
+	    CharacterControllerComponent cc = CharacterControllerComponent.Cast(owner.FindComponent(CharacterControllerComponent));
+	    if (!cc)
+	        return false;
+   		return cc.IsFreeLookEnabled();
 	}
 	
 	static float SRGP_NormalizeAngle(float angle)

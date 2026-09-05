@@ -44,6 +44,9 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("0.2", uiwidget: UIWidgets.Slider, desc: "Lower limit for horizontal sway impulse", category: "Settings", params: "0 1")]
 	float SWAY_MINIMAL_HORIZONTAL;
 	
+	[Attribute("true", uiwidget: UIWidgets.CheckBox, desc: "Enable sway when quit ADSing", category: "Settings")]
+	bool SWAY_ENABLE_OUT;
+	
 	private float m_fSwayImpulsePower;
 	private float m_fTargetSwayImpulse;
 	private float m_fTargetSwayHORImpulse;
@@ -91,7 +94,15 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		}
 		
 		if (!SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && m_bWasADSPrev)
+		{
+			if (SWAY_ENABLE_OUT)
+			{
+				m_fSwayImpulsePower = 0.3;
+				m_fNoiseSeed = Math.RandomFloat(0, 100);
+	    		m_fNoiseSeedHOR = Math.RandomFloat(0, 100);
+			}
 			m_bWasADSPrev = false;
+		}
 		
 		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		if (stance == 2)

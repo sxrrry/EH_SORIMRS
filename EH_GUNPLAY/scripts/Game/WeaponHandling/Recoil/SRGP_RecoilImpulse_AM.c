@@ -79,6 +79,12 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		float bulletMass;
 		float bulletSpeed;
 		
+		if (!m_muzzleComp)
+		{
+			m_muzzleComp = MuzzleComponent.Cast(m_weaponEnt.FindComponent(MuzzleComponent));
+			return;
+		}
+		
 		SCR_MuzzleEffectComponent muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 		if (!muzzEffComp)
 			return;

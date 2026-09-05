@@ -36,7 +36,6 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "Speed of all calculations", category: "Settings", params: "1 50")]
 	float INERTIA_SPEED;
 	
-	
 	IEntity m_weaponEnt;
 	PlayerController m_playerController;
 	PlayerCamera m_playerCamera;
@@ -84,6 +83,9 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 			rotation = vector.Zero;
 			return;
 		}
+		
+		if (SRGP_Utils.SRGP_IsFreeloking(m_weaponOwner))
+			return;
 		
 		m_vCurrentCameraAngles = m_playerCamera.GetYawPitchRoll();
 		
