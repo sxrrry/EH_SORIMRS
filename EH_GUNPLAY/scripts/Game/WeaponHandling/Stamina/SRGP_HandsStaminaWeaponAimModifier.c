@@ -110,29 +110,4 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	    rotation[0] = noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
 	    rotation[1] = noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
 	}
-	
-	
-	/* reduce stamina on shot
-	override protected void OnWeaponFired()
-	{
-		PlayerController pc = GetGame().GetPlayerController();
-		if (!pc)
-			return;
-		SCR_ChimeraCharacter player = SCR_ChimeraCharacter.Cast(pc.GetControlledEntity());
-		if (!player)
-			return;
-		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
-		if(!HSCC)
-			return;
-		
-		float stamina = HSCC.GetStamina();
-		stamina -= 0.2 * HSCC.SRGP_GetWeaponWeight(player);
-		if (stamina < 0)
-			stamina = 0;
-		Print(stamina - (stamina - 0.2 * HSCC.SRGP_GetWeaponWeight(player)));
-		HSCC.SetStamina(stamina);
-		
-	}
-	*/
-	
 }

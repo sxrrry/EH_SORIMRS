@@ -12,28 +12,34 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	float RECOIL_POWER;
 	
 	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_HOR_POWER;  // \/
+	float RECOIL_HOR_POWER;  // ~0.7 real
 	
 	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_VERT_POWER; // > ~0.5 realistic
+	float RECOIL_VERT_POWER; // ~0.5 realistic
 	
 	[Attribute("11", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
-	float RECOIL_ROLL_POWER; // 0.5 hor = ~15 this - best
+	float RECOIL_ROLL_POWER; // 0.5 ver = ~11 this - best
 	
-	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 1")]
-	float RECOIL_SPRING;
+	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
+	float RECOIL_SPRING_VERTICAL; // 0.8
 	
-	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 1")]
-	float RECOIL_DAMPING;
+	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
+	float RECOIL_SPRING_HORIZONTAL; // 0.8
 	
-	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How fast all recoil happens...?", category: "Settings", params: "0.1 50")]
-	float RECOIL_SPEED_MULT;
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 2")]
+	float RECOIL_DAMPING_VERTICAL; // 0.7
+	
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 2")]
+	float RECOIL_DAMPING_HORIZONTAL; // 0.7
+	
+	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "How fast all recoil happens...?", category: "Settings", params: "0.1 50")]
+	float RECOIL_SPEED_MULT; // 6
 	
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
-	float RECOIL_AIMKICK_VERTICAL;
+	float RECOIL_AIMKICK_VERTICAL; // 3
 	
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
-	float RECOIL_AIMKICK_HORIZONTAL;
+	float RECOIL_AIMKICK_HORIZONTAL; // 3
 	
 	[Attribute("0.0015", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally in hands (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
 	float RECOIL_GUN_SIDEMOVE;
@@ -130,7 +136,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		m_fWeaponMassFactor = Math.Max(m_fWeaponMassFactor, 0.1);
 		
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
-		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor* RECOIL_HOR_POWER * RECOIL_POWER;
+		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_HOR_POWER * RECOIL_POWER;
 		
 		//PrintFormat("%1|%2|%3|%4", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse, m_fBulletInitSpeedCoef);
 	}
@@ -141,8 +147,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);
 		m_fTotalHorizontalImpulse = Math.Clamp(m_fTotalHorizontalImpulse, 0, MAXIMAL_HORIZONTAL_DEGREES)* Math.RandomFloat(-1, 1);
 		
-		m_fCurrentVerticalImpulse = Math.SmoothSpring(m_fCurrentVerticalImpulse, m_fTotalVerticalImpulse, m_fVerticalVelocity, RECOIL_SPRING, RECOIL_DAMPING, timeSlice * RECOIL_SPEED_MULT);
-		m_fCurrentHorizontalImpulse = Math.SmoothSpring(m_fCurrentHorizontalImpulse, m_fTotalHorizontalImpulse, m_fHorizontalVelocity, RECOIL_SPRING, RECOIL_DAMPING, timeSlice * RECOIL_SPEED_MULT);
+		m_fCurrentVerticalImpulse = Math.SmoothSpring(m_fCurrentVerticalImpulse, m_fTotalVerticalImpulse, m_fVerticalVelocity, RECOIL_SPRING_VERTICAL, RECOIL_DAMPING_VERTICAL, timeSlice * RECOIL_SPEED_MULT);
+		m_fCurrentHorizontalImpulse = Math.SmoothSpring(m_fCurrentHorizontalImpulse, m_fTotalHorizontalImpulse, m_fHorizontalVelocity, RECOIL_SPRING_HORIZONTAL, RECOIL_DAMPING_HORIZONTAL, timeSlice * RECOIL_SPEED_MULT);
 		
 		rotation[1] = m_fCurrentVerticalImpulse;
 		rotation[0] = m_fCurrentHorizontalImpulse;

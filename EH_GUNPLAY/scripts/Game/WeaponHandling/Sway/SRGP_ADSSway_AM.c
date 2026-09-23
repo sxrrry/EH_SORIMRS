@@ -11,6 +11,9 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "Total sway strength", category: "Settings", params: "0 100")]
 	float SWAY_STRENGTH;
 	
+	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Speed of alignment (impulse * (this * deltaT) every frame)", category: "Settings", params: "0 100")]
+	float SWAY_ALIGN_SPEED;
+	
 	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
 	float SWAY_SPRING_VERTICAL;
 	
@@ -23,13 +26,13 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
 	float SWAY_DAMPING_HORIZONTAL;
 	
-	[Attribute("-5", uiwidget: UIWidgets.Slider, desc: "How strong ADS sway impacts on camera movement", category: "Settings", params: "-100 100")]
+	[Attribute("-8", uiwidget: UIWidgets.Slider, desc: "How strong ADS sway impacts on camera movement", category: "Settings", params: "-100 100")]
 	float SWAY_CAMERA_IMPACT;
 	
-	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves vertically from sway (inverted)", category: "Settings", params: "0 1")]
+	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves vertically from sway (inverted)", category: "Settings", params: "-1 1")]
 	float SWAY_MOVE_VERTICAL;
 	
-	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves horizontally from sway (inverted)", category: "Settings", params: "0 1")]
+	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves horizontally from sway (inverted)", category: "Settings", params: "-1 1")]
 	float SWAY_MOVE_HORIZONTAL;
 	
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "Sway roll power (multiplied from horizontal sway)", category: "Settings", params: "0 50")]
@@ -56,6 +59,11 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	private float m_fHORSwayVelocity = 0.8;
 	private float m_fNoiseSeed;
 	private float m_fNoiseSeedHOR;
+	
+	private float m_fAngleTarget;
+	private float m_fAngle;
+	private float m_fAngleVel;
+	private float m_fAngleTimer;
 	
 	float m_fStanceFactor;
 	float m_fdeploymentFactor;
@@ -147,6 +155,22 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		m_fTargetSwayImpulse = Math.Clamp(m_fTargetSwayImpulse, -1.0, 1.0);
 		m_fTargetSwayHORImpulse = Math.Clamp(m_fTargetSwayHORImpulse, -0.7, 0.7);
 		
+		// this shit tries to simulate less straight line of aiming correction, more human
+		m_fAngleTimer -= timeSlice;
+		if (m_fAngleTimer <= 0)
+		{
+			m_fAngleTimer = Math.RandomFloat(0.002, 0.03); // change rate
+			m_fAngleTarget = Math.RandomFloat(-1.2, 1.2);
+		}
+		m_fAngle = Math.SmoothSpring(m_fAngle, m_fAngleTarget, m_fAngleVel, 0.7, 0.6, timeSlice * 12.0);
+		float vertImp = m_fTargetSwayImpulse;
+		float horImp = m_fTargetSwayHORImpulse;
+		float angleCos = Math.Cos(m_fAngle);
+		float angleSin = Math.Sin(m_fAngle);
+		m_fTargetSwayImpulse = vertImp * angleCos - horImp * angleSin;
+		m_fTargetSwayHORImpulse = vertImp * angleSin + horImp * angleCos;
+		// it just works...
+		
 		if (Math.AbsFloat(m_fTargetSwayImpulse) < SWAY_MINIMAL_VERTICAL)
 		{
 		    if (m_fTargetSwayImpulse >= 0)
@@ -182,8 +206,6 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		turnOffset[1] = m_fCurrentSwayImpulse * SWAY_CAMERA_IMPACT;
 		
 		if (m_fSwayImpulsePower > 0)
-			m_fSwayImpulsePower -= 0.01;
-		if (m_fSwayImpulsePower < 0)
-			m_fSwayImpulsePower = 0;
+			m_fSwayImpulsePower = Math.Max(0, m_fSwayImpulsePower - SWAY_ALIGN_SPEED * timeSlice);
 	}
 }
