@@ -26,6 +26,9 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
 	float SWAY_DAMPING_HORIZONTAL;
 	
+	[Attribute("4", uiwidget: UIWidgets.Slider, desc: "When entering/quiting ADS character will make forward-backward snap movement, hitting shoulder hard", category: "Settings", params: "0 100")]
+	float SWAY_PUSH_POWER;
+	
 	[Attribute("-8", uiwidget: UIWidgets.Slider, desc: "How strong ADS sway impacts on camera movement", category: "Settings", params: "-100 100")]
 	float SWAY_CAMERA_IMPACT;
 	
@@ -59,6 +62,10 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	private float m_fHORSwayVelocity = 0.8;
 	private float m_fNoiseSeed;
 	private float m_fNoiseSeedHOR;
+	
+	private float m_fCurrentPushImpulse;
+	private float m_fTargetPushImpulse;
+	private float m_fPushVelocity = 0.8;
 	
 	private float m_fAngleTarget;
 	private float m_fAngle;
@@ -159,8 +166,10 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		m_fAngleTimer -= timeSlice;
 		if (m_fAngleTimer <= 0)
 		{
-			m_fAngleTimer = Math.RandomFloat(0.002, 0.03); // change rate
-			m_fAngleTarget = Math.RandomFloat(-1.2, 1.2);
+			m_fAngleTimer = Math.RandomFloat(0.03, 0.12); // change rate
+			m_fAngleTarget = Math.RandomFloat(0.8, 1.2);
+			if (Math.RandomFloat(0,1) > 0.5)
+				m_fAngleTarget*=-1;
 		}
 		m_fAngle = Math.SmoothSpring(m_fAngle, m_fAngleTarget, m_fAngleVel, 0.7, 0.6, timeSlice * 12.0);
 		float vertImp = m_fTargetSwayImpulse;
@@ -190,9 +199,12 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		float swayStrength = m_fSwayImpulsePower * SWAY_STRENGTH * m_fStanceFactor * m_fdeploymentFactor;
 		m_fTargetSwayImpulse *= swayStrength;
 		m_fTargetSwayHORImpulse *= swayStrength;
+		m_fTargetPushImpulse = swayStrength;
 		
 		m_fCurrentSwayImpulse = Math.SmoothSpring(m_fCurrentSwayImpulse, m_fTargetSwayImpulse, m_fSwayVelocity, SWAY_SPRING_VERTICAL, SWAY_DAMPING_VERTICAL, timeSlice * SWAY_SPEED);
 		m_fCurrentSwayHORImpulse = Math.SmoothSpring(m_fCurrentSwayHORImpulse, m_fTargetSwayHORImpulse, m_fHORSwayVelocity, SWAY_SPRING_HORIZONTAL, SWAY_DAMPING_HORIZONTAL, timeSlice * SWAY_SPEED);
+		
+		m_fCurrentPushImpulse = Math.SmoothSpring(m_fCurrentPushImpulse, m_fTargetPushImpulse, m_fPushVelocity, 0.7, 1, timeSlice * SWAY_SPEED * 1.5);
 		
 		// 0hor 1ver 2roll
 		rotation[0] = m_fCurrentSwayHORImpulse;
@@ -201,6 +213,7 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		
 		translation[0] = m_fCurrentSwayHORImpulse * -1 * SWAY_MOVE_HORIZONTAL;
 		translation[1] = m_fCurrentSwayImpulse * -1 * SWAY_MOVE_VERTICAL;
+		translation[2] = m_fCurrentPushImpulse * SWAY_MOVE_HORIZONTAL * SWAY_PUSH_POWER;
 		
 		turnOffset[0] = m_fCurrentSwayHORImpulse * SWAY_CAMERA_IMPACT;
 		turnOffset[1] = m_fCurrentSwayImpulse * SWAY_CAMERA_IMPACT;
