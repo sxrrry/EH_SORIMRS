@@ -20,7 +20,7 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
        m_fOverallTremorMult 0.1
        m_fCrouchMultiplier 0.4
        m_cTremorOnStamina {
-        0 1 0.118 0.598 0.239 0.351 0.437 0.15 0.8 0 1 0
+        0 1 0.118 0.598 0.234 0.426 0.406 0.216 0.6 0.075 1 0.052
        }
        m_cTremorOnWeaponWeight {
         0 0.332 0.252 0.256 0.5 0.139 0.647 0.04 1 0
@@ -29,6 +29,8 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
       SRGP_ADSSway_AM "{6A12E65E9BB035C7}" {
       }
       SRGP_InertiaSway_AM "{6A1CB49C8335DDC9}" {
+      }
+      SRGP_RecoilShake_AM "{6A6F0CA2B86BA773}" {
       }
      }
     }

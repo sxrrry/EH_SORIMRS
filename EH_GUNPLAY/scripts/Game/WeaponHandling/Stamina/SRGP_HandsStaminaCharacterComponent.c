@@ -25,10 +25,14 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 	[Attribute("0 2 20 0.2", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina regen", category: "Settings", params: "20 2 0 0")]
 	protected ref Curve m_cWeaponWeightRegenCurve;
 
-	[Attribute("0 0 2 50", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina regen", category: "Settings", params: "2 100 0 0")]
+	[Attribute("0 0 2 50", uiwidget: UIWidgets.CurveDialog, desc: "Arms damage debuff", category: "Settings", params: "2 100 0 0")]
 	protected ref Curve m_cArmsDamageDebuff;
 	
+	[Attribute("1 0 0 50", uiwidget: UIWidgets.CurveDialog, desc: "Body stamina debuff", category: "Settings", params: "1 50 0 0")]
+	protected ref Curve m_cBodyStaminaDebuff;
+	
 	SCR_CharacterDamageManagerComponent m_dmgManagerComponent;
+	CharacterStaminaComponent csc;
 	protected const int DMG_CHECK_TICK_PERIOD = 1000; // optimal 1000
 	
 	
@@ -37,6 +41,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		m_Owner = owner;
 		m_fHandsStamina = 100;
 		m_dmgManagerComponent = SCR_CharacterDamageManagerComponent.Cast(owner.FindComponent(SCR_CharacterDamageManagerComponent));
+		csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
 		SetEventMask(owner, EntityEvent.FIXEDFRAME);
 		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, DMG_CHECK_TICK_PERIOD, true);
 	}
@@ -95,6 +100,17 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		return stamina;
 	}
 	
+	float SRGP_GetDebuffFactor()
+	{
+		float stamina = csc.GetStamina();
+		float bodyStaminaFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		stamina,
+		m_cBodyStaminaDebuff)[1];
+		
+		return bodyStaminaFactor;
+	}
+	
 	void SRGP_SetStaminaDebuff()
 	{
 		float aimDamage = m_dmgManagerComponent.GetAimingDamage();
@@ -103,7 +119,13 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		aimDamage,
 		m_cArmsDamageDebuff)[1];
 		
-		m_fHandsStaminaMax = MAX_STAMINA - aimDamageFactor;
+		float stamina = csc.GetStamina();
+		float bodyStaminaFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		stamina,
+		m_cBodyStaminaDebuff)[1];
+		
+		m_fHandsStaminaMax = MAX_STAMINA - aimDamageFactor - bodyStaminaFactor;
 		
 		if (m_fHandsStamina > m_fHandsStaminaMax)
 			m_fHandsStamina = m_fHandsStaminaMax;

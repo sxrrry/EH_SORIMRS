@@ -7,11 +7,13 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 	
 	float m_fAlpha = 0;		// opacity
 	float m_fCurrentStamina; // current hands stamina
+	float m_fCurrentBodyStaminaDebuffFactor;
 	float m_fFadeoutTimer = 0;
 	
 	ImageWidget m_wDamagedArmsIcon;
 	TextWidget m_wTDbgStamina;
 	ProgressBarWidget m_wPBHandsStamina;
+	ProgressBarWidget m_wPBHSBodyStaminaDebuff;
 	
 	bool m_bIsShown = false;
 	
@@ -23,11 +25,14 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		m_wPBHandsStamina = ProgressBarWidget.Cast(m_wRoot.FindAnyWidget("m_wPBHandsStamina"));
 		if (!m_wPBHandsStamina)
 			return;
+		m_wPBHSBodyStaminaDebuff = ProgressBarWidget.Cast(m_wRoot.FindAnyWidget("m_wPBHSBodyStaminaDebuff"));
+		if (!m_wPBHSBodyStaminaDebuff)
+			return;
 	}
 	
 	override protected void DisplayUpdate(IEntity owner, float timeSlice)
 	{
-		if (!m_wTDbgStamina || !m_wPBHandsStamina)
+		if (!m_wTDbgStamina || !m_wPBHandsStamina || !m_wPBHSBodyStaminaDebuff)
 			Init();
 		
 		PlayerController pc = PlayerController.Cast(owner);
@@ -40,8 +45,10 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		if (!HSCC)
 			return;
 		m_fCurrentStamina = HSCC.GetStamina();
+		m_fCurrentBodyStaminaDebuffFactor = HSCC.SRGP_GetDebuffFactor();
 		
 		m_wPBHandsStamina.SetCurrent(m_fCurrentStamina);
+		m_wPBHSBodyStaminaDebuff.SetCurrent(m_fCurrentBodyStaminaDebuffFactor);
 		m_wTDbgStamina.SetText(m_fCurrentStamina.ToString());
 		
 		//--------------------------------------------------------------------------
@@ -53,6 +60,14 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 			AnimateWidget.Color(m_wPBHandsStamina, Color.Yellow, 2);
 		else if (m_fCurrentStamina >= 60)
 			AnimateWidget.Color(m_wPBHandsStamina, Color.White, 2);
+		/*
+		if (m_fCurrentBodyStaminaDebuffFactor > 40)
+			AnimateWidget.Color(m_wPBHSBodyStaminaDebuff, Color.Red, 2);
+		else if (m_fCurrentBodyStaminaDebuffFactor <= 40 && m_fCurrentBodyStaminaDebuffFactor > 20)
+			AnimateWidget.Color(m_wPBHSBodyStaminaDebuff, Color.Yellow, 2);
+		else if (m_fCurrentBodyStaminaDebuffFactor <= 20)
+			AnimateWidget.Color(m_wPBHSBodyStaminaDebuff, Color.White, 2);
+		*/
 		
 		//--------------------------------------------------------------------------
 		// Fadeout management
@@ -73,11 +88,11 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		}
 		
 		FadeOpacity(m_wPBHandsStamina, timeSlice, 10);
+		FadeOpacity(m_wPBHSBodyStaminaDebuff, timeSlice, 10);
 	}
 	
 	protected void FadeOpacity(ProgressBarWidget widget, float timeSlice, float fadeSpeed)
 	{
-		
 		if (!m_bIsShown && m_fFadeoutTimer <= 0.001)
 		{
 			m_fAlpha = Math.Lerp(m_fAlpha, 0, fadeSpeed * timeSlice);
@@ -98,8 +113,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 				m_fAlpha = maxAlpha;
 			}
 		}
-		
 		widget.SetOpacity(m_fAlpha);
-		
 	}
+
 }

@@ -17,8 +17,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
 	float RECOIL_VERT_POWER; // ~0.5 realistic
 	
-	[Attribute("11", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
-	float RECOIL_ROLL_POWER; // 0.5 ver = ~11 this - best
+	[Attribute("8", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
+	float RECOIL_ROLL_POWER; // 0.7 hor = ~8 this - best
 	
 	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
 	float RECOIL_SPRING_VERTICAL; // 0.8

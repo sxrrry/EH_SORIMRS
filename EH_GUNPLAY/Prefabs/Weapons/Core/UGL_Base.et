@@ -4,8 +4,20 @@ GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
   MuzzleInMagComponent "{B3A264F493CC5A18}" {
    WeaponAimModifiers {
     SRGP_HandsStaminaWeaponMicroTremorAimModifier "{69FCC39D986874D1}" {
+     m_cTremorOnStamina {
+      0 1 0.118 0.598 0.234 0.426 0.406 0.216 0.6 0.075 1 0.052
+     }
+     m_cTremorOnWeaponWeight {
+      0 0.332 0.252 0.256 0.5 0.139 0.647 0.04 1 0
+     }
     }
     SRGP_HandsStaminaWeaponAimModifier "{69FCC39D97467B53}" {
+     m_cTremorOnStamina {
+      0 1 0.118 0.598 0.239 0.351 0.437 0.15 0.8 0 1 0
+     }
+     m_cTremorOnWeaponWeight {
+      0 0 1 1
+     }
     }
     SRGP_RecoilImpulse_AM "{69FCC39D97A57400}" {
      RECOIL_POWER 1
@@ -13,6 +25,8 @@ GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
     SRGP_ADSSway_AM "{6A12E65C962ACC44}" {
     }
     SRGP_InertiaSway_AM "{6A1CB49CFACD355B}" {
+    }
+    SRGP_RecoilShake_AM "{6A6F0CA296430E48}" {
     }
    }
   }

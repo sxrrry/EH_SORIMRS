@@ -5,9 +5,20 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 	float deploymentFactor = 1;
 	float weightFactor = 1;
 	
-	//[Attribute("90", uiwidget: UIWidgets.Auto, desc: "Stamina from which tremor starts (def 90)", category: "Settings", params: "1 100")]
-	//int STAMINA_TO_START;
-	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total tremor power (def 0.5)", category: "Settings", params: "0 1")]
+	float m_fSVTurnH;
+	float m_fSVTurnV;
+	float m_fSVRotV;
+	float m_fSVRotH;
+	
+	float rotVSoft;
+	float rotHSoft;
+	
+	float rotV;
+	float rotH;
+	
+	float m_fTick;
+	
+	[Attribute("0.1", uiwidget: UIWidgets.Auto, desc: "Total tremor power (def 0.5)", category: "Settings", params: "0 100")]
 	float m_fOverallTremorMult;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Tremor * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
@@ -63,35 +74,56 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 			weight,
 			m_cTremorOnWeaponWeight)[1];
 			
-			CalculateMicroTremorTurn(HSCC.GetStamina(), turnOffset);
-			CalculateMicroTremorRot(HSCC.GetStamina(), rotation);
+			CalculateMicroTremorTurn(HSCC.GetStamina(), turnOffset, timeSlice);
+			CalculateMicroTremorRot(HSCC.GetStamina(), rotation, translation, timeSlice);
 		}
 		else if (!SRGP_Utils.SRGP_IsInADS(player))
 			turnOffset = vector.Zero;
 	}
 	
 	
-	protected void CalculateMicroTremorTurn(float stamina, out vector turnOffset)
+	protected void CalculateMicroTremorTurn(float stamina, out vector turnOffset, float timeSlice)
 	{
 		float staminaFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		stamina,
 		m_cTremorOnStamina)[1];
 		
-		turnOffset[0] = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
-		turnOffset[1] = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+		float turnV = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+		float turnH = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+	
+		float turnVSoft = Math.SmoothSpring(turnVSoft, turnV, m_fSVTurnV, 0.7, 0.5, timeSlice * 25);
+		float turnHSoft = Math.SmoothSpring(turnHSoft, turnH, m_fSVTurnH, 0.7, 0.5, timeSlice * 25);
+		
+		turnOffset[0] = turnVSoft;
+		turnOffset[1] = turnHSoft;
 
 	}
 	
-	protected void CalculateMicroTremorRot(float stamina, out vector rotation)
+	protected void CalculateMicroTremorRot(float stamina, out vector rotation, out vector translation, float timeSlice)
 	{
 		float staminaFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		stamina,
 		m_cTremorOnStamina)[1];
 		
-		rotation[0] = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
-		rotation[1] = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+		m_fTick -= timeSlice;
+	    if (m_fTick <= 0)
+	    {
+			m_fTick = Math.RandomFloat(0.05, 0.1);
+			float mult = staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+			rotV = Math.RandomFloat(-1, 1) * mult;
+			rotH = Math.RandomFloat(-1, 1) * mult;
+		}
+	
+		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.6, 0.3, timeSlice * 35);
+		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.6, 0.3, timeSlice * 35);
+		
+		rotation[0] = rotVSoft;
+		rotation[1] = rotHSoft;
+		
+		translation[0] = rotVSoft * 0.003;
+		translation[1] = rotHSoft * 0.003;
 
 	}
 	
