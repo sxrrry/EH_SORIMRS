@@ -24,8 +24,6 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	float m_fOverallShakeMult;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
-	[Attribute("0 0 20 3", uiwidget: UIWidgets.CurveDialog, desc: "Relation of shake to weapon weight", category: "Settings", params: "20 3 0 0")]
-	protected ref Curve m_cShakeOnWeaponWeight;
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
@@ -66,28 +64,34 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	    if (m_fShake > 0)
 	    {
 			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
-			weightFactor = LegacyCurve.Curve(
-			ECurveType.CurveProperty2D,
-			weight,
-			m_cShakeOnWeaponWeight)[1];
+			float weightFactor = Math.InverseLerp(20, 0, weight);
+			weightFactor = Math.Min(weightFactor, 1);
+			weightFactor = Math.Max(weightFactor, 0.1);
 			float mult = weightFactor * stanceFactor * deploymentFactor * m_fOverallShakeMult;
-			rotV = Math.RandomFloat(-1, 1) * mult;
-			rotH = Math.RandomFloat(-1, 1) * mult;
+			float shakeV = Math.RandomFloat(0.6, 1);
+			float shakeH = Math.RandomFloat(0.6, 1);
+			if (Math.RandomFloat(0, 1) > 0.5)
+				shakeV*=-1;
+			if (Math.RandomFloat(0, 1) > 0.5)
+				shakeH*=-1;
 			
-			m_fShake = Math.Max(0, m_fShake - 10 * timeSlice);
+			rotV = shakeV * mult;
+			rotH = shakeH * mult;
+			
+			m_fShake = Math.Max(0, m_fShake - 12 * timeSlice);
 		}
 	
 		rotV *= m_fShake;
 		rotH *= m_fShake;
 		
-		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.6, 0.5, timeSlice * 35);
-		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.6, 0.5, timeSlice * 35);
+		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.9, 0.6, timeSlice * 35);
+		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.9, 0.6, timeSlice * 35);
 		
 		rotation[0] = rotVSoft;
 		rotation[1] = rotHSoft;
 		
-		translation[0] = rotHSoft * 0.01;
-		translation[1] = rotVSoft * 0.01;
+		translation[0] = rotHSoft * 0.005;
+		translation[1] = rotVSoft * 0.005;
 	}
 	
 	override void OnWeaponFired()
