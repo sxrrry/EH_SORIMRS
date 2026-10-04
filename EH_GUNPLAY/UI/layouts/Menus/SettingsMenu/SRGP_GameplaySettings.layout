@@ -1,0 +1,63 @@
+HorizontalLayoutWidgetClass {
+ Name "SRGP_GameplaySettings"
+ components {
+  SRGP_WeaponDisplacementSettingsSubMenu "{6A88F13540A57F2A}" {
+  }
+ }
+ {
+  ScrollLayoutWidgetClass "{6A88ED5A3D93A5A3}" {
+   Name "ScrollLayout0"
+   Slot LayoutSlot "{69E4FA8A02729EBC}" {
+    Padding -2 72 2 0
+    SizeMode Fill
+    FillWeight 1.433
+   }
+   Color 0.761 0.392 0.078 1
+   components {
+    SCR_GamepadScrollComponent "{69E4FA883364D737}" {
+    }
+   }
+   style Small
+   {
+    VerticalLayoutWidgetClass "{6A88ED5A3D93A5A0}" {
+     Name "Content"
+     Slot AlignableSlot "{69E4FA8AF50157B7}" {
+      HorizontalAlign 3
+      VerticalAlign 3
+      Padding -4 0 10 0
+     }
+     {
+      ButtonWidgetClass "{6A88F136409A34B4}" {
+       Name "wButton_ResetDefaults"
+       Slot LayoutSlot "{6A88F136409A3462}" {
+        VerticalAlign 0
+        FillWeight 19.5
+       }
+       Color 1 0.199 0 0.1312
+       components {
+        SCR_ModularButtonComponent "{6A88F131A45A9D42}" {
+        }
+       }
+       {
+        RichTextWidgetClass "{6A88F1379B99C5A1}" {
+         Name "Reset"
+         Slot ButtonWidgetSlot "{6A88F1379B99C584}" {
+         }
+         Text "Reset to defaults"
+         "Font Size" 32
+         "Min Font Size" 22
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+  RichTextWidgetClass "{6A88F1344664948B}" {
+   Name "m_wText_Desc"
+   Slot LayoutSlot "{6A88F13446649446}" {
+    SizeMode Fill
+   }
+  }
+ }
+}

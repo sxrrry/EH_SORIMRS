@@ -48,6 +48,25 @@ FrameWidgetClass {
      }
      style SimpleOutline
     }
+    ProgressBarWidgetClass "{6A6F0CBE575CB2C0}" {
+     Name "m_wPBHSBodyStaminaDebuff"
+     Slot FrameWidgetSlot "{69A2F0E6F96A0D4D}" {
+      Anchor 0.5 0.4 0.5 0.5
+      PositionX -100
+      OffsetLeft -100
+      PositionY -4
+      OffsetTop -4
+      SizeX 200
+      OffsetRight -100
+      SizeY 3
+      OffsetBottom 1
+     }
+     "Is Visible" 0
+     Color 1 0.2876 0.2876 1
+     style SimpleOutline
+     Flipped 1
+     "Draw Background" 0
+    }
    }
   }
  }

@@ -1,0 +1,8 @@
+GameProject {
+ ID "EHSecurity"
+ GUID "6A3F3CF19EE5AB63"
+ TITLE "EH_Security"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

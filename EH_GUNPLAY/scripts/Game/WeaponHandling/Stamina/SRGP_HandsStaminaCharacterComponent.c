@@ -1,0 +1,149 @@
+class SRGP_HandsStaminaCharacterComponentClass : ScriptComponentClass
+{
+}
+
+class SRGP_HandsStaminaCharacterComponent : ScriptComponent
+{
+	protected IEntity m_Owner;
+	
+	protected const float MAX_STAMINA = 100;
+	
+	protected float m_fHandsStamina;
+	protected float m_fHandsStaminaDebuff;
+	protected float m_fHandsStaminaMax;
+	protected float m_fWeaponWeight;
+	
+	[Attribute("0.1", uiwidget: UIWidgets.Auto, desc: "Drain rate on fixed frame", params: "0 1")]
+	protected float m_fHSDrain;
+	
+	[Attribute("0.1", uiwidget: UIWidgets.Auto, desc: "Regen rate on fixed frame", params: "0 1")]
+	protected float m_fHSRegen;
+	
+	[Attribute("0 0 20 3", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina drain", category: "Settings", params: "20 3 0 0")]
+	protected ref Curve m_cWeaponWeightDrainCurve;
+	
+	[Attribute("0 2 20 0.2", uiwidget: UIWidgets.CurveDialog, desc: "Relation of weapon weight to stamina regen", category: "Settings", params: "20 2 0 0")]
+	protected ref Curve m_cWeaponWeightRegenCurve;
+
+	[Attribute("0 0 2 50", uiwidget: UIWidgets.CurveDialog, desc: "Arms damage debuff", category: "Settings", params: "2 100 0 0")]
+	protected ref Curve m_cArmsDamageDebuff;
+	
+	[Attribute("1 0 0 50", uiwidget: UIWidgets.CurveDialog, desc: "Body stamina debuff", category: "Settings", params: "1 50 0 0")]
+	protected ref Curve m_cBodyStaminaDebuff;
+	
+	SCR_CharacterDamageManagerComponent m_dmgManagerComponent;
+	CharacterStaminaComponent csc;
+	protected const int DMG_CHECK_TICK_PERIOD = 1000; // optimal 1000
+	
+	
+	override void OnPostInit(IEntity owner)
+	{
+		m_Owner = owner;
+		m_fHandsStamina = 100;
+		m_dmgManagerComponent = SCR_CharacterDamageManagerComponent.Cast(owner.FindComponent(SCR_CharacterDamageManagerComponent));
+		csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
+		SetEventMask(owner, EntityEvent.FIXEDFRAME);
+		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, DMG_CHECK_TICK_PERIOD, true, owner);
+	}
+	
+	override void EOnFixedFrame(IEntity owner, float timeSlice)
+    {
+		if (SRGP_Utils.SRGP_IsInADS(owner) && m_fHandsStamina > 0 && SRGP_Utils.SRGP_GetStance(owner) != 2 && SRGP_Utils.SRGP_IsWeaponDeployed(owner) == 0)
+		{
+			m_fHandsStamina = DrainTick(owner, m_fHandsStamina);
+		}
+		else if ((!SRGP_Utils.SRGP_IsInADS(owner) && m_fHandsStamina < 100) || SRGP_Utils.SRGP_GetStance(owner) == 2 || SRGP_Utils.SRGP_IsWeaponDeployed(owner) >= 1 && m_fHandsStamina < m_fHandsStaminaMax)
+			m_fHandsStamina = RegenTick(owner, m_fHandsStamina);
+	}
+	
+	float GetStamina() { return m_fHandsStamina; }
+	void SetStamina(float handsStamina) { m_fHandsStamina = handsStamina; }
+	float GetArmsDamage() { return m_dmgManagerComponent.GetAimingDamage(); }
+	
+	protected float RegenTick(IEntity owner, float stamina)
+	{
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(owner);
+		float weightFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		weight,
+		m_cWeaponWeightRegenCurve)[1];
+		
+		if (SRGP_Utils.SRGP_GetStance(owner) == 0)
+			stamina += m_fHSRegen * weightFactor;
+		else if (SRGP_Utils.SRGP_GetStance(owner) == 1)
+			stamina += m_fHSRegen * 1.5 * weightFactor;
+		else if (SRGP_Utils.SRGP_GetStance(owner) == 2)
+			stamina += m_fHSRegen * 2 * weightFactor;
+		stamina = Math.Round(stamina * Math.Pow(10, 3)) / Math.Pow(10, 3);
+		if (stamina > 100)
+			stamina = 100;
+		if (stamina > m_fHandsStaminaMax)
+			stamina = m_fHandsStaminaMax;
+		return stamina;
+	}
+	
+	protected float DrainTick(IEntity owner, float stamina)
+	{
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(owner);
+		float weightFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		weight,
+		m_cWeaponWeightDrainCurve)[1];
+		
+		if (SRGP_Utils.SRGP_GetStance(owner) == 0)
+			stamina -= m_fHSDrain * weightFactor;
+		else if (SRGP_Utils.SRGP_GetStance(owner) == 1)
+			stamina -= m_fHSDrain * 0.5  * weightFactor;
+		stamina = Math.Round(stamina * Math.Pow(10, 3)) / Math.Pow(10, 3);
+		if (stamina < 0)
+		stamina = 0;
+		return stamina;
+	}
+	
+	float SRGP_GetDebuffFactor(IEntity owner)
+	{
+		if (!csc)
+		{
+			csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
+			return 0;
+		}
+		
+		float stamina = csc.GetStamina();
+		float bodyStaminaFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		stamina,
+		m_cBodyStaminaDebuff)[1];
+		
+		return bodyStaminaFactor;
+	}
+	
+	void SRGP_SetStaminaDebuff(IEntity owner)
+	{
+		if (!owner)
+			return;
+		
+		if (!csc)
+		{
+			csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
+			return;
+		}
+		
+		float aimDamage = m_dmgManagerComponent.GetAimingDamage();
+		float aimDamageFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		aimDamage,
+		m_cArmsDamageDebuff)[1];
+		
+		float stamina = csc.GetStamina();
+		float bodyStaminaFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		stamina,
+		m_cBodyStaminaDebuff)[1];
+		
+		m_fHandsStaminaMax = MAX_STAMINA - aimDamageFactor - bodyStaminaFactor;
+		
+		if (m_fHandsStamina > m_fHandsStaminaMax)
+			m_fHandsStamina = m_fHandsStaminaMax;
+	}
+	
+}
