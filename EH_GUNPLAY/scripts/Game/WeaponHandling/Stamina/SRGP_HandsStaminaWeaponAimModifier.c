@@ -56,19 +56,14 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		if (SRGP_Utils.SRGP_IsInADS(player))
-		{
-			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
-			float weightFactor = LegacyCurve.Curve(
-			ECurveType.CurveProperty2D,
-			weight,
-			m_cTremorOnWeaponWeight)[1];
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+		float weightFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		weight,
+		m_cTremorOnWeaponWeight)[1];
 			
-			CalculateTurn(HSCC.GetStamina(), turnOffset);
-			CalculateRotation(HSCC.GetStamina(), rotation);
-		}
-		else if (!SRGP_Utils.SRGP_IsInADS(player))
-			turnOffset = vector.Zero;
+		CalculateTurn(HSCC.GetStamina(), turnOffset);
+		CalculateRotation(HSCC.GetStamina(), rotation);
 	}
 	
 	protected void CalculateTurn(float stamina, out vector turnOffset)

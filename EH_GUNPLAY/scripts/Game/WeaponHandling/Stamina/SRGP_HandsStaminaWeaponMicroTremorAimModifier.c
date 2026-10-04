@@ -36,7 +36,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		if (!player)
 			return;
 		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
-		if(!HSCC)
+		if (!HSCC)
 			return;
 		
 		int stance = SRGP_Utils.SRGP_GetStance(player);
@@ -66,21 +66,15 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		if (SRGP_Utils.SRGP_IsInADS(player))
-		{
-			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
-			weightFactor = LegacyCurve.Curve(
-			ECurveType.CurveProperty2D,
-			weight,
-			m_cTremorOnWeaponWeight)[1];
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+		weightFactor = LegacyCurve.Curve(
+		ECurveType.CurveProperty2D,
+		weight,
+		m_cTremorOnWeaponWeight)[1];
 			
-			CalculateMicroTremorTurn(HSCC.GetStamina(), turnOffset, timeSlice);
-			CalculateMicroTremorRot(HSCC.GetStamina(), rotation, translation, timeSlice);
-		}
-		else if (!SRGP_Utils.SRGP_IsInADS(player))
-			turnOffset = vector.Zero;
+		CalculateMicroTremorTurn(HSCC.GetStamina(), turnOffset, timeSlice);
+		CalculateMicroTremorRot(HSCC.GetStamina(), rotation, translation, timeSlice);
 	}
-	
 	
 	protected void CalculateMicroTremorTurn(float stamina, out vector turnOffset, float timeSlice)
 	{
@@ -97,7 +91,6 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		
 		turnOffset[0] = turnVSoft;
 		turnOffset[1] = turnHSoft;
-
 	}
 	
 	protected void CalculateMicroTremorRot(float stamina, out vector rotation, out vector translation, float timeSlice)
@@ -124,7 +117,6 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		
 		translation[0] = rotVSoft * 0.003;
 		translation[1] = rotHSoft * 0.003;
-
 	}
 	
 }

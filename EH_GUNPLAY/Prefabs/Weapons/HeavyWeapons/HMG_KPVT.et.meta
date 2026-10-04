@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et"
+ Name "{85FA621B61AA5BD9}Prefabs/Weapons/HeavyWeapons/HMG_KPVT.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

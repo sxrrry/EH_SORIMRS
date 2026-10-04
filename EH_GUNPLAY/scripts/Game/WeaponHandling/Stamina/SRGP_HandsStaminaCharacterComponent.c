@@ -43,7 +43,7 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		m_dmgManagerComponent = SCR_CharacterDamageManagerComponent.Cast(owner.FindComponent(SCR_CharacterDamageManagerComponent));
 		csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
 		SetEventMask(owner, EntityEvent.FIXEDFRAME);
-		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, DMG_CHECK_TICK_PERIOD, true);
+		GetGame().GetCallqueue().CallLater(SRGP_SetStaminaDebuff, DMG_CHECK_TICK_PERIOD, true, owner);
 	}
 	
 	override void EOnFixedFrame(IEntity owner, float timeSlice)
@@ -100,8 +100,14 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		return stamina;
 	}
 	
-	float SRGP_GetDebuffFactor()
+	float SRGP_GetDebuffFactor(IEntity owner)
 	{
+		if (!csc)
+		{
+			csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
+			return 0;
+		}
+		
 		float stamina = csc.GetStamina();
 		float bodyStaminaFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
@@ -111,8 +117,17 @@ class SRGP_HandsStaminaCharacterComponent : ScriptComponent
 		return bodyStaminaFactor;
 	}
 	
-	void SRGP_SetStaminaDebuff()
+	void SRGP_SetStaminaDebuff(IEntity owner)
 	{
+		if (!owner)
+			return;
+		
+		if (!csc)
+		{
+			csc = CharacterStaminaComponent.Cast(owner.FindComponent(CharacterStaminaComponent));
+			return;
+		}
+		
 		float aimDamage = m_dmgManagerComponent.GetAimingDamage();
 		float aimDamageFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,

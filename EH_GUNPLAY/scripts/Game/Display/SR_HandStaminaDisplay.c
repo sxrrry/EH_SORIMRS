@@ -45,7 +45,7 @@ class SR_HandStaminaDisplay : SCR_InfoDisplayExtended
 		if (!HSCC)
 			return;
 		m_fCurrentStamina = HSCC.GetStamina();
-		m_fCurrentBodyStaminaDebuffFactor = HSCC.SRGP_GetDebuffFactor();
+		m_fCurrentBodyStaminaDebuffFactor = HSCC.SRGP_GetDebuffFactor(owner);
 		
 		m_wPBHandsStamina.SetCurrent(m_fCurrentStamina);
 		m_wPBHSBodyStaminaDebuff.SetCurrent(m_fCurrentBodyStaminaDebuffFactor);
