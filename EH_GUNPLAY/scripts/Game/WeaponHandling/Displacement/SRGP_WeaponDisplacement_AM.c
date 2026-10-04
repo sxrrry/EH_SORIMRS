@@ -1,10 +1,10 @@
 class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 {
+    [Attribute("False", uiwidget: UIWidgets.CheckBox, desc: "Use displacement for handguns", category: "Settings")]
+    bool IS_HANDGUN;
+
     IEntity m_weaponOwner;
     SRGP_WeaponDisplacementComponent m_SettingsComp;
-	
-	[Attribute("False", uiwidget: UIWidgets.CheckBox, desc: "Use displacement for handguns", category: "Settings")]
-	bool IS_HANDGUN;
 
     float SPRING_VELOCITY = 0;
     float m_fCurrentMult;
@@ -20,8 +20,8 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
             weaponOwner.FindComponent(SRGP_WeaponDisplacementComponent)
         );
     }
-	
-	protected bool IsPlayerCharacter(IEntity entity)
+
+    protected bool IsPlayerCharacter(IEntity entity)
     {
         PlayerManager pm = GetGame().GetPlayerManager();
         if (!pm)
@@ -31,27 +31,26 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
     }
 
     protected void LoadAndPushPersistedSettings()
-	{
-	    if (!m_SettingsComp)
-	        return;
-	
-	    SCR_PlayerController pc = SCR_PlayerController.Cast(GetGame().GetPlayerController());
-	    if (!pc || pc.GetControlledEntity() != m_weaponOwner)
-	        return;
-	
-	    SRGP_WeaponDisplacementPersistence persistence = new SRGP_WeaponDisplacementPersistence();
-	    persistence.LoadFromFileOrDefaults();
-	    persistence.ApplyToGameSettings();
-	
-	    m_SettingsComp.RequestApplyValues(
-	        persistence.ROTATION_X,
-	        persistence.ROTATION_Y,
-	        persistence.ROTATION_Z,
-	        persistence.OFFSET_X,
-	        persistence.OFFSET_Y,
-	        persistence.OFFSET_Z
-	    );
-	}
+    {
+        if (!m_SettingsComp)
+            return;
+
+        SCR_PlayerController pc = SCR_PlayerController.Cast(GetGame().GetPlayerController());
+        if (!pc || pc.GetControlledEntity() != m_weaponOwner)
+            return;
+
+        SRGP_WeaponDisplacementPersistence persistence = new SRGP_WeaponDisplacementPersistence();
+        persistence.LoadFromFileOrDefaults();
+        persistence.ApplyToGameSettings();
+
+        m_SettingsComp.RequestApplyValues(
+            persistence.ROTATION_X, persistence.ROTATION_Y, persistence.ROTATION_Z,
+            persistence.OFFSET_X, persistence.OFFSET_Y, persistence.OFFSET_Z,
+            persistence.PISTOL_ROTATION_X, persistence.PISTOL_ROTATION_Y, persistence.PISTOL_ROTATION_Z,
+            persistence.PISTOL_OFFSET_X, persistence.PISTOL_OFFSET_Y, persistence.PISTOL_OFFSET_Z,
+            persistence.ENABLE_PISTOL_SETTINGS
+        );
+    }
 
     override void OnCalculate(
         IEntity owner,
@@ -64,8 +63,9 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
     {
         if (!m_weaponOwner)
             return;
-		if (!IsPlayerCharacter(m_weaponOwner))
-		   return;
+		
+        if (!IsPlayerCharacter(m_weaponOwner))
+            return;
 
         if (!m_bSyncSent)
         {
@@ -86,10 +86,24 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
                 return;
         }
 
-        float rotX, rotY, rotZ, offX, offY, offZ;
-
         SCR_PlayerController pc = SCR_PlayerController.Cast(GetGame().GetPlayerController());
         bool isOwner = (pc && pc.GetControlledEntity() == m_weaponOwner);
+
+        bool enablePistol = false;
+        if (isOwner)
+        {
+            BaseContainer s = GetGame().GetGameUserSettings().GetModule("SRGP_WeaponDisplacementSettings");
+            if (s)
+                s.Get("ENABLE_PISTOL_SETTINGS", enablePistol);
+        }
+        else
+        {
+            enablePistol = m_SettingsComp.ENABLE_PISTOL_SETTINGS;
+        }
+
+        bool usePistol = IS_HANDGUN && enablePistol;
+
+        float rotX, rotY, rotZ, offX, offY, offZ;
 
         if (isOwner)
         {
@@ -97,32 +111,55 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
             if (!s)
                 return;
 
-            s.Get("ROTATION_X", rotX);
-            s.Get("ROTATION_Y", rotY);
-            s.Get("ROTATION_Z", rotZ);
-            s.Get("OFFSET_X", offX);
-            s.Get("OFFSET_Y", offY);
-            s.Get("OFFSET_Z", offZ);
+            if (usePistol)
+            {
+                s.Get("PISTOL_ROTATION_X", rotX);
+                s.Get("PISTOL_ROTATION_Y", rotY);
+                s.Get("PISTOL_ROTATION_Z", rotZ);
+                s.Get("PISTOL_OFFSET_X", offX);
+                s.Get("PISTOL_OFFSET_Y", offY);
+                s.Get("PISTOL_OFFSET_Z", offZ);
+            }
+            else
+            {
+                s.Get("ROTATION_X", rotX);
+                s.Get("ROTATION_Y", rotY);
+                s.Get("ROTATION_Z", rotZ);
+                s.Get("OFFSET_X", offX);
+                s.Get("OFFSET_Y", offY);
+                s.Get("OFFSET_Z", offZ);
+            }
         }
         else
         {
-            rotX = m_SettingsComp.ROTATION_X;
-            rotY = m_SettingsComp.ROTATION_Y;
-            rotZ = m_SettingsComp.ROTATION_Z;
-            offX = m_SettingsComp.OFFSET_X;
-            offY = m_SettingsComp.OFFSET_Y;
-            offZ = m_SettingsComp.OFFSET_Z;
+            if (usePistol)
+            {
+                rotX = m_SettingsComp.PISTOL_ROTATION_X;
+                rotY = m_SettingsComp.PISTOL_ROTATION_Y;
+                rotZ = m_SettingsComp.PISTOL_ROTATION_Z;
+                offX = m_SettingsComp.PISTOL_OFFSET_X;
+                offY = m_SettingsComp.PISTOL_OFFSET_Y;
+                offZ = m_SettingsComp.PISTOL_OFFSET_Z;
+            }
+            else
+            {
+                rotX = m_SettingsComp.ROTATION_X;
+                rotY = m_SettingsComp.ROTATION_Y;
+                rotZ = m_SettingsComp.ROTATION_Z;
+                offX = m_SettingsComp.OFFSET_X;
+                offY = m_SettingsComp.OFFSET_Y;
+                offZ = m_SettingsComp.OFFSET_Z;
+            }
         }
 
         if (SRGP_Utils.SRGP_IsInADS(m_weaponOwner))
             m_fTargetMult = 0;
         else
             m_fTargetMult = 1;
+		if (SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner) > 0)
+			m_fTargetMult *= 0;
 		if (SRGP_Utils.SRGP_GetStance(m_weaponOwner) == 2)
 			m_fTargetMult *= 0;
-		if (SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner) == 1 || SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner) == 2)
-			m_fTargetMult *= 0;
-			
 
         m_fCurrentMult = Math.SmoothSpring(
             m_fCurrentMult, m_fTargetMult,
