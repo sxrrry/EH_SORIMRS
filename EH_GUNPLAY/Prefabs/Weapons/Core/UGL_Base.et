@@ -30,6 +30,8 @@ GameEntity : "{2E0E3D7D1DD0FF8F}Prefabs/Weapons/Core/Attachment_Base.et" {
     }
     SRGP_MovementSway_AM "{6A88AD194AE3AAF4}" {
     }
+    SRGP_WeaponDisplacement_AM "{6A8919376C94AD5C}" {
+    }
    }
   }
  }

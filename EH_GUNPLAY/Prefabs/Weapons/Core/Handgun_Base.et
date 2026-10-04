@@ -36,6 +36,8 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
       }
       SRGP_MovementSway_AM "{6A88AD195E02253A}" {
       }
+      SRGP_WeaponDisplacement_AM "{6A89193762B728A9}" {
+      }
      }
     }
    }
