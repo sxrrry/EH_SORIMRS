@@ -53,7 +53,20 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 	{
 		if (!m_playerCamera)
 		{
-			m_playerCamera = m_playerController.GetPlayerCamera();
+			if (m_playerController)
+			{
+				m_playerCamera = m_playerController.GetPlayerCamera();
+				return;
+			}
+			else
+			{
+				m_playerController = GetGame().GetPlayerController();
+				return;
+			}
+		}
+		if (!m_characterControllerComponent)
+		{
+			m_characterControllerComponent = SCR_CharacterControllerComponent.Cast(m_weaponOwner.FindComponent(SCR_CharacterControllerComponent));
 			return;
 		}
 		

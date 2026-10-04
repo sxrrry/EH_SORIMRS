@@ -1,0 +1,17 @@
+FrameWidgetClass {
+ Name "rootFrame"
+ {
+  ScrollLayoutWidgetClass "{6A88E7FAB27D7B54}" {
+   Name "Content"
+   Slot FrameWidgetSlot "{6A88E7FAB27D7B3B}" {
+   }
+   {
+    RichTextWidgetClass "{6A88E7FAA68DAE15}" {
+     Name "m_wText_Desc"
+     Slot AlignableSlot "{6A88E7FAA68DA9F4}" {
+     }
+    }
+   }
+  }
+ }
+}

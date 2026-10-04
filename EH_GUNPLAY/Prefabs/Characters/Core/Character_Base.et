@@ -18,6 +18,8 @@ SCR_ChimeraCharacter {
     0 1 1 0
    }
   }
+  SRGP_WeaponDisplacementComponent "{6A88F13EF9145EDC}" {
+  }
   SCR_CharacterAnimationComponent "{520EA1D2F659C994}" {
    components {
     SCR_CharacterCommandHandlerComponent "{520EA1D2F659C99A}" {
