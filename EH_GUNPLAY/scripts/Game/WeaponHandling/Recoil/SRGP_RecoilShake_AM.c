@@ -20,7 +20,7 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	
 	float m_fTick;
 	
-	[Attribute("1", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
+	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
 	float m_fOverallShakeMult;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
