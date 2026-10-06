@@ -83,6 +83,11 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
+		if (!m_weaponOwner)
+			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
+		
 		if (!m_playerController)
 		{
 			m_playerController = GetGame().GetPlayerController();

@@ -56,6 +56,11 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
+		if (!m_weaponOwner)
+			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
+		
 		if (!m_playerCamera)
 		{
 			if (m_playerController)

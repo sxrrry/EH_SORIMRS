@@ -29,23 +29,34 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 	[Attribute("0 0 20 3", uiwidget: UIWidgets.CurveDialog, desc: "Relation of tremor to weapon weight", category: "Settings", params: "20 3 0 0")]
 	protected ref Curve m_cTremorOnWeaponWeight;
 	
+	SRGP_HandsStaminaCharacterComponent HSCC;
+	IEntity m_weaponOwner;
+	
+	override protected void OnActivated(IEntity weaponOwner)
+	{
+		m_weaponOwner = weaponOwner;
+		if (!m_weaponOwner)
+			return;
+		HSCC = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
+	}
+	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
 		translation = vector.Zero;
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
-		PlayerController pc = GetGame().GetPlayerController();
-		if (!pc)
+		if (!m_weaponOwner)
 			return;
-		SCR_ChimeraCharacter player = SCR_ChimeraCharacter.Cast(pc.GetControlledEntity());
-		if (!player)
-			return;
-		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
 		if (!HSCC)
+		{
+			HSCC = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
 			return;
+		}
 		
-		int stance = SRGP_Utils.SRGP_GetStance(player);
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		
 		if (stance == 2)
 		{
@@ -57,7 +68,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (deploymentState)
 		{
@@ -72,7 +83,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(m_weaponOwner);
 		weightFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		weight,

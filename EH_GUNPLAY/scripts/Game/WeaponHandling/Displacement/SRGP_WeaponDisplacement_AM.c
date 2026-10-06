@@ -21,15 +21,6 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
         );
     }
 
-    protected bool IsPlayerCharacter(IEntity entity)
-    {
-        PlayerManager pm = GetGame().GetPlayerManager();
-        if (!pm)
-            return false;
-
-        return pm.GetPlayerIdFromControlledEntity(entity) >= 0;
-    }
-
     protected void LoadAndPushPersistedSettings()
     {
         if (!m_SettingsComp)
@@ -69,7 +60,7 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
         if (!m_weaponOwner)
             return;
 		
-        if (!IsPlayerCharacter(m_weaponOwner))
+        if (!SRGP_Utils.IsPlayerCharacter(m_weaponOwner))
             return;
 
         if (!m_bSyncSent)
@@ -178,7 +169,6 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
             m_fCurrentMult, m_fTargetMult,
             SPRING_VELOCITY, 0.1, 0.5, timeSlice * springSpeed
         );
-		
 		
         translation[0] = offX * m_fCurrentMult;
         translation[1] = offY * m_fCurrentMult;

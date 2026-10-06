@@ -25,6 +25,13 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	[Attribute("0.7", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
 	
+	IEntity m_weaponOwner;
+	
+	override protected void OnActivated(IEntity weaponOwner)
+	{
+		m_weaponOwner = weaponOwner;
+	}
+	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
 		timeSlice = Math.Min(timeSlice, 0.033);
@@ -32,14 +39,12 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
-		PlayerController pc = GetGame().GetPlayerController();
-		if (!pc)
+		if (!m_weaponOwner)
 			return;
-		SCR_ChimeraCharacter player = SCR_ChimeraCharacter.Cast(pc.GetControlledEntity());
-		if (!player)
-			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
 		
-		int stance = SRGP_Utils.SRGP_GetStance(player);
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		
 		if (stance == 2)
 		{
@@ -51,7 +56,7 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (deploymentState)
 		{
@@ -68,7 +73,7 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		
 	    if (m_fShake > 0)
 	    {
-			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+			float weight = SRGP_Utils.SRGP_GetWeaponWeight(m_weaponOwner);
 			float weightFactor = Math.InverseLerp(20, 0, weight);
 			weightFactor = Math.Min(weightFactor, 1);
 			weightFactor = Math.Max(weightFactor, 0.1);

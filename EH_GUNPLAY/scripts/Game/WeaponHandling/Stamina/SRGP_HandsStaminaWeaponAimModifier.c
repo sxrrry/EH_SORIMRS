@@ -1,13 +1,10 @@
 class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 {
-	
-	float stanceFactor = 1; // def 1
+	float stanceFactor = 1;
 	int deploymentState = 0;
 	float deploymentFactor = 1;
 	float weightFactor = 1;
 	
-	//[Attribute("90", uiwidget: UIWidgets.Auto, desc: "Stamina from which tremor starts (def 90)", params: "1 100")]
-	//int STAMINA_TO_START;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total tremor power (def 0.5)", category: "Settings", params: "0 1")]
 	float m_fOverallTremorMult;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Tremor * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
@@ -17,6 +14,17 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	[Attribute("0 0 20 3", uiwidget: UIWidgets.CurveDialog, desc: "Relation of tremor to weapon weight", category: "Settings", params: "20 3 0 0")]
 	protected ref Curve m_cTremorOnWeaponWeight;
 	
+	IEntity m_weaponOwner
+	SRGP_HandsStaminaCharacterComponent HSCC;
+	
+	override protected void OnActivated(IEntity weaponOwner)
+	{
+		m_weaponOwner = weaponOwner;
+		if (!m_weaponOwner)
+			return;
+		HSCC = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
+	}
+	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
 		timeSlice = Math.Min(timeSlice, 0.033);
@@ -24,17 +32,17 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
-		PlayerController pc = GetGame().GetPlayerController();
-		if (!pc)
+		if (!m_weaponOwner)
 			return;
-		SCR_ChimeraCharacter player = SCR_ChimeraCharacter.Cast(pc.GetControlledEntity());
-		if (!player)
-			return;
-		SRGP_HandsStaminaCharacterComponent HSCC = SRGP_HandsStaminaCharacterComponent.Cast(player.FindComponent(SRGP_HandsStaminaCharacterComponent));
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
 		if (!HSCC)
+		{
+			HSCC = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
 			return;
+		}
 		
-		int stance = SRGP_Utils.SRGP_GetStance(player);
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		
 		if (stance == 2)
 		{
@@ -46,7 +54,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (deploymentState)
 		{
@@ -61,7 +69,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 				break;
 		}
 		
-		float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+		float weight = SRGP_Utils.SRGP_GetWeaponWeight(m_weaponOwner);
 		float weightFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		weight,
@@ -89,7 +97,6 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	    turnOffset[0] = Math.Min(Math.Max(noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
 	    turnOffset[1] = Math.Min(Math.Max(noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
 		
-		//PrintFormat("TO=%1|NO=%2|SF=%3|ST=%4", turnOffset[0], noiseX, staminaFactor, stamina);
 	}
 	
 	protected void CalculateRotation(float stamina, out vector rotation)

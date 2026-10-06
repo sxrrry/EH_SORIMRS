@@ -15,24 +15,6 @@ FrameWidgetClass {
     OffsetBottom 0
    }
    {
-    TextWidgetClass "{69A2FB3191464A16}" {
-     Name "m_wTDbgStamina"
-     Slot FrameWidgetSlot "{69A2FB31914655F8}" {
-      Anchor 0.5 0.5 0.5 0.5
-      PositionX -162
-      OffsetLeft -162
-      PositionY -31
-      OffsetTop -31
-      SizeX 328
-      OffsetRight -166
-      SizeY 14
-      OffsetBottom 17
-     }
-     "Is Visible" 0
-     Text "stamina"
-     "Font Size" 10
-     "Min Font Size" 10
-    }
     ProgressBarWidgetClass "{69A2F0E6F96A0D62}" {
      Name "m_wPBHandsStamina"
      Slot FrameWidgetSlot "{69A2F0E6F96A0D4D}" {
@@ -47,25 +29,6 @@ FrameWidgetClass {
       OffsetBottom 1
      }
      style SimpleOutline
-    }
-    ProgressBarWidgetClass "{6A6F0CBE575CB2C0}" {
-     Name "m_wPBHSBodyStaminaDebuff"
-     Slot FrameWidgetSlot "{69A2F0E6F96A0D4D}" {
-      Anchor 0.5 0.4 0.5 0.5
-      PositionX -100
-      OffsetLeft -100
-      PositionY -4
-      OffsetTop -4
-      SizeX 200
-      OffsetRight -100
-      SizeY 3
-      OffsetBottom 1
-     }
-     "Is Visible" 0
-     Color 1 0.2876 0.2876 1
-     style SimpleOutline
-     Flipped 1
-     "Draw Background" 0
     }
    }
   }

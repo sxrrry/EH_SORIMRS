@@ -144,7 +144,12 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		timeSlice = Math.Min(timeSlice, 0.033);
 		translation = vector.Zero;
 		rotation = vector.Zero;
-		turnOffset = vector.Zero;	
+		turnOffset = vector.Zero;
+		
+		if (!m_weaponOwner)
+			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+		    return;
 		
 		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);
 		m_fTotalHorizontalImpulse = Math.Clamp(m_fTotalHorizontalImpulse, 0, MAXIMAL_HORIZONTAL_DEGREES)* Math.RandomFloat(-1, 1);

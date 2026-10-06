@@ -2,7 +2,6 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 {
 	IEntity m_weaponEnt
 	IEntity m_weaponOwner;
-	SRGP_HandsStaminaCharacterComponent m_HandsStamCharComp;
 	bool m_bWasADSPrev;
 	
 	[Attribute("0.65", uiwidget: UIWidgets.Slider, desc: "Sway * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
@@ -84,7 +83,6 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	override protected void OnActivated(IEntity weaponOwner)
 	{
 		m_weaponOwner = weaponOwner;
-		m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
@@ -94,16 +92,10 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		rotation = vector.Zero;
 		turnOffset = vector.Zero;
 		
-		float t = GetGame().GetWorld().GetWorldTime() * 0.001;
-		
-		if (!m_HandsStamCharComp)
-			return;
-		if (!owner)
-			return;
-		if (!m_weaponEnt)
-			return;
 		if (!m_weaponOwner)
 			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
 		
 		if (SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && !m_bWasADSPrev)
 		{
