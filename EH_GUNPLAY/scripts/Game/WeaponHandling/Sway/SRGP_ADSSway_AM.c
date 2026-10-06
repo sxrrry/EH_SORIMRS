@@ -14,13 +14,13 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Speed of alignment (impulse * (this * deltaT) every frame)", category: "Settings", params: "0 100")]
 	float SWAY_ALIGN_SPEED;
 	
-	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
 	float SWAY_SPRING_VERTICAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
 	float SWAY_DAMPING_VERTICAL;
 	
-	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Horizontal sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
 	float SWAY_SPRING_HORIZONTAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
@@ -89,6 +89,11 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{	
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		float t = GetGame().GetWorld().GetWorldTime() * 0.001;
 		
 		if (!m_HandsStamCharComp)

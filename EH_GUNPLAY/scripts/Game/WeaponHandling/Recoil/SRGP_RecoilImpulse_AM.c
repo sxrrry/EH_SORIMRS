@@ -137,12 +137,14 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
 		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_HOR_POWER * RECOIL_POWER;
-		
-		//PrintFormat("%1|%2|%3|%4", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse, m_fBulletInitSpeedCoef);
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;	
 		
 		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);
 		m_fTotalHorizontalImpulse = Math.Clamp(m_fTotalHorizontalImpulse, 0, MAXIMAL_HORIZONTAL_DEGREES)* Math.RandomFloat(-1, 1);
@@ -157,8 +159,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		translation[0] = m_fCurrentHorizontalImpulse * RECOIL_GUN_SIDEMOVE; // decorative side sway
 		translation[2] = Math.Max(m_fCurrentVerticalImpulse * RECOIL_GUN_SHOULDERKICK * -1, RECOIL_GUN_SHOULDERKICK_LIMIT); // kick
 		
-		turnOffset[0] = m_fCurrentHorizontalImpulse * RECOIL_AIMKICK_HORIZONTAL;
-		turnOffset[1] = m_fCurrentVerticalImpulse * RECOIL_AIMKICK_VERTICAL;
+		turnOffset[0] = Math.Min(Math.Max(m_fCurrentHorizontalImpulse * RECOIL_AIMKICK_HORIZONTAL, -0.5), 0.5);
+		turnOffset[1] = Math.Min(Math.Max(m_fCurrentVerticalImpulse * RECOIL_AIMKICK_VERTICAL, -0.5), 0.5);
 		
 		m_fTotalHorizontalImpulse = 0;
 		m_fTotalVerticalImpulse = 0;

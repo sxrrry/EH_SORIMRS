@@ -12,6 +12,8 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 	
 	float rotVSoft;
 	float rotHSoft;
+	float turnVSoft;
+	float turnHSoft;
 	
 	float rotV;
 	float rotH;
@@ -29,6 +31,10 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		PlayerController pc = GetGame().GetPlayerController();
 		if (!pc)
 			return;
@@ -78,6 +84,7 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 	
 	protected void CalculateMicroTremorTurn(float stamina, out vector turnOffset, float timeSlice)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
 		float staminaFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		stamina,
@@ -86,15 +93,16 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		float turnV = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
 		float turnH = Math.RandomFloat(-1, 1) * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
 	
-		float turnVSoft = Math.SmoothSpring(turnVSoft, turnV, m_fSVTurnV, 0.7, 0.5, timeSlice * 25);
-		float turnHSoft = Math.SmoothSpring(turnHSoft, turnH, m_fSVTurnH, 0.7, 0.5, timeSlice * 25);
+		turnVSoft = Math.SmoothSpring(turnVSoft, turnV, m_fSVTurnV, 0.7, 0.5, timeSlice * 25);
+		turnHSoft = Math.SmoothSpring(turnHSoft, turnH, m_fSVTurnH, 0.7, 0.5, timeSlice * 25);
 		
-		turnOffset[0] = turnVSoft;
-		turnOffset[1] = turnHSoft;
+		turnOffset[0] = Math.Min(Math.Max(turnVSoft, -10), 10);
+		turnOffset[1] = Math.Min(Math.Max(turnHSoft, -10), 10);
 	}
 	
 	protected void CalculateMicroTremorRot(float stamina, out vector rotation, out vector translation, float timeSlice)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
 		float staminaFactor = LegacyCurve.Curve(
 		ECurveType.CurveProperty2D,
 		stamina,
@@ -112,11 +120,11 @@ class SRGP_HandsStaminaWeaponMicroTremorAimModifier : ScriptedWeaponAimModifier
 		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.6, 0.3, timeSlice * 35);
 		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.6, 0.3, timeSlice * 35);
 		
-		rotation[0] = rotVSoft;
-		rotation[1] = rotHSoft;
+		rotation[0] = Math.Min(Math.Max(rotVSoft, -10), 10);
+		rotation[1] = Math.Min(Math.Max(rotHSoft, -10), 10);
 		
-		translation[0] = rotVSoft * 0.003;
-		translation[1] = rotHSoft * 0.003;
+		translation[0] = Math.Min(Math.Max(rotVSoft * 0.003, -0.5), 0.5);
+		translation[1] = Math.Min(Math.Max(rotHSoft * 0.003, -0.5), 0.5);
 	}
 	
 }

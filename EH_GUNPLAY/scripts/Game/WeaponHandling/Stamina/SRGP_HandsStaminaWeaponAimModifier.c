@@ -19,6 +19,11 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		PlayerController pc = GetGame().GetPlayerController();
 		if (!pc)
 			return;
@@ -81,8 +86,8 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		float noiseX = Math.PerlinNoise(t + freqX) * 5;
 		float noiseY = Math.PerlinNoise(t + freqY) * 5;
 		
-	    turnOffset[0] = noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
-	    turnOffset[1] = noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+	    turnOffset[0] = Math.Min(Math.Max(noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
+	    turnOffset[1] = Math.Min(Math.Max(noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
 		
 		//PrintFormat("TO=%1|NO=%2|SF=%3|ST=%4", turnOffset[0], noiseX, staminaFactor, stamina);
 	}
@@ -102,7 +107,7 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		float noiseX = Math.PerlinNoise(t + freqX) * 5;
 		float noiseY = Math.PerlinNoise(t + freqY) * 5;
 	    
-	    rotation[0] = noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
-	    rotation[1] = noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult;
+	    rotation[0] = Math.Min(Math.Max(noiseX * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
+	    rotation[1] = Math.Min(Math.Max(noiseY * staminaFactor * weightFactor * stanceFactor * deploymentFactor * m_fOverallTremorMult, -10), 10);
 	}
 }

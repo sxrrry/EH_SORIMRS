@@ -22,11 +22,16 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
 	float m_fOverallShakeMult;
-	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
+	[Attribute("0.7", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		PlayerController pc = GetGame().GetPlayerController();
 		if (!pc)
 			return;
@@ -87,11 +92,11 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.9, 0.6, timeSlice * 35);
 		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.9, 0.6, timeSlice * 35);
 		
-		rotation[0] = rotVSoft;
-		rotation[1] = rotHSoft;
+		rotation[0] = Math.Min(Math.Max(rotVSoft, -10), 10);
+		rotation[1] = Math.Min(Math.Max(rotHSoft, -10), 10);
 		
-		translation[0] = rotHSoft * 0.005;
-		translation[1] = rotVSoft * 0.005;
+		translation[0] = Math.Min(Math.Max(rotHSoft * 0.005, -0.5), 0.5);
+		translation[1] = Math.Min(Math.Max(rotVSoft * 0.005, -0.5), 0.5);
 	}
 	
 	override void OnWeaponFired()

@@ -61,6 +61,11 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
         out vector turnOffset
     )
     {
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
         if (!m_weaponOwner)
             return;
 		
@@ -161,11 +166,20 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 		if (SRGP_Utils.SRGP_GetStance(m_weaponOwner) == 2)
 			m_fTargetMult *= 0;
 
+		float springSpeed = 35;
+		
+		// fix stupid pistol ads glitch
+		if (IS_HANDGUN && SRGP_Utils.SRGP_IsInADS(m_weaponOwner))
+			springSpeed = 100;
+		else
+			springSpeed = 25;
+		
         m_fCurrentMult = Math.SmoothSpring(
             m_fCurrentMult, m_fTargetMult,
-            SPRING_VELOCITY, 0.1, 0.5, timeSlice * 35
+            SPRING_VELOCITY, 0.1, 0.5, timeSlice * springSpeed
         );
-
+		
+		
         translation[0] = offX * m_fCurrentMult;
         translation[1] = offY * m_fCurrentMult;
         translation[2] = offZ * m_fCurrentMult;

@@ -1,15 +1,15 @@
 class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 {
-	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
+	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float OVERALL_INERTIA;
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float INERTIA_ROLL;
 	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float SWAY_ADS_POWER;
 	
-	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float SWAY_SPRING_VERTICAL;
-	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float SWAY_SPRING_HORIZONTAL;
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
 	float SWAY_DAMPING_VERTICAL;
@@ -51,6 +51,11 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		if (!m_playerCamera)
 		{
 			if (m_playerController)
@@ -90,19 +95,16 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 			m_fADSPower = 1;
 		
 		if (m_fTargetHorizontalSway > 0 && !SRGP_Utils.SRGP_IsInADS(m_weaponOwner))
-			m_fCompensation = 0.35;
+			m_fCompensation = 0.5;
 		else
-		{
 			m_fCompensation = 1;
-			
-		}
 		
 		m_fCurrentVerticalSway = Math.SmoothSpring(m_fCurrentVerticalSway, m_fTargetVerticalSway, SPRING_VELOCITY_VERTICAL, SWAY_SPRING_VERTICAL, SWAY_DAMPING_VERTICAL, timeSlice * SWAY_SPEED);
 		m_fCurrentHorizontalSway = Math.SmoothSpring(m_fCurrentHorizontalSway, m_fTargetHorizontalSway, SPRING_VELOCITY_HORIZONTAL, SWAY_SPRING_HORIZONTAL, SWAY_DAMPING_HORIZONTAL, timeSlice * SWAY_SPEED);
 		
-		translation[0] = m_fCurrentHorizontalSway * OVERALL_INERTIA * m_fADSPower;
-		translation[1] = m_fCurrentVerticalSway * OVERALL_INERTIA * 0.1 * m_fADSPower;
+		translation[0] = Math.Min(Math.Max(m_fCurrentHorizontalSway * OVERALL_INERTIA * m_fADSPower, -0.5), 0.5);
+		translation[2] = Math.Min(Math.Max(m_fCurrentVerticalSway * OVERALL_INERTIA * -0.6 * m_fADSPower, -0.5), 0.5);
 		
-		rotation[2] = m_fCurrentHorizontalSway * OVERALL_INERTIA * m_fCompensation * 500 * INERTIA_ROLL;
+		rotation[2] = Math.Min(Math.Max(m_fCurrentHorizontalSway * OVERALL_INERTIA * m_fCompensation * 500 * INERTIA_ROLL, -90), 90);
 	}
 }

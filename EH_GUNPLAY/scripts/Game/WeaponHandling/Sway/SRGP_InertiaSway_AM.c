@@ -48,6 +48,7 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 	float SPRING_VELOCITY_VERTICAL = 1;
 	float SPRING_VELOCITY_HORIZONTAL = 1;
 	float prevYawAngle;
+	bool m_freelookLock;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -70,8 +71,18 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 		}
 	}
 	
+	protected void ResetFreelookLock()
+	{
+		m_freelookLock = false;
+	}
+	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{	
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
 		if (!m_playerController)
 		{
 			m_playerController = GetGame().GetPlayerController();
@@ -85,7 +96,17 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 		}
 		
 		if (SRGP_Utils.SRGP_IsFreeloking(m_weaponOwner))
+		{
+			GetGame().GetCallqueue().Remove(ResetFreelookLock);
+			m_freelookLock = true;
 			return;
+		}
+		if (m_freelookLock)
+		{
+			if (GetGame().GetCallqueue().GetRemainingTime(ResetFreelookLock) <= 0)
+				GetGame().GetCallqueue().CallLater(ResetFreelookLock, 250, false);
+			return;
+		}
 		
 		m_vCurrentCameraAngles = m_playerCamera.GetYawPitchRoll();
 		
