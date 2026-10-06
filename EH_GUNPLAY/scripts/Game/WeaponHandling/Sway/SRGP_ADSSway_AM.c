@@ -2,7 +2,6 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 {
 	IEntity m_weaponEnt
 	IEntity m_weaponOwner;
-	SRGP_HandsStaminaCharacterComponent m_HandsStamCharComp;
 	bool m_bWasADSPrev;
 	
 	[Attribute("0.65", uiwidget: UIWidgets.Slider, desc: "Sway * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
@@ -14,13 +13,13 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Speed of alignment (impulse * (this * deltaT) every frame)", category: "Settings", params: "0 100")]
 	float SWAY_ALIGN_SPEED;
 	
-	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
 	float SWAY_SPRING_VERTICAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
 	float SWAY_DAMPING_VERTICAL;
 	
-	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Horizontal sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
 	float SWAY_SPRING_HORIZONTAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
@@ -84,21 +83,19 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	override protected void OnActivated(IEntity weaponOwner)
 	{
 		m_weaponOwner = weaponOwner;
-		m_HandsStamCharComp = SRGP_HandsStaminaCharacterComponent.Cast(weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{	
-		float t = GetGame().GetWorld().GetWorldTime() * 0.001;
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
 		
-		if (!m_HandsStamCharComp)
-			return;
-		if (!owner)
-			return;
-		if (!m_weaponEnt)
-			return;
 		if (!m_weaponOwner)
 			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
 		
 		if (SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && !m_bWasADSPrev)
 		{

@@ -20,21 +20,31 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	
 	float m_fTick;
 	
-	[Attribute("1", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
+	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
 	float m_fOverallShakeMult;
-	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
+	[Attribute("0.7", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
+	
+	IEntity m_weaponOwner;
+	
+	override protected void OnActivated(IEntity weaponOwner)
+	{
+		m_weaponOwner = weaponOwner;
+	}
 	
 	override protected void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
-		PlayerController pc = GetGame().GetPlayerController();
-		if (!pc)
-			return;
-		SCR_ChimeraCharacter player = SCR_ChimeraCharacter.Cast(pc.GetControlledEntity());
-		if (!player)
-			return;
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
 		
-		int stance = SRGP_Utils.SRGP_GetStance(player);
+		if (!m_weaponOwner)
+			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+    		return;
+		
+		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		
 		if (stance == 2)
 		{
@@ -46,7 +56,7 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		else if (stanceFactor < 1)
 			stanceFactor = 1;
 		
-		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(player);
+		deploymentState = SRGP_Utils.SRGP_IsWeaponDeployed(m_weaponOwner);
 		
 		switch (deploymentState)
 		{
@@ -63,7 +73,7 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		
 	    if (m_fShake > 0)
 	    {
-			float weight = SRGP_Utils.SRGP_GetWeaponWeight(player);
+			float weight = SRGP_Utils.SRGP_GetWeaponWeight(m_weaponOwner);
 			float weightFactor = Math.InverseLerp(20, 0, weight);
 			weightFactor = Math.Min(weightFactor, 1);
 			weightFactor = Math.Max(weightFactor, 0.1);
@@ -87,11 +97,11 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		rotVSoft = Math.SmoothSpring(rotVSoft, rotV, m_fSVRotV, 0.9, 0.6, timeSlice * 35);
 		rotHSoft = Math.SmoothSpring(rotHSoft, rotH, m_fSVRotH, 0.9, 0.6, timeSlice * 35);
 		
-		rotation[0] = rotVSoft;
-		rotation[1] = rotHSoft;
+		rotation[0] = Math.Min(Math.Max(rotVSoft, -10), 10);
+		rotation[1] = Math.Min(Math.Max(rotHSoft, -10), 10);
 		
-		translation[0] = rotHSoft * 0.005;
-		translation[1] = rotVSoft * 0.005;
+		translation[0] = Math.Min(Math.Max(rotHSoft * 0.005, -0.5), 0.5);
+		translation[1] = Math.Min(Math.Max(rotVSoft * 0.005, -0.5), 0.5);
 	}
 	
 	override void OnWeaponFired()

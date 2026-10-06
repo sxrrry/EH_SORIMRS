@@ -1,6 +1,6 @@
 class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 {
-	[Attribute("0.65", uiwidget: UIWidgets.Slider, desc: "Recoil * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
 	float m_fCrouchMultiplier;
 	
 	const float MAXIMAL_VERTICAL_DEGREES = 20;
@@ -11,14 +11,14 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	[Attribute("0.15", uiwidget: UIWidgets.Slider, desc: "Overall recoil * this", category: "Settings", params: "0 5")]
 	float RECOIL_POWER;
 	
-	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_HOR_POWER;  // ~0.7 real
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
+	float RECOIL_HOR_POWER;  // ~0.4 real
 	
-	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_VERT_POWER; // ~0.5 realistic
+	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
+	float RECOIL_VERT_POWER; // ~0.4 realistic
 	
 	[Attribute("8", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
-	float RECOIL_ROLL_POWER; // 0.7 hor = ~8 this - best
+	float RECOIL_ROLL_POWER; // 0.4 hor = ~8 this - best
 	
 	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
 	float RECOIL_SPRING_VERTICAL; // 0.8
@@ -35,10 +35,10 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "How fast all recoil happens...?", category: "Settings", params: "0.1 50")]
 	float RECOIL_SPEED_MULT; // 6
 	
-	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
+	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
 	float RECOIL_AIMKICK_VERTICAL; // 3
 	
-	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
+	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
 	float RECOIL_AIMKICK_HORIZONTAL; // 3
 	
 	[Attribute("0.0015", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally in hands (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
@@ -137,12 +137,19 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
 		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_HOR_POWER * RECOIL_POWER;
-		
-		//PrintFormat("%1|%2|%3|%4", m_fWeaponMassFactor, energyFactor, m_fTotalVerticalImpulse, m_fBulletInitSpeedCoef);
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)
 	{
+		timeSlice = Math.Min(timeSlice, 0.033);
+		translation = vector.Zero;
+		rotation = vector.Zero;
+		turnOffset = vector.Zero;
+		
+		if (!m_weaponOwner)
+			return;
+		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+		    return;
 		
 		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);
 		m_fTotalHorizontalImpulse = Math.Clamp(m_fTotalHorizontalImpulse, 0, MAXIMAL_HORIZONTAL_DEGREES)* Math.RandomFloat(-1, 1);
@@ -157,8 +164,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		translation[0] = m_fCurrentHorizontalImpulse * RECOIL_GUN_SIDEMOVE; // decorative side sway
 		translation[2] = Math.Max(m_fCurrentVerticalImpulse * RECOIL_GUN_SHOULDERKICK * -1, RECOIL_GUN_SHOULDERKICK_LIMIT); // kick
 		
-		turnOffset[0] = m_fCurrentHorizontalImpulse * RECOIL_AIMKICK_HORIZONTAL;
-		turnOffset[1] = m_fCurrentVerticalImpulse * RECOIL_AIMKICK_VERTICAL;
+		turnOffset[0] = Math.Min(Math.Max(m_fCurrentHorizontalImpulse * RECOIL_AIMKICK_HORIZONTAL, -0.5), 0.5);
+		turnOffset[1] = Math.Min(Math.Max(m_fCurrentVerticalImpulse * RECOIL_AIMKICK_VERTICAL, -0.5), 0.5);
 		
 		m_fTotalHorizontalImpulse = 0;
 		m_fTotalVerticalImpulse = 0;

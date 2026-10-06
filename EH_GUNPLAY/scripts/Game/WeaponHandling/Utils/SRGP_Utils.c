@@ -74,4 +74,18 @@ class SRGP_Utils
 		// in case if something went wrong, but weapon in hands :)
 		return 3;
 	}
+	
+	static bool IsPlayerCharacter(IEntity entity)
+    {
+        PlayerManager pm = GetGame().GetPlayerManager();
+        if (!pm)
+            return false;
+        return pm.GetPlayerIdFromControlledEntity(entity) > 0;
+    }
+	
+	static bool SRGP_IsLocalPlayerEntity(IEntity entity)
+	{
+	    SCR_PlayerController pc = SCR_PlayerController.Cast(GetGame().GetPlayerController());
+	    return pc && pc.GetControlledEntity() == entity;
+	}
 }
