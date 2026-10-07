@@ -1,24 +1,29 @@
 class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 {
-	float stanceFactor = 1;
-	int deploymentState = 0;
-	float deploymentFactor = 1;
-	float weightFactor = 1;
+	private float stanceFactor = 1;
+	private int deploymentState = 0;
+	private float deploymentFactor = 1;
+	private float weightFactor = 1;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
 	
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total tremor power (def 0.5)", category: "Settings", params: "0 1")]
-	float m_fOverallTremorMult;
+	private float m_fOverallTremorMult;
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Tremor * this when crouching (def 0.5)", category: "Settings", params: "0 1")]
-	float m_fCrouchMultiplier;
+	private float m_fCrouchMultiplier;
 	[Attribute("0 0 100 1", uiwidget: UIWidgets.CurveDialog, desc: "Relation of tremor to stamina", category: "Settings", params: "100 1 0 0")]
-	protected ref Curve m_cTremorOnStamina;
+	private ref Curve m_cTremorOnStamina;
 	[Attribute("0 0 20 3", uiwidget: UIWidgets.CurveDialog, desc: "Relation of tremor to weapon weight", category: "Settings", params: "20 3 0 0")]
-	protected ref Curve m_cTremorOnWeaponWeight;
+	private ref Curve m_cTremorOnWeaponWeight;
 	
-	IEntity m_weaponOwner
-	SRGP_HandsStaminaCharacterComponent HSCC;
+	private IEntity m_weaponOwner
+	private SRGP_HandsStaminaCharacterComponent HSCC;
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 		if (!m_weaponOwner)
 			return;
@@ -34,8 +39,14 @@ class SRGP_HandsStaminaWeaponAimModifier : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
-    		return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
+		    return;
 		if (!HSCC)
 		{
 			HSCC = SRGP_HandsStaminaCharacterComponent.Cast(m_weaponOwner.FindComponent(SRGP_HandsStaminaCharacterComponent));

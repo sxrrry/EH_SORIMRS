@@ -1,56 +1,56 @@
 class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 {
-	IEntity m_weaponEnt
-	IEntity m_weaponOwner;
-	bool m_bWasADSPrev;
+	private IEntity m_weaponEnt
+	private IEntity m_weaponOwner;
+	private bool m_bWasADSPrev;
 	
 	[Attribute("0.65", uiwidget: UIWidgets.Slider, desc: "Sway * this when crouching (def 0.65)", category: "Settings", params: "0 1")]
-	float m_fCrouchMultiplier;
+	private float m_fCrouchMultiplier;
 	
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "Total sway strength", category: "Settings", params: "0 100")]
-	float SWAY_STRENGTH;
+	private float SWAY_STRENGTH;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Speed of alignment (impulse * (this * deltaT) every frame)", category: "Settings", params: "0 100")]
-	float SWAY_ALIGN_SPEED;
+	private float SWAY_ALIGN_SPEED;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
-	float SWAY_SPRING_VERTICAL;
+	private float SWAY_SPRING_VERTICAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
-	float SWAY_DAMPING_VERTICAL;
+	private float SWAY_DAMPING_VERTICAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal sping power (how springy gun behaves)", category: "Settings", params: "0 1")]
-	float SWAY_SPRING_HORIZONTAL;
+	private float SWAY_SPRING_HORIZONTAL;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal damping power (how hard it tries to become fine)", category: "Settings", params: "0 1")]
-	float SWAY_DAMPING_HORIZONTAL;
+	private float SWAY_DAMPING_HORIZONTAL;
 	
 	[Attribute("4", uiwidget: UIWidgets.Slider, desc: "When entering/quiting ADS character will make forward-backward snap movement, hitting shoulder hard", category: "Settings", params: "0 100")]
-	float SWAY_PUSH_POWER;
+	private float SWAY_PUSH_POWER;
 	
 	[Attribute("-8", uiwidget: UIWidgets.Slider, desc: "How strong ADS sway impacts on camera movement", category: "Settings", params: "-100 100")]
-	float SWAY_CAMERA_IMPACT;
+	private float SWAY_CAMERA_IMPACT;
 	
 	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves vertically from sway (inverted)", category: "Settings", params: "-1 1")]
-	float SWAY_MOVE_VERTICAL;
+	private float SWAY_MOVE_VERTICAL;
 	
 	[Attribute("0.015", uiwidget: UIWidgets.Slider, desc: "How strong weapon moves horizontally from sway (inverted)", category: "Settings", params: "-1 1")]
-	float SWAY_MOVE_HORIZONTAL;
+	private float SWAY_MOVE_HORIZONTAL;
 	
 	[Attribute("3", uiwidget: UIWidgets.Slider, desc: "Sway roll power (multiplied from horizontal sway)", category: "Settings", params: "0 50")]
-	float SWAY_ROLL_POWER;
+	private float SWAY_ROLL_POWER;
 	
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "Sway speed (better not to touch actually)", category: "Settings", params: "1 100")]
-	float SWAY_SPEED;
+	private float SWAY_SPEED;
 	
 	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "Lower limit for vertical sway impulse", category: "Settings", params: "0 1")]
-	float SWAY_MINIMAL_VERTICAL;
+	private float SWAY_MINIMAL_VERTICAL;
 	
 	[Attribute("0.2", uiwidget: UIWidgets.Slider, desc: "Lower limit for horizontal sway impulse", category: "Settings", params: "0 1")]
-	float SWAY_MINIMAL_HORIZONTAL;
+	private float SWAY_MINIMAL_HORIZONTAL;
 	
 	[Attribute("true", uiwidget: UIWidgets.CheckBox, desc: "Enable sway when quit ADSing", category: "Settings")]
-	bool SWAY_ENABLE_OUT;
+	private bool SWAY_ENABLE_OUT;
 	
 	private float m_fSwayImpulsePower;
 	private float m_fTargetSwayImpulse;
@@ -71,9 +71,12 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	private float m_fAngleVel;
 	private float m_fAngleTimer;
 	
-	float m_fStanceFactor;
-	float m_fdeploymentFactor;
-	int m_DeploymentState;
+	private float m_fStanceFactor;
+	private float m_fdeploymentFactor;
+	private int m_DeploymentState;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -82,6 +85,8 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 	}
 	
@@ -94,8 +99,14 @@ class SRGP_ADSSway_AM : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
-    		return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
+		    return;
 		
 		if (SRGP_Utils.SRGP_IsInADS(m_weaponOwner) && !m_bWasADSPrev)
 		{

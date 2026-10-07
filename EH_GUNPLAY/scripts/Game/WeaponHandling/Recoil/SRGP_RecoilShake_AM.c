@@ -1,34 +1,39 @@
 class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 {
-	float stanceFactor = 1; // def 1
-	int deploymentState = 0;
-	float deploymentFactor = 1;
-	float weightFactor = 1;
+	private float stanceFactor = 1; // def 1
+	private int deploymentState = 0;
+	private float deploymentFactor = 1;
+	private float weightFactor = 1;
 	
-	float m_fShake;
+	private float m_fShake;
 	
-	float m_fSVTurnH;
-	float m_fSVTurnV;
-	float m_fSVRotV;
-	float m_fSVRotH;
+	private float m_fSVTurnH;
+	private float m_fSVTurnV;
+	private float m_fSVRotV;
+	private float m_fSVRotH;
 	
-	float rotVSoft;
-	float rotHSoft;
+	private float rotVSoft;
+	private float rotHSoft;
 	
-	float rotV;
-	float rotH;
+	private float rotV;
+	private float rotH;
 	
-	float m_fTick;
+	private float m_fTick;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
 	
 	[Attribute("0.5", uiwidget: UIWidgets.Auto, desc: "Total shake power (def 0.5)", category: "Settings", params: "0 100")]
-	float m_fOverallShakeMult;
+	private float m_fOverallShakeMult;
 	[Attribute("0.7", uiwidget: UIWidgets.Auto, desc: "Shake * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
-	float m_fCrouchMultiplier;
+	private float m_fCrouchMultiplier;
 	
-	IEntity m_weaponOwner;
+	private IEntity m_weaponOwner;
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 	}
 	
@@ -41,8 +46,14 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
-    		return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
+		    return;
 		
 		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		

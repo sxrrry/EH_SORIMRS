@@ -1,54 +1,57 @@
 class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 {
 	[Attribute("0.1", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float OVERALL_INERTIA;
+	private float OVERALL_INERTIA;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Yaw (horziontal) inertia * this", category: "Settings", params: "0 10")]
-	float INERTIA_HORIZONTAL;
+	private float INERTIA_HORIZONTAL;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Pitch (vertical) inertia * this", category: "Settings", params: "0 10")]
-	float INERTIA_VERTICAL;
+	private float INERTIA_VERTICAL;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Roll inertia * this", category: "Settings", params: "0 10")]
-	float INERTIA_ROLL;
+	private float INERTIA_ROLL;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Weapon move * this (BETTER TO MATCH WITH INERTIA_HORIZONTAL, BECAUSE THIS CONVERTED FROM IT ((m_vCurrentWeaponAngles[0] - m_vCurrentCameraAngles[0]) * INERTIA_MOVE_HORIZONTAL))", category: "Settings", params: "0 10")]
-	float INERTIA_MOVE_HORIZONTAL;
+	private float INERTIA_MOVE_HORIZONTAL;
 	
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Weapon move * this (BETTER TO MATCH WITH INERTIA_VERTICA, BECAUSE THIS CONVERTED FROM IT ((m_vCurrentWeaponAngles[1] - m_vCurrentCameraAngles[1]) * INERTIA_MOVE_VERTICAL))", category: "Settings", params: "0 10")]
-	float INERTIA_MOVE_VERTICAL;
+	private float INERTIA_MOVE_VERTICAL;
 	
 	[Attribute("0.002", uiwidget: UIWidgets.Slider, desc: "CONVERTED move * this (THIS *-1 to create proper move)", category: "Settings", params: "-1 1")]
-	float OVERALL_MOVE;
+	private float OVERALL_MOVE;
 	
 	[Attribute("0.9", uiwidget: UIWidgets.Slider, desc: "Spring effect", category: "Settings", params: "0 1")]
-	float INERTIA_SPRING_HORIZONTAL;
+	private float INERTIA_SPRING_HORIZONTAL;
 	
 	[Attribute("0.9", uiwidget: UIWidgets.Slider, desc: "Spring effect", category: "Settings", params: "0 1")]
-	float INERTIA_SPRING_VERTICAL;
+	private float INERTIA_SPRING_VERTICAL;
 	
 	[Attribute("0.9", uiwidget: UIWidgets.Slider, desc: "Spring damping power", category: "Settings", params: "0 1")]
-	float INERTIA_DAMPING_HORIZONTAL;
+	private float INERTIA_DAMPING_HORIZONTAL;
 	
 	[Attribute("0.9", uiwidget: UIWidgets.Slider, desc: "Spring damping power", category: "Settings", params: "0 1")]
-	float INERTIA_DAMPING_VERTICAL;
+	private float INERTIA_DAMPING_VERTICAL;
 	
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "Speed of all calculations", category: "Settings", params: "1 50")]
-	float INERTIA_SPEED;
+	private float INERTIA_SPEED;
 	
-	IEntity m_weaponEnt;
-	PlayerController m_playerController;
-	PlayerCamera m_playerCamera;
-	IEntity m_weaponOwner;
+	private IEntity m_weaponEnt;
+	private PlayerController m_playerController;
+	private PlayerCamera m_playerCamera;
+	private IEntity m_weaponOwner;
 	
-	vector m_vCurrentCameraAngles;
-	vector m_vCurrentWeaponAngles;
-	vector m_vPreviousWeaponAngles;
+	private vector m_vCurrentCameraAngles;
+	private vector m_vCurrentWeaponAngles;
+	private vector m_vPreviousWeaponAngles;
 	
-	float SPRING_VELOCITY_VERTICAL = 1;
-	float SPRING_VELOCITY_HORIZONTAL = 1;
-	float prevYawAngle;
-	bool m_freelookLock;
+	private float SPRING_VELOCITY_VERTICAL = 1;
+	private float SPRING_VELOCITY_HORIZONTAL = 1;
+	private float prevYawAngle;
+	private bool m_freelookLock;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -57,6 +60,8 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 		m_playerController = GetGame().GetPlayerController();
 		if (!m_playerController)
@@ -85,8 +90,14 @@ class SRGP_InertiaSway_AM : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
-    		return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
+		    return;
 		
 		if (!m_playerController)
 		{

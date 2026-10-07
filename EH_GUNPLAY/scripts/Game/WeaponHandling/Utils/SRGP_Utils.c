@@ -75,6 +75,7 @@ class SRGP_Utils
 		return 3;
 	}
 	
+	// should be calculated for all entities, but only for players, not NPC
 	static bool IsPlayerCharacter(IEntity entity)
     {
         PlayerManager pm = GetGame().GetPlayerManager();
@@ -83,6 +84,7 @@ class SRGP_Utils
         return pm.GetPlayerIdFromControlledEntity(entity) > 0;
     }
 	
+	// should be calculated only in client hands
 	static bool SRGP_IsLocalPlayerEntity(IEntity entity)
 	{
 	    SCR_PlayerController pc = SCR_PlayerController.Cast(GetGame().GetPlayerController());
