@@ -1,7 +1,22 @@
+class SRGP_SettingDef
+{
+    string WidgetName;
+    string VarName;
+    float Step;
+
+    void SRGP_SettingDef(string widgetName, string varName, float step)
+    {
+        WidgetName = widgetName;
+        VarName = varName;
+        Step = step;
+    }
+}
+
 class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
 {
     ref RichTextWidget m_wDescText;
     ref map<string, string> m_mDescriptions = new map<string, string>();
+    ref map<string, ref SRGP_SettingDef> m_mSettingDefs = new map<string, ref SRGP_SettingDef>();
     ref array<string> m_aPistolWidgets = new array<string>();
 
     protected int m_iLastPresetSlot = 1;
@@ -31,6 +46,7 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
             m_wDescText.SetText("");
 
         m_aSettingsBindings.Clear();
+        m_mSettingDefs.Clear();
 
         SRGP_WeaponDisplacementPersistence persistence = new SRGP_WeaponDisplacementPersistence();
         persistence.LoadFromFileOrDefaults();
@@ -145,10 +161,8 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
 
     protected void NormalizeSlider(string widgetName)
     {
-        string varName = GetVarNameForWidget(widgetName);
-        float step = GetStepForWidget(widgetName);
-
-        if (varName == "" || step <= 0)
+        SRGP_SettingDef def = m_mSettingDefs.Get(widgetName);
+        if (!def)
             return;
 
         BaseContainer s = GetGame().GetGameUserSettings().GetModule("SRGP_WeaponDisplacementSettings");
@@ -156,61 +170,23 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
             return;
 
         float v;
-        if (!s.Get(varName, v))
+        if (!s.Get(def.VarName, v))
             return;
 
-        float rounded = SRGP_WeaponDisplacementPersistence.RoundToStep(v, step);
+        float rounded = SRGP_WeaponDisplacementPersistence.RoundToStep(v, def.Step);
 
         if (v == rounded)
             return;
 
-        s.Set(varName, rounded);
+        s.Set(def.VarName, rounded);
 
-        Widget w = m_wRoot.FindAnyWidget(widgetName);
+        Widget w = m_wRoot.FindAnyWidget(def.WidgetName);
         if (!w)
             return;
 
         SCR_SliderComponent sl = SCR_SliderComponent.Cast(w.FindHandler(SCR_SliderComponent));
         if (sl)
             sl.SetValue(rounded);
-    }
-
-    protected string GetVarNameForWidget(string widgetName)
-    {
-        if (widgetName == "wSetting_SRGP_ROTATION_X") return "ROTATION_X";
-        if (widgetName == "wSetting_SRGP_ROTATION_Y") return "ROTATION_Y";
-        if (widgetName == "wSetting_SRGP_ROTATION_Z") return "ROTATION_Z";
-        if (widgetName == "wSetting_SRGP_OFFSET_X") return "OFFSET_X";
-        if (widgetName == "wSetting_SRGP_OFFSET_Y") return "OFFSET_Y";
-        if (widgetName == "wSetting_SRGP_OFFSET_Z") return "OFFSET_Z";
-
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_X") return "PISTOL_ROTATION_X";
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_Y") return "PISTOL_ROTATION_Y";
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_Z") return "PISTOL_ROTATION_Z";
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_X") return "PISTOL_OFFSET_X";
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_Y") return "PISTOL_OFFSET_Y";
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_Z") return "PISTOL_OFFSET_Z";
-
-        return "";
-    }
-
-    protected float GetStepForWidget(string widgetName)
-    {
-        if (widgetName == "wSetting_SRGP_ROTATION_X") return 0.1;
-        if (widgetName == "wSetting_SRGP_ROTATION_Y") return 0.1;
-        if (widgetName == "wSetting_SRGP_ROTATION_Z") return 0.1;
-        if (widgetName == "wSetting_SRGP_OFFSET_X") return 0.005;
-        if (widgetName == "wSetting_SRGP_OFFSET_Y") return 0.005;
-        if (widgetName == "wSetting_SRGP_OFFSET_Z") return 0.005;
-
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_X") return 0.1;
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_Y") return 0.1;
-        if (widgetName == "wSetting_SRGP_PISTOL_ROTATION_Z") return 0.1;
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_X") return 0.005;
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_Y") return 0.005;
-        if (widgetName == "wSetting_SRGP_PISTOL_OFFSET_Z") return 0.005;
-
-        return 0;
     }
 
     protected void OnAnySettingChanged()
@@ -328,19 +304,10 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
 
         SetCheckboxValue("wSetting_SRGP_ENABLE_PISTOL_SETTINGS", "ENABLE_PISTOL_SETTINGS", s);
 
-        SetSliderValue("wSetting_SRGP_ROTATION_X", "ROTATION_X", s);
-        SetSliderValue("wSetting_SRGP_ROTATION_Y", "ROTATION_Y", s);
-        SetSliderValue("wSetting_SRGP_ROTATION_Z", "ROTATION_Z", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_X", "OFFSET_X", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_Y", "OFFSET_Y", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_Z", "OFFSET_Z", s);
-
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_X", "PISTOL_ROTATION_X", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_Y", "PISTOL_ROTATION_Y", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_Z", "PISTOL_ROTATION_Z", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_X", "PISTOL_OFFSET_X", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_Y", "PISTOL_OFFSET_Y", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_Z", "PISTOL_OFFSET_Z", s);
+        foreach (string widgetName, SRGP_SettingDef def : m_mSettingDefs)
+        {
+            SetSliderValue(def.WidgetName, def.VarName, s);
+        }
     }
 
     protected void SetSliderValue(string widgetName, string varName, BaseContainer s)
@@ -491,6 +458,8 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
             widgetName
         );
         m_aSettingsBindings.Insert(binding);
+
+        m_mSettingDefs.Insert(widgetName, new SRGP_SettingDef(widgetName, settingVar, step));
 
         Widget finalWidget = m_wRoot.FindAnyWidget(widgetName);
         if (finalWidget)

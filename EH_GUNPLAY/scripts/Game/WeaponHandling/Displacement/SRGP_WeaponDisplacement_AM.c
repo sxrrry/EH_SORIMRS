@@ -173,7 +173,7 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 		if (IS_HANDGUN && SRGP_Utils.SRGP_IsInADS(m_weaponOwner))
 			springSpeed = 100;
 		else
-			springSpeed = 25;
+			springSpeed = 35;
 		
         m_fCurrentMult = Math.SmoothSpring(
             m_fCurrentMult, m_fTargetMult,
