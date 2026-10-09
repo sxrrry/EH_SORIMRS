@@ -49,6 +49,36 @@ class SRGP_WeaponDisplacementPersistence : JsonApiStruct
         FileIO.MakeDirectory("$profile:SRGP_WeaponDisplacement");
     }
 
+    static float RoundToStep(float value, float step)
+    {
+        if (step <= 0)
+            return value;
+
+        float ratio = value / step;
+        float rounded = Math.Floor(ratio + 0.5);
+
+        return rounded * step;
+    }
+
+    void NormalizeValues()
+    {
+        ROTATION_X = RoundToStep(ROTATION_X, 0.1);
+        ROTATION_Y = RoundToStep(ROTATION_Y, 0.1);
+        ROTATION_Z = RoundToStep(ROTATION_Z, 0.1);
+
+        OFFSET_X = RoundToStep(OFFSET_X, 0.005);
+        OFFSET_Y = RoundToStep(OFFSET_Y, 0.005);
+        OFFSET_Z = RoundToStep(OFFSET_Z, 0.005);
+
+        PISTOL_ROTATION_X = RoundToStep(PISTOL_ROTATION_X, 0.1);
+        PISTOL_ROTATION_Y = RoundToStep(PISTOL_ROTATION_Y, 0.1);
+        PISTOL_ROTATION_Z = RoundToStep(PISTOL_ROTATION_Z, 0.1);
+
+        PISTOL_OFFSET_X = RoundToStep(PISTOL_OFFSET_X, 0.005);
+        PISTOL_OFFSET_Y = RoundToStep(PISTOL_OFFSET_Y, 0.005);
+        PISTOL_OFFSET_Z = RoundToStep(PISTOL_OFFSET_Z, 0.005);
+    }
+
     void LoadFromFileOrDefaults()
     {
         EnsureDirectory();
@@ -56,10 +86,12 @@ class SRGP_WeaponDisplacementPersistence : JsonApiStruct
         if (FileIO.FileExists(GetFilePath()))
         {
             LoadFromFile(GetFilePath());
+            NormalizeValues();
             return;
         }
 
         LoadFromGameSettings();
+        NormalizeValues();
         SaveToFile();
     }
 
@@ -112,12 +144,14 @@ class SRGP_WeaponDisplacementPersistence : JsonApiStruct
     void SaveToFile()
     {
         EnsureDirectory();
+        NormalizeValues();
         PackToFile(GetFilePath());
     }
 
     void SaveToSlot(int slot)
     {
         EnsureDirectory();
+        NormalizeValues();
         PackToFile(GetPresetPath(slot));
     }
 
@@ -128,6 +162,7 @@ class SRGP_WeaponDisplacementPersistence : JsonApiStruct
             return false;
 
         LoadFromFile(path);
+        NormalizeValues();
         return true;
     }
 }
