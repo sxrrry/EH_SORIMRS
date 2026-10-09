@@ -1,37 +1,40 @@
 class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 {
 	[Attribute("0.6", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float OVERALL_INERTIA;
+	private float OVERALL_INERTIA;
 	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float INERTIA_ROLL;
+	private float INERTIA_ROLL;
 	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float SWAY_ADS_POWER;
+	private float SWAY_ADS_POWER;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float SWAY_SPRING_VERTICAL;
+	private float SWAY_SPRING_VERTICAL;
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float SWAY_SPRING_HORIZONTAL;
+	private float SWAY_SPRING_HORIZONTAL;
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float SWAY_DAMPING_VERTICAL;
+	private float SWAY_DAMPING_VERTICAL;
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "ALL inertia * this", category: "Settings", params: "0 10")]
-	float SWAY_DAMPING_HORIZONTAL;
+	private float SWAY_DAMPING_HORIZONTAL;
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "Speed of all calculations", category: "Settings", params: "1 50")]
-	float SWAY_SPEED;
+	private float SWAY_SPEED;
 	
-	IEntity m_weaponOwner;
-	IEntity m_weaponEnt;
-	PlayerController m_playerController;
-	SCR_CharacterControllerComponent m_characterControllerComponent;
-	PlayerCamera m_playerCamera;
+	private IEntity m_weaponOwner;
+	private IEntity m_weaponEnt;
+	private PlayerController m_playerController;
+	private SCR_CharacterControllerComponent m_characterControllerComponent;
+	private PlayerCamera m_playerCamera;
 	
-	float m_fCurrentHorizontalSway;
-	float m_fCurrentVerticalSway;
-	float m_fTargetHorizontalSway;
-	float m_fTargetVerticalSway;
-	float m_fCompensation;
-	float m_fADSPower;
-	float SPRING_VELOCITY_VERTICAL = 0;
-	float SPRING_VELOCITY_HORIZONTAL = 0;
+	private float m_fCurrentHorizontalSway;
+	private float m_fCurrentVerticalSway;
+	private float m_fTargetHorizontalSway;
+	private float m_fTargetVerticalSway;
+	private float m_fCompensation;
+	private float m_fADSPower;
+	private float SPRING_VELOCITY_VERTICAL = 0;
+	private float SPRING_VELOCITY_HORIZONTAL = 0;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -40,6 +43,8 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 		m_playerController = GetGame().GetPlayerController();
 		if (!m_playerController)
@@ -58,8 +63,14 @@ class SRGP_MovementSway_AM : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
-    		return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
+		    return;
 		
 		if (!m_playerCamera)
 		{

@@ -1,20 +1,25 @@
 class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 {
     [Attribute("False", uiwidget: UIWidgets.CheckBox, desc: "Use displacement for handguns", category: "Settings")]
-    bool IS_HANDGUN;
+    private bool IS_HANDGUN;
 
-    IEntity m_weaponOwner;
-    SRGP_WeaponDisplacementComponent m_SettingsComp;
+    private IEntity m_weaponOwner;
+    private SRGP_WeaponDisplacementComponent m_SettingsComp;
 
-    float SPRING_VELOCITY = 0;
-    float m_fCurrentMult;
-    float m_fTargetMult;
+    private float SPRING_VELOCITY = 0;
+    private float m_fCurrentMult;
+    private float m_fTargetMult;
 
-    bool m_bSyncSent = false;
+	private bool m_bSyncSent = false;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsPlayer;
 
     override protected void OnActivated(IEntity weaponOwner)
     {
         m_weaponOwner = weaponOwner;
+		m_fControlCheckTDelta = 1;
+		m_bIsPlayer = false;
 
         m_SettingsComp = SRGP_WeaponDisplacementComponent.Cast(
             weaponOwner.FindComponent(SRGP_WeaponDisplacementComponent)
@@ -58,10 +63,15 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 		turnOffset = vector.Zero;
 		
         if (!m_weaponOwner)
-            return;
-		
-        if (!SRGP_Utils.IsPlayerCharacter(m_weaponOwner))
-            return;
+			return;
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsPlayer = SRGP_Utils.IsPlayerCharacter(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsPlayer)
+		    return;
 
         if (!m_bSyncSent)
         {
@@ -163,7 +173,7 @@ class SRGP_WeaponDisplacement_AM : ScriptedWeaponAimModifier
 		if (IS_HANDGUN && SRGP_Utils.SRGP_IsInADS(m_weaponOwner))
 			springSpeed = 100;
 		else
-			springSpeed = 25;
+			springSpeed = 35;
 		
         m_fCurrentMult = Math.SmoothSpring(
             m_fCurrentMult, m_fTargetMult,

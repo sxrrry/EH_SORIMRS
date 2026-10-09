@@ -1,54 +1,54 @@
 class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 {
 	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil * this when crouching (def 0.7)", category: "Settings", params: "0 1")]
-	float m_fCrouchMultiplier;
+	private float m_fCrouchMultiplier;
 	
-	const float MAXIMAL_VERTICAL_DEGREES = 20;
-	const float MAXIMAL_VERTICAL_IMPULSE = 100;
-	const float MAXIMAL_HORIZONTAL_DEGREES = 10;
-	const float MAXIMAL_HORIZONTAL_IMPULSE = 100;
+	private const float MAXIMAL_VERTICAL_DEGREES = 20;
+	private const float MAXIMAL_VERTICAL_IMPULSE = 100;
+	private const float MAXIMAL_HORIZONTAL_DEGREES = 10;
+	private const float MAXIMAL_HORIZONTAL_IMPULSE = 100;
 
 	[Attribute("0.15", uiwidget: UIWidgets.Slider, desc: "Overall recoil * this", category: "Settings", params: "0 5")]
-	float RECOIL_POWER;
+	private float RECOIL_POWER;
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_HOR_POWER;  // ~0.4 real
+	private float RECOIL_HOR_POWER;  // ~0.4 real
 	
 	[Attribute("0.4", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
-	float RECOIL_VERT_POWER; // ~0.4 realistic
+	private float RECOIL_VERT_POWER; // ~0.4 realistic
 	
 	[Attribute("8", uiwidget: UIWidgets.Slider, desc: "Recoil roll power", category: "Settings", params: "0 100")]
-	float RECOIL_ROLL_POWER; // 0.4 hor = ~8 this - best
+	private float RECOIL_ROLL_POWER; // 0.4 hor = ~8 this - best
 	
 	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
-	float RECOIL_SPRING_VERTICAL; // 0.8
+	private float RECOIL_SPRING_VERTICAL; // 0.8
 	
 	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]
-	float RECOIL_SPRING_HORIZONTAL; // 0.8
+	private float RECOIL_SPRING_HORIZONTAL; // 0.8
 	
 	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 2")]
-	float RECOIL_DAMPING_VERTICAL; // 0.7
+	private float RECOIL_DAMPING_VERTICAL; // 0.7
 	
 	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Recoil damping", category: "Settings", params: "0 2")]
-	float RECOIL_DAMPING_HORIZONTAL; // 0.7
+	private float RECOIL_DAMPING_HORIZONTAL; // 0.7
 	
 	[Attribute("15", uiwidget: UIWidgets.Slider, desc: "How fast all recoil happens...?", category: "Settings", params: "0.1 50")]
-	float RECOIL_SPEED_MULT; // 6
+	private float RECOIL_SPEED_MULT; // 6
 	
 	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
-	float RECOIL_AIMKICK_VERTICAL; // 3
+	private float RECOIL_AIMKICK_VERTICAL; // 3
 	
 	[Attribute("6", uiwidget: UIWidgets.Slider, desc: "How much recoil converts into aim kick (camera turn)", category: "Settings", params: "0 100")]
-	float RECOIL_AIMKICK_HORIZONTAL; // 3
+	private float RECOIL_AIMKICK_HORIZONTAL; // 3
 	
 	[Attribute("0.0015", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally in hands (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
-	float RECOIL_GUN_SIDEMOVE;
+	private float RECOIL_GUN_SIDEMOVE;
 	
 	[Attribute("0.005", uiwidget: UIWidgets.Slider, desc: "How much gun will travel horizontally into shoulder (hor recoil impulse * this)", category: "Settings", params: "0 0.25")]
-	float RECOIL_GUN_SHOULDERKICK;
+	private float RECOIL_GUN_SHOULDERKICK;
 	
 	[Attribute("-0.003", uiwidget: UIWidgets.Slider, desc: "Limits gun kick distance by this (so gun wont pierce shoulder)", category: "Settings", params: "-0.5 0")]
-	float RECOIL_GUN_SHOULDERKICK_LIMIT;
+	private float RECOIL_GUN_SHOULDERKICK_LIMIT;
 	
 	private float m_fTotalVerticalImpulse;
 	private float m_fCurrentVerticalImpulse;
@@ -58,16 +58,21 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	private float m_fVerticalVelocity = 0.8;
 	private float m_fHorizontalVelocity = 0.9;
 	
-	float m_fStanceFactor;
-	float m_fdeploymentFactor;
-	int m_DeploymentState;
+	private float m_fStanceFactor;
+	private float m_fdeploymentFactor;
+	private int m_DeploymentState;
 	
-	float m_fWeaponMass;
-	float m_fBulletInitSpeedCoef;
-	float m_fAmmoPower;
-	IEntity m_weaponEnt
-	IEntity m_weaponOwner;
-	MuzzleComponent m_muzzleComp;
+	private float m_fWeaponMass;
+	private float m_fBulletInitSpeedCoef;
+	private float m_fAmmoPower;
+	
+	private float m_fControlCheckTDelta;
+	private bool m_bIsLocalPlayer;
+	
+	private IEntity m_weaponEnt
+	private IEntity m_weaponOwner;
+	private MuzzleComponent m_muzzleComp;
+	private SCR_MuzzleEffectComponent muzzEffComp;
 	
 	override protected void OnInit(IEntity weaponEnt)
 	{
@@ -76,25 +81,30 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	
 	override protected void OnActivated(IEntity weaponOwner)
 	{
+		m_fControlCheckTDelta = 1;
+		m_bIsLocalPlayer = false;
 		m_weaponOwner = weaponOwner;
 		m_muzzleComp = MuzzleComponent.Cast(m_weaponEnt.FindComponent(MuzzleComponent));
+		muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 	}
 	
 	override void OnWeaponFired()
 	{
-		float bulletMass;
-		float bulletSpeed;
-		
+		if (!m_bIsLocalPlayer)
+			return;
+		if (!m_weaponOwner)
+			return;
 		if (!m_muzzleComp)
 		{
 			m_muzzleComp = MuzzleComponent.Cast(m_weaponEnt.FindComponent(MuzzleComponent));
 			return;
 		}
-		
-		SCR_MuzzleEffectComponent muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 		if (!muzzEffComp)
+		{
+			muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 			return;
-		
+		}
+			
 		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		if (stance == 2)
 		{
@@ -120,6 +130,8 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 				break;
 		}
 		
+		float bulletMass;
+		float bulletSpeed;
 		bulletMass = muzzEffComp.GetBulletMass();
 		bulletSpeed = muzzEffComp.GetBulletSpeed();
 		m_fBulletInitSpeedCoef = m_muzzleComp.GetBulletInitSpeedCoef();
@@ -148,7 +160,13 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		
 		if (!m_weaponOwner)
 			return;
-		if (!SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner))
+		if (m_fControlCheckTDelta >= 0.5)
+		{
+			m_fControlCheckTDelta = 0;
+			m_bIsLocalPlayer = SRGP_Utils.SRGP_IsLocalPlayerEntity(m_weaponOwner);
+		}
+		m_fControlCheckTDelta += timeSlice;
+		if (!m_bIsLocalPlayer)
 		    return;
 		
 		m_fTotalVerticalImpulse = Math.Clamp(m_fTotalVerticalImpulse, 0, MAXIMAL_VERTICAL_DEGREES);

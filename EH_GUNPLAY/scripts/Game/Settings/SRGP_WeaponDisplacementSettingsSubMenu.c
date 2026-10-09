@@ -1,7 +1,22 @@
+class SRGP_SettingDef
+{
+    string WidgetName;
+    string VarName;
+    float Step;
+
+    void SRGP_SettingDef(string widgetName, string varName, float step)
+    {
+        WidgetName = widgetName;
+        VarName = varName;
+        Step = step;
+    }
+}
+
 class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
 {
     ref RichTextWidget m_wDescText;
     ref map<string, string> m_mDescriptions = new map<string, string>();
+    ref map<string, ref SRGP_SettingDef> m_mSettingDefs = new map<string, ref SRGP_SettingDef>();
     ref array<string> m_aPistolWidgets = new array<string>();
 
     protected int m_iLastPresetSlot = 1;
@@ -31,6 +46,7 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
             m_wDescText.SetText("");
 
         m_aSettingsBindings.Clear();
+        m_mSettingDefs.Clear();
 
         SRGP_WeaponDisplacementPersistence persistence = new SRGP_WeaponDisplacementPersistence();
         persistence.LoadFromFileOrDefaults();
@@ -143,6 +159,36 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
         GetGame().GetCallqueue().CallLater(SyncToComponent, 0, false);
     }
 
+    protected void NormalizeSlider(string widgetName)
+    {
+        SRGP_SettingDef def = m_mSettingDefs.Get(widgetName);
+        if (!def)
+            return;
+
+        BaseContainer s = GetGame().GetGameUserSettings().GetModule("SRGP_WeaponDisplacementSettings");
+        if (!s)
+            return;
+
+        float v;
+        if (!s.Get(def.VarName, v))
+            return;
+
+        float rounded = SRGP_WeaponDisplacementPersistence.RoundToStep(v, def.Step);
+
+        if (v == rounded)
+            return;
+
+        s.Set(def.VarName, rounded);
+
+        Widget w = m_wRoot.FindAnyWidget(def.WidgetName);
+        if (!w)
+            return;
+
+        SCR_SliderComponent sl = SCR_SliderComponent.Cast(w.FindHandler(SCR_SliderComponent));
+        if (sl)
+            sl.SetValue(rounded);
+    }
+
     protected void OnAnySettingChanged()
     {
         if (m_bApplyingPreset)
@@ -200,7 +246,11 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
         if (!comp || !comp.GetRootWidget())
             return;
 
-        GetGame().GetCallqueue().CallLater(SaveToCurrentSlot, 50, false);
+        string widgetName = comp.GetRootWidget().GetName();
+
+        GetGame().GetCallqueue().CallLater(NormalizeSlider, 30, false, widgetName);
+        GetGame().GetCallqueue().CallLater(SaveToCurrentSlot, 60, false);
+        GetGame().GetCallqueue().CallLater(SyncToComponent, 60, false);
     }
 
     protected void OnPresetSlotChanged(int newSlot)
@@ -252,21 +302,12 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
         if (!s)
             return;
 
-		SetCheckboxValue("wSetting_SRGP_ENABLE_PISTOL_SETTINGS", "ENABLE_PISTOL_SETTINGS", s);
-		
-        SetSliderValue("wSetting_SRGP_ROTATION_X", "ROTATION_X", s);
-        SetSliderValue("wSetting_SRGP_ROTATION_Y", "ROTATION_Y", s);
-        SetSliderValue("wSetting_SRGP_ROTATION_Z", "ROTATION_Z", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_X", "OFFSET_X", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_Y", "OFFSET_Y", s);
-        SetSliderValue("wSetting_SRGP_OFFSET_Z", "OFFSET_Z", s);
+        SetCheckboxValue("wSetting_SRGP_ENABLE_PISTOL_SETTINGS", "ENABLE_PISTOL_SETTINGS", s);
 
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_X", "PISTOL_ROTATION_X", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_Y", "PISTOL_ROTATION_Y", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_ROTATION_Z", "PISTOL_ROTATION_Z", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_X", "PISTOL_OFFSET_X", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_Y", "PISTOL_OFFSET_Y", s);
-        SetSliderValue("wSetting_SRGP_PISTOL_OFFSET_Z", "PISTOL_OFFSET_Z", s);
+        foreach (string widgetName, SRGP_SettingDef def : m_mSettingDefs)
+        {
+            SetSliderValue(def.WidgetName, def.VarName, s);
+        }
     }
 
     protected void SetSliderValue(string widgetName, string varName, BaseContainer s)
@@ -285,8 +326,8 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
 
         sl.SetValue(v);
     }
-	
-	protected void SetCheckboxValue(string widgetName, string varName, BaseContainer s)
+
+    protected void SetCheckboxValue(string widgetName, string varName, BaseContainer s)
     {
         Widget w = m_wRoot.FindAnyWidget(widgetName);
         if (!w)
@@ -417,6 +458,8 @@ class SRGP_WeaponDisplacementSettingsSubMenu : SCR_SettingsSubMenuBase
             widgetName
         );
         m_aSettingsBindings.Insert(binding);
+
+        m_mSettingDefs.Insert(widgetName, new SRGP_SettingDef(widgetName, settingVar, step));
 
         Widget finalWidget = m_wRoot.FindAnyWidget(widgetName);
         if (finalWidget)
