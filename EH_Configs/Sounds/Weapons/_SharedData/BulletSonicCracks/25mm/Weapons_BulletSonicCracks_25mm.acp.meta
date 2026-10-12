@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{8E5C5CBA7DEDDA1C}Sounds/Weapons/_SharedData/BulletSonicCracks/25mm/Weapons_BulletSonicCracks_25mm.acp"
+ Configurations {
+  AudioProjectResourceClass PC {
+  }
+  AudioProjectResourceClass XBOX_ONE : PC {
+  }
+  AudioProjectResourceClass XBOX_SERIES : PC {
+  }
+  AudioProjectResourceClass PS4 : PC {
+  }
+  AudioProjectResourceClass PS5 : PC {
+  }
+  AudioProjectResourceClass HEADLESS : PC {
+  }
+ }
+}

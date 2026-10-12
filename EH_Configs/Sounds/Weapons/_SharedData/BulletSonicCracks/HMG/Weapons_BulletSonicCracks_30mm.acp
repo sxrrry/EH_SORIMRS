@@ -1,0 +1,3137 @@
+AudioClass {
+ signals {
+  SignalClass {
+   id 132109
+   name "Signal 93"
+   tl -771.55 2141.559
+   res "{E801AB59ABF0E75D}Sounds/_SharedData/Signals/SimpleHelpers/SimpleDistanceBlender2Steps.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 3
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 1
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    1 3
+   }
+   outputsport {
+    4 7
+   }
+   inputvalues {
+    0 0
+   }
+   inputvaluesmin {
+    0 0
+   }
+   inputvaluesmax {
+    1 1
+   }
+   path "{E801AB59ABF0E75D}Sounds/_SharedData/Signals/SimpleHelpers/SimpleDistanceBlender2Steps.sig"
+  }
+  SignalClass {
+   id 136205
+   name "Weapon_BulletCrack_Tails"
+   tl -771.55 1691.757
+   res "{D287963451C22B9C}Sounds/_SharedData/Signals/Weapons/Weapon_BulletCrack_Tails.sig"
+   inputsport {
+    49 50 51 52 71
+   }
+   outputsport {
+    2 57 58 59
+   }
+   inputvalues {
+    1 0 0 0 1
+   }
+   inputvaluesmin {
+    0 0 0 0 0
+   }
+   inputvaluesmax {
+    1 1 1 1 1
+   }
+   path "{D287963451C22B9C}Sounds/_SharedData/Signals/Weapons/Weapon_BulletCrack_Tails.sig"
+  }
+  SignalClass {
+   id 144397
+   name "RandomChance"
+   comment "CustomValue = PreSilence time"
+   tl -771.55 525.986
+   ctl 0 -21
+   res "{33447DCE4959C32C}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 146444
+         port 1
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 10
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 146444
+         port 2
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    2 10
+   }
+   outputsport {
+    1 9
+   }
+   inputvalues {
+    0 0
+   }
+   inputvaluesmin {
+    0 0
+   }
+   inputvaluesmax {
+    1 1
+   }
+   path "{33447DCE4959C32C}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance.sig"
+  }
+  SignalClass {
+   id 157709
+   name "DistanceBlender_SonicCracks"
+   tl -771.55 795.518
+   res "{F323066698277E33}Sounds/_SharedData/Signals/SimpleHelpers/SimpleDistanceBlender_SonicCracks.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 28
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 1
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 2
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 3
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 3
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 40
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 1
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 41
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 6
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 44
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 7
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 45
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 8
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 46
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 9
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 47
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 10
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 48
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 11
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 49
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 12
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 50
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 13
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 51
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 14
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 60
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 15
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 61
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 16
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 70
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 118796
+         port 17
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    1 2 3 13 28 40 41 43 44 45 46 47 48 49 50 51 60 61 70
+   }
+   outputsport {
+    6 7 8 23 27 37 55 56 57 65 67 73
+   }
+   inputvalues {
+    0 0 0 0 20 0 0 507.7 0 0 0 0 0 0 0 0 0 0 0
+   }
+   inputvaluesmin {
+    0 0 0 0 0 0 0 350 0 0 0 0 0 0 0 0 0 0 0
+   }
+   inputvaluesmax {
+    1 1 1 180 20 1 1 800 1 1 1 1 1 1 1 1 1 1 1
+   }
+   path "{F323066698277E33}Sounds/_SharedData/Signals/SimpleHelpers/SimpleDistanceBlender_SonicCracks.sig"
+  }
+  SignalClass {
+   id 159757
+   name "VCloseAddChance"
+   tl -771.55 645.232
+   res "{C9B52179BE226402}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance_2.sig"
+   conns {
+    IOPConnectionClass iopConnection {
+     port 2
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 146444
+         port 3
+        }
+       }
+      }
+     }
+    }
+    IOPConnectionClass iopConnection {
+     port 10
+     conn {
+      ConnectionsClass connections {
+       id 8
+       links {
+        ConnectionClass connection {
+         id 146444
+         port 4
+        }
+       }
+      }
+     }
+    }
+   }
+   inputsport {
+    2 10
+   }
+   outputsport {
+    1 9
+   }
+   inputvalues {
+    0 0
+   }
+   inputvaluesmin {
+    0 0
+   }
+   inputvaluesmax {
+    1 1
+   }
+   path "{C9B52179BE226402}Sounds/_SharedData/Signals/SimpleHelpers/RandomChance_2.sig"
+  }
+ }
+ sounds {
+  SoundClass {
+   id 119817
+   name "SOUND_SONIC_CRACK"
+   comment "Regular sonic crack, when a projectile passes by the listener"
+   version 5
+   tl 514.59 873.2
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 73
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 151570
+       port 65
+      }
+      ConnectionClass connection {
+       id 164882
+       port 65
+      }
+      ConnectionClass connection {
+       id 161810
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    50 0
+   }
+   volume_dB 3
+   outState 128011
+   outStatePort 184327
+   speedOfSoundSimulation 1
+   static 1
+  }
+  SoundClass {
+   id 126985
+   name "SOUND_SONIC_CRACK_SECONDARY"
+   comment "Remaining sonic crack energy when a projectile becomes subSonic before it reaches the listener"
+   version 5
+   tl 514.59 2078.006
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 73
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 152594
+       port 65
+      }
+      ConnectionClass connection {
+       id 112658
+       port 65
+      }
+      ConnectionClass connection {
+       id 161810
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    50 0
+   }
+   outState 128011
+   outStatePort 184327
+   speedOfSoundSimulation 1
+   static 1
+  }
+  SoundClass {
+   id 150537
+   name "SOUND_SONIC_CRACK_IMPACT"
+   comment "Remaining sonic crack energy when the projectile impacts before it reaches the listener"
+   version 5
+   tl 528.582 2299.119
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 73
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 112658
+       port 65
+      }
+      ConnectionClass connection {
+       id 152594
+       port 65
+      }
+      ConnectionClass connection {
+       id 161810
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    50 0
+   }
+   outState 128011
+   outStatePort 184327
+   speedOfSoundSimulation 1
+   static 1
+  }
+ }
+ buses {
+  BusClass {
+   id 116743
+   name "EL Bus"
+   version 7
+   tl 13.652 -167.398
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 56
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 129028
+       port 65
+      }
+      ConnectionClass connection {
+       id 124932
+       port 65
+      }
+      ConnectionClass connection {
+       id 154628
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+  }
+  BusClass {
+   id 133127
+   name "Pre Sound Bus"
+   version 7
+   tl -310.633 290.262
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 1
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 139268
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+  }
+  BusClass {
+   id 135175
+   name "AddLayer Bus"
+   version 7
+   tl 62.795 429.218
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 57
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 137223
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+  }
+  BusClass {
+   id 137223
+   name "AddLayerRandomChance Bus"
+   version 7
+   tl -310.633 430.04
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 159757
+       port 1
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 145412
+       port 65
+      }
+      ConnectionClass connection {
+       id 140292
+       port 65
+      }
+      ConnectionClass connection {
+       id 163844
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+  }
+  BusClass {
+   id 143367
+   name "IC Body Bus"
+   version 7
+   tl 62.795 2215.809
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 56
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 122884
+       port 65
+      }
+      ConnectionClass connection {
+       id 142340
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+  }
+  BusClass {
+   id 155655
+   name "MainBody Bus"
+   version 7
+   tl 62.795 886.8
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 56
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 147460
+       port 65
+      }
+      ConnectionClass connection {
+       id 130052
+       port 65
+      }
+      ConnectionClass connection {
+       id 167940
+       port 65
+      }
+      ConnectionClass connection {
+       id 115716
+       port 65
+      }
+      ConnectionClass connection {
+       id 133127
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   volume 1.995
+   volume_dB 6
+  }
+  BusClass {
+   id 156679
+   name "TailSumVolumeControl"
+   version 7
+   tl 62.795 1585.928
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 23
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 131078
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   volume 0.631
+   volume_dB -4
+   enableLimitation 1
+  }
+  BusClass {
+   id 162823
+   name "IC Tail Bus"
+   version 7
+   tl 57.45 2556.309
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 23
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 110598
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   volume 0.631
+   volume_dB -4
+  }
+ }
+ selectors {
+  SelectorClass {
+   id 110598
+   name "Selector 62"
+   version 5
+   tl -310.633 2555.504
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 2
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 656022804
+     links {
+      ConnectionClass connection {
+       id 148484
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 920580282
+     links {
+      ConnectionClass connection {
+       id 160772
+       port 65
+      }
+      ConnectionClass connection {
+       id 111620
+       port 65
+      }
+      ConnectionClass connection {
+       id 138244
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   ports {
+    PortClass Exterior {
+     max 1
+    }
+    PortClass Interior {
+     min 1
+     max 2
+    }
+   }
+  }
+  SelectorClass {
+   id 131078
+   name "Selector 62"
+   version 5
+   tl -286.633 1570.531
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 2
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 656022804
+     links {
+      ConnectionClass connection {
+       id 120836
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 920580282
+     links {
+      ConnectionClass connection {
+       id 153604
+       port 65
+      }
+      ConnectionClass connection {
+       id 121860
+       port 65
+      }
+      ConnectionClass connection {
+       id 114692
+       port 65
+      }
+      ConnectionClass connection {
+       id 134148
+       port 65
+      }
+      ConnectionClass connection {
+       id 149508
+       port 65
+      }
+      ConnectionClass connection {
+       id 165892
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1 0
+   }
+   ports {
+    PortClass Exterior {
+     max 1
+    }
+    PortClass Interior {
+     min 1
+     max 2
+    }
+   }
+  }
+ }
+ mixers {
+  MixerClass {
+   id 128011
+   name "OutputState 108"
+   version 4
+   tl 770.45 969.309
+   res "{B764D803219C775E}Sounds/FinalMix.afm"
+   ins {
+    ConnectionsClass connections {
+     id 184327
+     links {
+      ConnectionClass connection {
+       id 119817
+       port 65
+      }
+      ConnectionClass connection {
+       id 126985
+       port 65
+      }
+      ConnectionClass connection {
+       id 150537
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    1048576 0
+   }
+   path "{B764D803219C775E}Sounds/FinalMix.afm"
+   inputs {
+    "WPN_Handling" "WPN_Shots" "WPN_Explosions" "WNP_BulletHits" "CHAR" "ENV_AMB_2D" "VEH_Animations" "Impacts" "Dialog" "Music" "ENV_Doors" "VEH_Engine" "VEH_Tires" "VON" "SFX" "SFX_Reverb" "VON_Reverb" "Dialog_Reverb" "Impacts_EXT" "ENV_AMB_3D" "WPN_SonicCracks" "CHAR_Gear" "PA" "SFX_Reverb_Exterior" "UI" "ENV_AMB_3D_Reverb_Exterior" "SFX_Direct" "SFX_Reverb_Small" "SFX_Reverb_Medium" "SFX_Reverb_Large" "WPN_Shots_Player" "Dialog_Reverb_Small" "Dialog_Reverb_Medium" "Dialog_Reverb_Large" "WPN_TravelingProjectile" "Dialog_Delay_Exterior" "SFX_Reverb_InCabin"
+   }
+  }
+ }
+ constants {
+  ConstantClass {
+   id 118796
+   name "Constant 7"
+   version 5
+   tl -959.962 796.144
+   "Constant values" {
+    IOPConstantsValueClass VERYCLOSE_MAX {
+     Key "VERYCLOSE_MAX"
+     Value 15
+     Port 1
+    }
+    IOPConstantsValueClass CLOSE_MAX {
+     Key "CLOSE_MAX"
+     Value 75
+     Port 2
+    }
+    IOPConstantsValueClass MID_MAX {
+     Key "MID_MAX"
+     Value 180
+     Port 3
+    }
+    IOPConstantsValueClass TAIL_BOOST_V {
+     Key "TAIL_BOOST_V"
+     Value 2.5
+     Port 6
+    }
+    IOPConstantsValueClass SPD_MIN {
+     Key "SPD_MIN"
+     Value 340
+     Port 7
+    }
+    IOPConstantsValueClass SPD_MAX {
+     Key "SPD_MAX"
+     Value 800
+     Port 8
+    }
+    IOPConstantsValueClass SPD_MIN_P {
+     Key "SPD_MIN_P"
+     Value 0.7
+     Port 9
+    }
+    IOPConstantsValueClass SPD_MAX_P {
+     Key "SPD_MAX_P"
+     Value 1.125
+     Port 10
+    }
+    IOPConstantsValueClass BD_SPD_MIN_V {
+     Key "BD_SPD_MIN_V"
+     Value 0.77
+     Port 11
+    }
+    IOPConstantsValueClass BD_SPD_MAX_V {
+     Key "BD_SPD_MAX_V"
+     Value 1
+     Port 12
+    }
+    IOPConstantsValueClass AL_SPD_MIN_V {
+     Key "AL_SPD_MIN_V"
+     Value 1
+     Port 13
+    }
+    IOPConstantsValueClass AL_SPD_MAX_V {
+     Key "AL_SPD_MAX_V"
+     Value 0.6
+     Port 14
+    }
+    IOPConstantsValueClass TL_SPD_MIN_V {
+     Key "TL_SPD_MIN_V"
+     Value 0.8
+     Port 15
+    }
+    IOPConstantsValueClass TL_SPD_MAX_V {
+     Key "TL_SPD_MAX_V"
+     Value 1
+     Port 16
+    }
+    IOPConstantsValueClass SPD_MIN_V {
+     Key "SPD_MIN_V"
+     Value 0.75
+     Port 17
+    }
+   }
+  }
+  ConstantClass {
+   id 146444
+   name "Constant 22"
+   version 5
+   tl -959.962 519.34
+   "Constant values" {
+    IOPConstantsValueClass "Pre-Sound Chance" {
+     Key "Pre-Sound Chance"
+     Value 0.3
+     Port 1
+    }
+    IOPConstantsValueClass "Pre-Sound time" {
+     Key "Pre-Sound time"
+     Value 22
+     Port 2
+    }
+    IOPConstantsValueClass AddChance {
+     Key "AddChance"
+     Value 0.7
+     Port 3
+    }
+    IOPConstantsValueClass Dummy {
+     Key "Dummy"
+     Port 4
+    }
+   }
+  }
+ }
+ shaders {
+  ShaderClass {
+   id 112658
+   name "ImpactCrack Tail Shader"
+   version 5
+   tl 277.134 2610.448
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 141340
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 123923
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 2
+     links {
+      ConnectionClass connection {
+       id 125973
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 162823
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+  }
+  ShaderClass {
+   id 151570
+   name "Tails"
+   version 5
+   tl 277.134 1585.531
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 141340
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 158739
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 2
+     links {
+      ConnectionClass connection {
+       id 125973
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 156679
+       port 65
+      }
+      ConnectionClass connection {
+       id 113668
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+  }
+  ShaderClass {
+   id 152594
+   name "ImpactCrack Body Shader"
+   version 5
+   tl 277.134 2218.932
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 166940
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 123923
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 2
+     links {
+      ConnectionClass connection {
+       id 125973
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 143367
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+  }
+  ShaderClass {
+   id 161810
+   name "EL Shader"
+   version 5
+   tl 284.561 -104.941
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 166940
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 117779
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 2
+     links {
+      ConnectionClass connection {
+       id 125973
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 116743
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+  }
+  ShaderClass {
+   id 164882
+   name "Body"
+   version 5
+   tl 277.134 882.856
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 166940
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 158739
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 2
+     links {
+      ConnectionClass connection {
+       id 125973
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 64
+     links {
+      ConnectionClass connection {
+       id 155655
+       port 65
+      }
+      ConnectionClass connection {
+       id 135175
+       port 65
+      }
+     }
+    }
+   }
+   pi {
+    7 0
+   }
+  }
+ }
+ amplitudes {
+  AmplitudeClass {
+   id 117779
+   name "EL Amplitude"
+   version 5
+   tl 283.45 -170.691
+   curve "1/r"
+   outerRange 90
+   slopeFactor 10
+  }
+  AmplitudeClass {
+   id 123923
+   name "IC Body Amplitude"
+   version 5
+   tl 277.134 2141.504
+   curve "1/r"
+   innerRange 2
+   outerRange 1100
+   slopeFactor 23
+  }
+  AmplitudeClass {
+   id 158739
+   name "Amplitude 15"
+   version 5
+   tl 277.134 813.928
+   curve "1/r"
+   outerRange 1100
+   slopeFactor 72
+  }
+ }
+ frequency {
+  FrequencyClass : "{CA912C59A9267045}Sounds/_SharedData/Configs/Frequency/_SharedData/Frequency_Base.conf" {
+   id 125973
+   version 5
+   tl 277.134 671.262
+   parent "{CA912C59A9267045}Sounds/_SharedData/Configs/Frequency/_SharedData/Frequency_Base.conf"
+   terrainEffects 1
+  }
+ }
+ banks_local {
+  BankLocalClass {
+   id 111620
+   name "Tail Forest"
+   version 7
+   tl -566.55 2679.059
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 58
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 67
+      }
+     }
+    }
+   }
+   pi {
+    19 0
+   }
+   Volume 1.74
+   "Volume variance" 0.5
+   "Pitch variance" 2
+   "Fade in time" 50
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{E21421FF990AF1AD}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7B0A986684EDC03D}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0C00F0EE704F2F4D}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 113668
+   name "LCY Slapbacks"
+   version 7
+   tl -569.55 1285.309
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 23
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 3
+   "Volume variance" 3
+   Pitch -9
+   "Pitch variance" 2
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{8115B590D1824FAD}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F71A5CA1A868A8A9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_10.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{180B0C09CC657E3D}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_2.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6F01648138C7914D}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_3.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{68C69ED05E412B8E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_4.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1FCCF658AAE3C4FE}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_5.wav"
+     Index 5
+    }
+    AudioBankSampleClass Sample {
+     Filename "{86D24FC1B704F56E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_6.wav"
+     Index 6
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F1D8274943A61A1E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_7.wav"
+     Index 7
+    }
+    AudioBankSampleClass Sample {
+     Filename "{895DBB637A0980E8}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_8.wav"
+     Index 8
+    }
+    AudioBankSampleClass Sample {
+     Filename "{FE57D3EB8EAB6F98}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Slapbacks/SRSM2_RCrack_SB_9.wav"
+     Index 9
+    }
+   }
+  }
+  BankLocalClass {
+   id 114692
+   name "Tail Meadows+Hills"
+   version 7
+   tl -566.55 1457.753
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 57
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   Volume 1
+   "Volume variance" 0.5
+   Pitch -6
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{6525CE6776F994DC}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{FC3B77FE6B1EA54C}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{8B311F769FBC4A3C}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 115716
+   name "Body Close"
+   version 7
+   tl -566.55 826.043
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 6
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 9
+   "Volume variance" 2
+   Pitch -6
+   "Pitch variance" 1
+   Resampler FIR_4
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{9DB2C0F3E0F04C08}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{04AC796AFD177D98}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{73A611E209B592E8}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7461EBB36F33282B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_4.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{036B833B9B91C75B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_5.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{9A753AA28676F6CB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_6.wav"
+     Index 5
+    }
+   }
+  }
+  BankLocalClass {
+   id 120836
+   name "Tail Interior"
+   version 7
+   tl -566.55 1866.643
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume -42
+   "Volume variance" 0.8
+   Pitch -3
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{E41AB49EE0CDD1A7}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7D040D07FD2AE037}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0A0E658F09880F47}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0DC99FDE6F0EB584}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_4.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7AC3F7569BAC5AF4}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_5.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{E3DD4ECF864B6B64}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_6.wav"
+     Index 5
+    }
+    AudioBankSampleClass Sample {
+     Filename "{94D7264772E98414}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_7.wav"
+     Index 6
+    }
+    AudioBankSampleClass Sample {
+     Filename "{EC52BA6D4B461EE2}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Inside/LCY_Crack_Rifle_Inside_8.wav"
+     Index 7
+    }
+   }
+  }
+  BankLocalClass {
+   id 121860
+   name "Tail Forest"
+   version 7
+   tl -566.55 1591.42
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 58
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   Volume 1.74
+   "Volume variance" 0.5
+   Pitch -6
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{E21421FF990AF1AD}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7B0A986684EDC03D}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0C00F0EE704F2F4D}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Forest_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 122884
+   name "Body Close"
+   version 7
+   tl -566.55 2129.559
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 132109
+       port 4
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   Volume 15
+   "Volume variance" 2
+   Pitch -4
+   "Pitch variance" 1
+   Resampler FIR_4
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{9DB2C0F3E0F04C08}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{04AC796AFD177D98}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{73A611E209B592E8}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7461EBB36F33282B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_4.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{036B833B9B91C75B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_5.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{9A753AA28676F6CB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Close/LCY_Crack_Above50_Close_6.wav"
+     Index 5
+    }
+   }
+  }
+  BankLocalClass {
+   id 124932
+   name "EL Houses"
+   version 7
+   tl -566.55 -139.691
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 59
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 6.6
+   "Volume variance" 1
+   Pitch -5
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{7F60CE85F4F134D9}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Houses_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{E67E771CE9160549}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Houses_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{91741F941DB4EA39}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Houses_03.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{96B3E5C57B3250FA}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Houses_04.wav"
+     Index 3
+    }
+   }
+  }
+  BankLocalClass {
+   id 129028
+   name "EL Forest"
+   version 7
+   tl -566.55 -259.635
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 58
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 1.26
+   "Volume variance" 1
+   Pitch -6
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{BBFF14207D623503}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Forest_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{22E1ADB960850493}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Forest_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{55EBC5319427EBE3}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Forest_03.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{522C3F60F2A15120}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Forest_04.wav"
+     Index 3
+    }
+   }
+  }
+  BankLocalClass {
+   id 130052
+   name "Body Far"
+   version 7
+   tl -566.55 1170.642
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 8
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 9
+   "Volume variance" 0.5
+   Pitch -9
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{B966AA6895E58F77}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{207813F18802BEE7}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{57727B797CA05197}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{50B581281A26EB54}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_4.wav"
+     Index 3
+    }
+   }
+  }
+  BankLocalClass {
+   id 134148
+   name "LCY Forest Layer"
+   version 7
+   tl -356.015 1834.085
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 58
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   Pitch -5
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{89362430EB6B5531}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{10289DA9F68C64A1}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6722F521022E8BD1}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_3.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 138244
+   name "Tail Meadows+Hills"
+   version 7
+   tl -566.55 2544.392
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 57
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 67
+      }
+     }
+    }
+   }
+   pi {
+    19 0
+   }
+   Volume 1.1
+   "Volume variance" 0.5
+   "Pitch variance" 2
+   "Fade in time" 50
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{6525CE6776F994DC}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{FC3B77FE6B1EA54C}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{8B311F769FBC4A3C}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Meadows_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 139268
+   name "Body Pre-Sound"
+   version 7
+   tl -566.55 284.159
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 37
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   "Volume variance" 3
+   Pitch -8
+   "Pitch variance" 3
+   Resampler FIR_4
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{8699D4623A4CE66E}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Pre/Weapons_SonicCrack_Pre_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1F876DFB27ABD7FE}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Pre/Weapons_SonicCrack_Pre_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{688D0573D309388E}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Pre/Weapons_SonicCrack_Pre_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 140292
+   name "MidAdd"
+   version 7
+   tl -566.55 939.309
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 7
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 6
+   "Volume variance" 5
+   Pitch -9
+   "Pitch variance" 2
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{9515DDF68A863C44}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{D87C244032B82899}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_10.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{AF764CC8C61AC7E9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_11.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3668F551DBFDF679}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_12.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{41629DD92F5F1909}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_13.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{DFBBDE11543E925A}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_17.wav"
+     Index 5
+    }
+    AudioBankSampleClass Sample {
+     Filename "{46A5678849D9A3CA}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_14.wav"
+     Index 6
+    }
+    AudioBankSampleClass Sample {
+     Filename "{A73E423B6D9108AC}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_18.wav"
+     Index 7
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7CC6F6B605455867}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_4.wav"
+     Index 8
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0BCC9E3EF1E7B717}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_5.wav"
+     Index 9
+    }
+    AudioBankSampleClass Sample {
+     Filename "{31AF0F00BD7B4CBA}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_15.wav"
+     Index 10
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0C0B646F97610DD4}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_2.wav"
+     Index 11
+    }
+    AudioBankSampleClass Sample {
+     Filename "{A8B1B699A09C7D2A}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_16.wav"
+     Index 12
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7B010CE763C3E2A4}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_3.wav"
+     Index 13
+    }
+    AudioBankSampleClass Sample {
+     Filename "{92D227A7EC008687}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_6.wav"
+     Index 14
+    }
+    AudioBankSampleClass Sample {
+     Filename "{E5D84F2F18A269F7}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_7.wav"
+     Index 15
+    }
+    AudioBankSampleClass Sample {
+     Filename "{9D5DD305210DF301}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_8.wav"
+     Index 16
+    }
+    AudioBankSampleClass Sample {
+     Filename "{EA57BB8DD5AF1C71}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Far/SR_Crack_Rifle_FarAL_9.wav"
+     Index 17
+    }
+   }
+  }
+  BankLocalClass {
+   id 142340
+   name "Body Far"
+   version 7
+   tl -566.55 2266.309
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 132109
+       port 7
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+   }
+   pi {
+    3 0
+   }
+   Volume 5
+   "Volume variance" 0.5
+   Pitch -4
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{B966AA6895E58F77}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{207813F18802BEE7}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{57727B797CA05197}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{50B581281A26EB54}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Far/LCY_Crack_Above50_Far_4.wav"
+     Index 3
+    }
+   }
+  }
+  BankLocalClass {
+   id 145412
+   name "VeryCloseAdd"
+   version 7
+   tl -567.661 427.17
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 27
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 12
+   "Volume variance" 8
+   Pitch -8
+   "Pitch variance" 3
+   Resampler FIR_4
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{D50BCC60B096F53B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1C68B06FC81D76B6}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_10.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6B62D8E73CBF99C6}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_11.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F27C617E2158A856}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_12.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{857609F6D5FA4726}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_13.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1BAF4A3EAE9BCC75}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_17.wav"
+     Index 5
+    }
+    AudioBankSampleClass Sample {
+     Filename "{82B1F3A7B37CFDE5}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_14.wav"
+     Index 6
+    }
+    AudioBankSampleClass Sample {
+     Filename "{632AD61497345683}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_18.wav"
+     Index 7
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4280992C7790F8B9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_20.wav"
+     Index 8
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3B1F1D7159D32BDB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_3.wav"
+     Index 9
+    }
+    AudioBankSampleClass Sample {
+     Filename "{358AF1A4833217C9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_21.wav"
+     Index 10
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3CD8E7203F559118}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_4.wav"
+     Index 11
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F5BB9B2F47DE1295}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_15.wav"
+     Index 12
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1420BE9C6396B9F3}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_19.wav"
+     Index 13
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6CA522B65A392305}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_16.wav"
+     Index 14
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4C1575F9AD71C4AB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_2.wav"
+     Index 15
+    }
+    AudioBankSampleClass Sample {
+     Filename "{AC94483D9ED52659}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_22.wav"
+     Index 16
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4BD28FA8CBF77E68}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_5.wav"
+     Index 17
+    }
+    AudioBankSampleClass Sample {
+     Filename "{DB9E20B56A77C929}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_23.wav"
+     Index 18
+    }
+    AudioBankSampleClass Sample {
+     Filename "{D2CC3631D6104FF8}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_6.wav"
+     Index 19
+    }
+    AudioBankSampleClass Sample {
+     Filename "{A5C65EB922B2A088}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_7.wav"
+     Index 20
+    }
+    AudioBankSampleClass Sample {
+     Filename "{DD43C2931B1D3A7E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_8.wav"
+     Index 21
+    }
+    AudioBankSampleClass Sample {
+     Filename "{AA49AA1BEFBFD50E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_9.wav"
+     Index 22
+    }
+   }
+  }
+  BankLocalClass {
+   id 147460
+   name "Body Mid"
+   version 7
+   tl -566.7 1054.642
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 7
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 1.1
+   "Volume variance" 0.3
+   Pitch -9
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{052F047B83345550}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{9C31BDE29ED364C0}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{EB3BD56A6A718BB0}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{ECFC2F3B0CF73173}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_4.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{9BF647B3F855DE03}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_5.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{02E8FE2AE5B2EF93}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/Medium/LCY_Crack_Above50_Medium_6.wav"
+     Index 5
+    }
+   }
+  }
+  BankLocalClass {
+   id 148484
+   name "Tail Interior"
+   version 7
+   tl -566.55 2953.17
+   ins {
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+   }
+   pi {
+    2 0
+   }
+   Volume -27
+   "Volume variance" 0.8
+   "Pitch variance" 2
+   "Fade in time" 50
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{6F55CECB59146A7E}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_interior_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F64B775244F35BEE}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_interior_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{81411FDAB051B49E}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_interior_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 149508
+   name "LCY Meadows Layer"
+   version 7
+   tl -135.246 1841.352
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 57
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   Volume -3
+   Pitch -4
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{89362430EB6B5531}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{10289DA9F68C64A1}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6722F521022E8BD1}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/FM Layer/SRSM2_RCrack_FML_3.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 153604
+   name "Tail Houses"
+   version 7
+   tl -566.55 1725.753
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 59
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   Volume -2
+   "Volume variance" 0.5
+   Pitch -5
+   "Pitch variance" 1
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{268BFB5A1099F077}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{BF9542C30D7EC1E7}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{C89F2A4BF9DC2E97}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 154628
+   name "EL Meadows"
+   version 7
+   tl -566.55 -375.691
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 57
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 0.8
+   "Volume variance" 1
+   Pitch -5
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{E2BE4608D1DF7131}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Meadows_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7BA0FF91CC3840A1}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Meadows_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0CAA9719389AAFD1}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Meadows_03.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0B6D6D485E1C1512}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/EnvLayers/Weapons_SonicCrack_EnvLayer_Meadows_04.wav"
+     Index 3
+    }
+   }
+  }
+  BankLocalClass {
+   id 160772
+   name "Tail Houses"
+   version 7
+   tl -566.55 2810.142
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 59
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 67
+      }
+     }
+    }
+   }
+   pi {
+    19 0
+   }
+   Volume -2
+   "Volume variance" 0.5
+   "Pitch variance" 2
+   "Fade in time" 50
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{268BFB5A1099F077}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_01.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{BF9542C30D7EC1E7}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_02.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{C89F2A4BF9DC2E97}Sounds/Weapons/_SharedData/BulletSonicCracks/_SharedData/Tails/Weapons_SonicCrack_Default_Tail_Houses_03.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 163844
+   name "CloseAdd"
+   version 7
+   tl -566.55 706.087
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 6
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume -3
+   "Volume variance" 8
+   Pitch -11
+   "Pitch variance" 3
+   Resampler FIR_4
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{D50BCC60B096F53B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1C68B06FC81D76B6}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_10.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6B62D8E73CBF99C6}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_11.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F27C617E2158A856}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_12.wav"
+     Index 3
+    }
+    AudioBankSampleClass Sample {
+     Filename "{857609F6D5FA4726}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_13.wav"
+     Index 4
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1BAF4A3EAE9BCC75}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_17.wav"
+     Index 5
+    }
+    AudioBankSampleClass Sample {
+     Filename "{82B1F3A7B37CFDE5}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_14.wav"
+     Index 6
+    }
+    AudioBankSampleClass Sample {
+     Filename "{632AD61497345683}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_18.wav"
+     Index 7
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4280992C7790F8B9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_20.wav"
+     Index 8
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3B1F1D7159D32BDB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_3.wav"
+     Index 9
+    }
+    AudioBankSampleClass Sample {
+     Filename "{358AF1A4833217C9}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_21.wav"
+     Index 10
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3CD8E7203F559118}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_4.wav"
+     Index 11
+    }
+    AudioBankSampleClass Sample {
+     Filename "{F5BB9B2F47DE1295}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_15.wav"
+     Index 12
+    }
+    AudioBankSampleClass Sample {
+     Filename "{1420BE9C6396B9F3}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_19.wav"
+     Index 13
+    }
+    AudioBankSampleClass Sample {
+     Filename "{6CA522B65A392305}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_16.wav"
+     Index 14
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4C1575F9AD71C4AB}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_2.wav"
+     Index 15
+    }
+    AudioBankSampleClass Sample {
+     Filename "{AC94483D9ED52659}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_22.wav"
+     Index 16
+    }
+    AudioBankSampleClass Sample {
+     Filename "{4BD28FA8CBF77E68}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_5.wav"
+     Index 17
+    }
+    AudioBankSampleClass Sample {
+     Filename "{DB9E20B56A77C929}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_23.wav"
+     Index 18
+    }
+    AudioBankSampleClass Sample {
+     Filename "{D2CC3631D6104FF8}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_6.wav"
+     Index 19
+    }
+    AudioBankSampleClass Sample {
+     Filename "{A5C65EB922B2A088}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_7.wav"
+     Index 20
+    }
+    AudioBankSampleClass Sample {
+     Filename "{DD43C2931B1D3A7E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_8.wav"
+     Index 21
+    }
+    AudioBankSampleClass Sample {
+     Filename "{AA49AA1BEFBFD50E}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Whizz/Close/SR_Crack_AL_Close_9.wav"
+     Index 22
+    }
+   }
+  }
+  BankLocalClass {
+   id 165892
+   name "LCY Urban Layer"
+   version 7
+   tl -273.55 1695.309
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 136205
+       port 59
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 4
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 65
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    51 0
+   }
+   "Volume variance" 2
+   Pitch -3
+   "Pitch variance" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{A7AF0CB06757AE9B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Urban Layer/SRSM2_RCrack_UL_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{3EB1B5297AB09F0B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Urban Layer/SRSM2_RCrack_UL_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{49BBDDA18E12707B}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/CracksLayers/Urban Layer/SRSM2_RCrack_UL_3.wav"
+     Index 2
+    }
+   }
+  }
+  BankLocalClass {
+   id 167940
+   name "Body VeryClose"
+   version 7
+   tl -566.55 543.309
+   ctl 0 -21
+   ins {
+    ConnectionsClass connections {
+     id 0
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 27
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 1
+     links {
+      ConnectionClass connection {
+       id 157709
+       port 55
+      }
+     }
+    }
+    ConnectionsClass connections {
+     id 5
+     links {
+      ConnectionClass connection {
+       id 144397
+       port 9
+      }
+     }
+    }
+   }
+   pi {
+    35 0
+   }
+   Volume 18
+   "Volume variance" 0.5
+   Pitch -8
+   "Pitch variance" 1
+   Resampler FIR_4
+   "Fade in function" SCurve
+   "Disable streaming" 1
+   Samples {
+    AudioBankSampleClass Sample {
+     Filename "{94884D7C93BD0C0C}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/VeryClose/LCY_Crack_Above50_vClose_1.wav"
+    }
+    AudioBankSampleClass Sample {
+     Filename "{0D96F4E58E5A3D9C}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/VeryClose/LCY_Crack_Above50_vClose_2.wav"
+     Index 1
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7A9C9C6D7AF8D2EC}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/VeryClose/LCY_Crack_Above50_vClose_3.wav"
+     Index 2
+    }
+    AudioBankSampleClass Sample {
+     Filename "{7D5B663C1C7E682F}LunacyAudioLibrary/Samples/Warfare SFXs/Projectiles/Bullets/Cracks/Heavy/VeryClose/LCY_Crack_Above50_vClose_4.wav"
+     Index 3
+    }
+   }
+  }
+ }
+ spatialities {
+  SpatialityClass : "{2D30A74802CA091F}Sounds/_SharedData/Configs/Spatiality/Weapons/Spatiality_Weapons_SuperSonicCrack_Tail.conf" {
+   id 141340
+   version 5
+   tl 277.134 1441.42
+   parent "{2D30A74802CA091F}Sounds/_SharedData/Configs/Spatiality/Weapons/Spatiality_Weapons_SuperSonicCrack_Tail.conf"
+  }
+  SpatialityClass {
+   id 166940
+   name "Spatiality 17"
+   version 5
+   tl 277.134 745.523
+   spatialFactor 1
+  }
+ }
+ version 1
+ sourcesLimit 9
+}

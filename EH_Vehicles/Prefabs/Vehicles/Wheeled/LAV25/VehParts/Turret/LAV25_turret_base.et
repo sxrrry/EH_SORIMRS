@@ -1,0 +1,22 @@
+Turret : "{4AD877DEA242E512}Prefabs/Weapons/Core/Turret_Base.et" {
+ ID "51ACD0965653D003"
+ components {
+  TurretComponent "{58F8DC79D093C81C}" {
+   components {
+    WCS_Armament_VehicleSightsComponent "{58F8DC79D093C819}" {
+     SightsFOVInfo SCR_SightsZoomFOVInfo "{64B2EBD96481BC82}" {
+      m_fBaseZoom 7
+      m_fZoomMax 7
+     }
+     m_rSightProfile ""
+    }
+   }
+  }
+  WCS_Armament_FireControlComponent "{B3F26C9DE1584419}" {
+   Enabled 0
+  }
+  WCS_Armament_TurretStabilizationComponent "{68A56DCAB5307BD2}" {
+   Enabled 0
+  }
+ }
+}

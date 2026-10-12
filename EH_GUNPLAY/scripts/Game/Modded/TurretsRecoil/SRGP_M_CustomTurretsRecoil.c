@@ -8,10 +8,10 @@ modded class SCR_RecoilForceAimModifier
 	[Attribute("0.05", uiwidget: UIWidgets.Slider, desc: "Overall recoil * this", category: "Settings", params: "0 5")]
 	float RECOIL_POWER;
 	
-	[Attribute("0.3", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
+	[Attribute("0.1", uiwidget: UIWidgets.Slider, desc: "Horizontal recoil power multiplier", category: "Settings", params: "0 5")]
 	float RECOIL_HOR_POWER;
 	
-	[Attribute("0.5", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
+	[Attribute("0.1", uiwidget: UIWidgets.Slider, desc: "Vertical recoil power multiplier", category: "Settings", params: "0 5")]
 	float RECOIL_VERT_POWER;
 	
 	[Attribute("0.8", uiwidget: UIWidgets.Slider, desc: "Recoil spring", category: "Settings", params: "0 2")]

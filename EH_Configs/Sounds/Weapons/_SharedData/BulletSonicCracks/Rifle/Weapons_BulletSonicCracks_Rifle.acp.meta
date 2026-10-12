@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{ABAD8342FF1E1578}Sounds/Weapons/_SharedData/BulletSonicCracks/Rifle/Weapons_BulletSonicCracks_Rifle.acp"
+ Configurations {
+  AudioProjectResourceClass PC {
+  }
+  AudioProjectResourceClass XBOX_ONE : PC {
+  }
+  AudioProjectResourceClass XBOX_SERIES : PC {
+  }
+  AudioProjectResourceClass PS4 : PC {
+  }
+  AudioProjectResourceClass PS5 : PC {
+  }
+  AudioProjectResourceClass HEADLESS : PC {
+  }
+ }
+}
