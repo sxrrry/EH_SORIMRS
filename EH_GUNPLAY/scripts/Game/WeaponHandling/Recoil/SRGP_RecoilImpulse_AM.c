@@ -50,7 +50,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 	[Attribute("-0.003", uiwidget: UIWidgets.Slider, desc: "Limits gun kick distance by this (so gun wont pierce shoulder)", category: "Settings", params: "-0.5 0")]
 	private float RECOIL_GUN_SHOULDERKICK_LIMIT;
 	
-	[Attribute("1", uiwidget: UIWidgets.Slider, desc: "Camera shake impact", category: "Settings", params: "0 10")]
+	[Attribute("0.7", uiwidget: UIWidgets.Slider, desc: "Camera shake impact", category: "Settings", params: "0 5")]
 	private float m_fShakeScale;
 	
 	private float m_fTotalVerticalImpulse;
@@ -107,7 +107,6 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 			muzzEffComp = SCR_MuzzleEffectComponent.Cast(m_weaponEnt.FindComponent(SCR_MuzzleEffectComponent));
 			return;
 		}
-			
 		int stance = SRGP_Utils.SRGP_GetStance(m_weaponOwner);
 		if (stance == 2)
 		{
@@ -139,7 +138,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		bulletSpeed = muzzEffComp.GetBulletSpeed();
 		m_fBulletInitSpeedCoef = m_muzzleComp.GetBulletInitSpeedCoef();
 		bulletSpeed *= m_fBulletInitSpeedCoef;
-		
+
 		float energy = (bulletMass * bulletSpeed * bulletSpeed) / 2; // bullet energy in J
 
 		float energyFactor = Math.InverseLerp(200, 3000, energy);
@@ -153,7 +152,7 @@ class SRGP_RecoilImpulse_AM : ScriptedWeaponAimModifier
 		m_fTotalVerticalImpulse = Math.Lerp(0, MAXIMAL_VERTICAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_VERT_POWER * RECOIL_POWER;
 		m_fTotalHorizontalImpulse = Math.Lerp(0, MAXIMAL_HORIZONTAL_IMPULSE, energyFactor) * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor * RECOIL_HOR_POWER * RECOIL_POWER;
 		
-		SRGP_CamShake.Kick(m_fShakeScale * energyFactor * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor);
+		SRGP_CamShake.ShakeCamera(m_fShakeScale * energyFactor * m_fWeaponMassFactor * m_fStanceFactor * m_fdeploymentFactor);
 	}
 	
 	override void OnCalculate(IEntity owner, WeaponAimModifierContext context, float timeSlice, out vector translation, out vector rotation, out vector turnOffset)

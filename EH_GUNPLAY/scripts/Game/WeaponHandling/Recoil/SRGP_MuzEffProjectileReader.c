@@ -2,8 +2,8 @@
 
 modded class SCR_MuzzleEffectComponent
 {
-	protected float bulletMass;
-	protected float bulletSpeed;
+	protected float bulletMass = 0.004;
+	protected float bulletSpeed = 800;
 	
 	override void OnFired(IEntity effectEntity, BaseMuzzleComponent muzzle, IEntity projectileEntity)
 	{
