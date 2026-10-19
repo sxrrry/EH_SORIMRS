@@ -1,22 +1,24 @@
 modded class GC_SuppressionSystem : GameSystem
 {
-	
 	[Attribute("2.0", UIWidgets.Auto,
 	"How much we should cut suppression effects range when in cover by creating fake bigger distance? (distance * this = 3m act will be 6 if set to 2.0)",
 	params: "0 10.0")]
 	protected float m_CoverRangeCut;
 	
-	override void OnControlledEntityChanged(IEntity from, IEntity to)
+	[Attribute("0", UIWidgets.CheckBox,
+	"When enabled, bullet impacts from friendly shooters do not cause suppression (impact path only).",
+	category: "Suppression")]
+	protected bool m_bIgnoreFriendlyImpactSuppression;
+	
+	bool GetIgnoreFriendlyImpactSuppression()
 	{
-		SetEnabled(true);
-		Print("OnControlledEntityChanged - Flush suppression");
-		protected float m_fSuppression = 0;
+		return m_bIgnoreFriendlyImpactSuppression;
 	}
 
 	override float ExplosionScreenShake(float impulse)
 	{
 		if (!m_bExplosionScreenShakeEnabled)
-				return 0;
+			return 0;
 		
 		float minImpulse = Math.Max(m_fExplosionScreenShakeMinImpulse, 0.0);
 		float maxImpulse = Math.Max(m_fExplosionScreenShakeMaxImpulse, minImpulse + 0.001);
@@ -55,7 +57,6 @@ modded class GC_SuppressionSystem : GameSystem
 		PrintFormat("GC | ExplosionScreenShake: impulse:%1, amount:%2, sustainTime:%3", impulse, amount, sustainTime);
 		
 		return amount;
-
 	}
 	
 	override void HandleBulletImpact(IEntity bullet, vector transform[3], float multiplier, float distance, float speed)
@@ -80,7 +81,7 @@ modded class GC_SuppressionSystem : GameSystem
 		{
 			multi -= m_fCoverMultiplier;
 			// SRY MULTIPLY
-			distance = distance * m_CoverRangeCut;	
+			distance = distance * m_CoverRangeCut;
 		}
 		
 		multi *= multiplier;
@@ -190,5 +191,4 @@ modded class GC_SuppressionSystem : GameSystem
 				m_aProjectiles.Remove(i);
 		}
 	}
-	
 }

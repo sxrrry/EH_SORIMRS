@@ -18,8 +18,6 @@ class SRGP_RecoilShake_AM : ScriptedWeaponAimModifier
 	private float rotV;
 	private float rotH;
 	
-	private float m_fTick;
-	
 	private float m_fControlCheckTDelta;
 	private bool m_bIsLocalPlayer;
 	

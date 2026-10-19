@@ -23,6 +23,8 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
      WeaponAimModifiers {
       SwayWeaponAimModifier "{521AE9A27BDC1E6F}" {
       }
+      SRGP_CameraShake_AM "{6AA6DE952BB99F3C}" {
+      }
       SRGP_HandsStaminaWeaponAimModifier "{69A35ABE30C5EE63}" {
        Name "SR Tremor"
        m_fOverallTremorMult 0.3
