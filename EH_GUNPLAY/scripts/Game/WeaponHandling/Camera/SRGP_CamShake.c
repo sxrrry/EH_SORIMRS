@@ -14,9 +14,11 @@ class SRGP_CamShake
         float pitch = PITCH_BASE * Math.RandomFloat(0.85, 1.15);
         float yaw = YAW_BASE * Math.RandomFloat(-1.0, 1.0);
         float roll = ROLL_BASE * Math.RandomFloat(0.7, 1.3);
-		
+
+        float sign = 1.0;
         if (Math.RandomFloat01() < 0.5)
-            roll = -roll;
+            sign = -1.0;
+        roll *= sign;
 
         s_vShakeAmplitude = Vector(yaw * scale, pitch * scale, roll * scale);
         s_fShakeAge = 0;
@@ -39,10 +41,10 @@ class SRGP_CamShake
 
     static void CountImpulseAge(float dt) {s_fShakeAge += dt;}
 
-    static void RotateCamera(vector tm[4], vector ypr)
+    static void RotateCamera(vector camMatrix[4], vector anglesDeg)
     {
-        vector rot[3];
-        Math3D.AnglesToMatrix(ypr, rot);
-        Math3D.MatrixMultiply3(tm, rot, tm);
+        vector deltaBasis[3];
+        Math3D.AnglesToMatrix(anglesDeg, deltaBasis);
+        Math3D.MatrixMultiply3(camMatrix, deltaBasis, camMatrix);
     }
 }

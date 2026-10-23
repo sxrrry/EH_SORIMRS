@@ -6,16 +6,13 @@ GenericEntity : "{E1F14DB52DBFBC57}Prefabs/Weapons/Core/Weapon_Base.et" {
     MuzzleComponent "{50F64C4591CD7AA6}" {
      components {
       SCR_MuzzleEffectComponent "{6954A078D022DF48}" {
+       Enabled 0
        ParticleEffect "{32FC74AE9AECA2BF}Particles/notSorry/sr_muzzleBlastTrigger_small.ptc"
        EffectPosition EntitySlotInfo pos {
         PivotID "barrel_muzzle"
         Offset 0 0 0.1
        }
        ResetOnFire 0
-      }
-     }
-     WeaponAimModifiers {
-      SRGP_RecoilImpulse_AM "{69FC9626088F08DF}" {
       }
      }
     }
