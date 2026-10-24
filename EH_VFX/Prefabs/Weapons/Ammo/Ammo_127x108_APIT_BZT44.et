@@ -1,4 +1,13 @@
 TracerProjectile : "{158CA8519769A66F}Prefabs/Weapons/Ammo/Ammo_127x108_API_B32.et" {
  ID "DA5C6308000CDEF2"
- ProjectileModel "{A6644CF09A0BC6EB}Assets/Weapons/Ammo/Tracers/Thin/EHVFX_Tracer_Yellow.xob"
+ components {
+  SlotManagerComponent "{6AB0AC01F6F4648E}" {
+   Slots {
+    EntitySlotInfo EH_Tracer {
+     Prefab "{923366325E9F9D10}Prefabs/Weapons/sr_tracers/TracerParticle_YELLOW.et"
+    }
+   }
+  }
+ }
+ ProjectileModel "{6E7FFC4322FE7D28}Assets/Weapons/Ammo/Tracers/Invisible/EHVFX_TracerInvisible.xob"
 }

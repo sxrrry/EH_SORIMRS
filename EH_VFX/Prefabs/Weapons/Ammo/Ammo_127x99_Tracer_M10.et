@@ -1,5 +1,14 @@
 TracerProjectile : "{A4E070505C87AD42}Prefabs/Weapons/Ammo/Ammo_127x99_Ball_M33.et" {
  ID "476AE74C17425072"
- ProjectileModel "{09FB24281BA95A29}Assets/Weapons/Ammo/Tracers/Thin/EHVFX_Tracer_Red.xob"
+ components {
+  SlotManagerComponent "{6AB0AC01F6F4648E}" {
+   Slots {
+    EntitySlotInfo EH_Tracer {
+     Prefab "{E0DDB18A8558B090}Prefabs/Weapons/sr_tracers/TracerParticle_RED.et"
+    }
+   }
+  }
+ }
+ ProjectileModel "{6E7FFC4322FE7D28}Assets/Weapons/Ammo/Tracers/Invisible/EHVFX_TracerInvisible.xob"
  "Tracer Burn Time" 5
 }

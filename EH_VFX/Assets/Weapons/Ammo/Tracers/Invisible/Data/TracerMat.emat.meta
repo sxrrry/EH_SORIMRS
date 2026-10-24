@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{D09A27FBD5D15725}Assets/Weapons/Ammo/Tracers/Invisible/Data/TracerMat.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,4 @@
+ParticleEffectEntity : "{6DA7D7D4F0179E84}Prefabs/Weapons/sr_tracers/TracerParticle_Base.et" {
+ ID "6530AD13A4C2F9E4"
+ EffectPath "{748E1ECD9CE0FD1F}Particles/sorrryTracers/ehvfx_tracer_YELLOW.ptc"
+}

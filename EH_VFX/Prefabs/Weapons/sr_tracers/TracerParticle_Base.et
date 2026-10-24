@@ -1,0 +1,5 @@
+ParticleEffectEntity : "{F87BDCA400309DB2}Prefabs/Particles/EnvironmentParticle_Base.et" {
+ ID "6530AD13A4C2F9E4"
+ UseFrameEvent 1
+ EffectPath "{6A2B0AB5B49B6F4A}Particles/sorrryTracers/ehvfx_tracer_red.ptc"
+}

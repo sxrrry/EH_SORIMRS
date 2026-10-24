@@ -1,0 +1,5 @@
+MatPBRDecal {
+ Color 0 0 0 0
+ AlphaMul 0
+ BlendMode AlphaBlend
+}

@@ -1,0 +1,12 @@
+Projectile {
+ ID "DA5C6308000CDEF2"
+ components {
+  SlotManagerComponent "{6AB0AC01F6F4648E}" {
+   Slots {
+    EntitySlotInfo EH_Tracer {
+     Angles 90 0 0
+    }
+   }
+  }
+ }
+}
